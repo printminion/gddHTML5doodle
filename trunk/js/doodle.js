@@ -181,6 +181,11 @@ function removeDebugBorder() {
         debugBorder.push({type:'r',elementId:r[i].id});
         $(r[i]).removeClass('r');
     }
+    try {
+        $('#logo').bind('click', function () { showDebugBorder();});
+    }catch(e) {
+        
+    }
     
 }
 
