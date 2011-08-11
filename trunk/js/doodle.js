@@ -8,7 +8,7 @@ var rotateYValue, rotateXValue, translateZValue = 0;
 var container = undefined;
 var debugMode = 'console'; //conosle, window, none
 var debug = new Array();
-
+var debugBorder = new Array();
 
 function step(n) {
 	
@@ -122,7 +122,7 @@ function step5() {
 	
 }
 function step6() {
-	
+	showDebugBorder();
 }
 /**
  *fixed bug in chrome 
@@ -144,11 +144,37 @@ var currentState = 'plane';
 var analyserState = true;
 var p01, p02, p03, p04, p05, p06, p07, p08, p09, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p211, p212, p201, p202 = undefined;
 
+function removeDebugBorder() {
+    var d = $('.d');
+    var g = $('.g');
+    var r = $('.r');
+    for(i=0;i<d.length;i++) {
+        debugBorder.push({type:'d',elementId:d[i].id});
+        $(d[i]).removeClass('d');
+    }
+    for(i=0;i<g.length;i++) {
+        debugBorder.push({type:'g',elementId:g[i].id});
+        $(g[i]).removeClass('g');
+    }
+    for(i=0;i<r.length;i++) {
+        debugBorder.push({type:'r',elementId:r[i].id});
+        $(r[i]).removeClass('r');
+    }
+    
+}
 
+function showDebugBorder () {
+    debugBorder.forEach(function(item,key) {
+        $('#'+item.elementId).toggleClass(item.type);
+        console.log(item,key);
+    }) ;
+}
 
 function init() {
     //fix an chrome bug, workaround
     videoMuteHelper();
+    //remove the debug border
+    removeDebugBorder();
     if(analyserState==true) {
         window.analyserObj = new analyser();
         window.analyserObj.init();
