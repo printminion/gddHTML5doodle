@@ -10,7 +10,7 @@ var analyser = function () {
 }
 
 analyser.prototype.init = function () {
-    console.log("im here");
+    debugAdd("init Multi Analyser");
     //number of channels to visualize
     this.visChannels = 0   ; //this is the state how much pannels from the map will be moved
     this.maxVisChannels = 21;

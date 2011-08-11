@@ -1,4 +1,5 @@
 var nightStar = function () {
+    debugAdd("init nightStar");
     this.stars = 40;
     this.debug = new Array();
     this.starType = 'canvas';//nyan
@@ -55,9 +56,9 @@ nightStar.prototype.addStarField = function() {
 
 nightStar.prototype.createNyanStar = function (id) {
     var div = document.createElement('canvas');
-    var container = document.getElementById('container');
-    var posLeft = GetRandom(0,container.offsetWidth);
-    var posTop = GetRandom(0, container.offsetHeight-100);
+    var container =document.getElementById('background');
+    var posLeft = this.GetRandom(0,container.offsetWidth);
+    var posTop = this.GetRandom(0, container.offsetHeight-100);
      debugAdd('currentStar Position left:' +  posLeft + ' top:' + posTop);
     div.setAttribute('class', 'nyanStar');
     div.setAttribute('id', 'star'+id);
@@ -67,9 +68,9 @@ nightStar.prototype.createNyanStar = function (id) {
 
 nightStar.prototype.createStar = function (id) {
     var div = document.createElement('canvas');
-    var container = document.getElementById('container');
-    var posLeft = GetRandom(0,container.offsetWidth);
-    var posTop = GetRandom(0, container.offsetHeight-100);
+    var container = document.getElementById('background');
+    var posLeft = this.GetRandom(0,container.offsetWidth);
+    var posTop = this.GetRandom(0, container.offsetHeight-100);
      debugAdd('currentStar Position left:' +  posLeft + ' top:' + posTop);
     div.setAttribute('class', 'star');
     div.setAttribute('id', 'star'+id);
@@ -118,25 +119,26 @@ nightStar.prototype.deleteStars = function() {
         for(i=0;i<anz;i++) {
             var idM = getAllStars[getAllStars.length-1].getAttribute('id');
             var removeMe = document.getElementById(idM); 
-            document.getElementById('container').removeChild(removeMe);
+           // document.getElementById('container').removeChild(removeMe);
+            document.getElementById('background').removeChild(removeMe);
         }
      
    
 }
 
 
-function toggleDayNight() {
+nightStar.prototype.toggleDayNight = function() {
     var body = document.getElementsByTagName('body');
     var whatIsNow=body[0].getAttribute('class');
     var newClass = 'day';
     switch(whatIsNow) {
         case 'day':
             newClass = 'night';
-            addStarField();
+            this.addStarField();
         break;
         case 'night':
             newClass = 'day';
-            removeStars();
+            this.removeStars();
         break;
     }
     body[0].setAttribute('class',newClass);
@@ -145,7 +147,7 @@ function toggleDayNight() {
     
 }
 
-function toggleStars () {
+nightStar.prototype.toggleStars = function () {
     //starType
     var toggler = document.getElementById('toggleStar');
     switch(this.starType) {
