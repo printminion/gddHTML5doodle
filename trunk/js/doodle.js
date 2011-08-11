@@ -53,7 +53,7 @@ function step1() {
 	/*
 	 * start music - gdd2011beat.mp3
 	 */
-	
+	 window.analyserObj.source.noteOn(0);
 	
 	/*
 	 * start beat on each cell

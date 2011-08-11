@@ -75,7 +75,7 @@ analyser.prototype.loadSample = function (url) {
         request.onload = function() { 
             ObjContext.source.buffer = ObjContext.context.createBuffer(request.response, false);
             ObjContext.source.looping = false;
-            //ObjContext.source.noteOn(0);
+            // ObjContext.source.noteOn(0);
             //ObjContext.bindEvents();
             //ObjContext.initSpectralAnalyser(ObjContext.currentvalue.length);
             ObjContext.visualizer();				// run jsfft visualizer
