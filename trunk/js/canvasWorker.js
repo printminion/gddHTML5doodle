@@ -11,7 +11,7 @@ var canvasWorker = function () {
         founded: 'General relativity'
     };
     this.people[1] = {
-        name: 'Wilhelm Röntgen',
+        name: 'Wilhelm R&ouml;ntgen',
         dynmapId:'02', 
         picUrl: 'images/germanPeople/konradroentgen.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Konrad_Rontgen',
@@ -243,6 +243,7 @@ canvasWorker.prototype.createCanvas = function (id, peopleObj) {
         this.drawRectDown(peopleObj.picUrl,ctx);
     
 }
+
 canvasWorker.prototype.toggleBackToWorld = function () {
     //removes all the pictures
      var infoBox = document.getElementById('humanInfo');
@@ -256,6 +257,9 @@ canvasWorker.prototype.toggleBackToWorld = function () {
             
 canvasWorker.prototype.printPeopleInfo = function (humanObj) {
    
+	this.onPersonUpdate(humanObj);
+     
+	 
     //build here the human info
     var infoBox = document.getElementById('humanInfo');
     infoBox.style.display = 'block';
@@ -293,7 +297,6 @@ canvasWorker.prototype.printPeople = function() {
         this.createCanvas(this.currentPeopleIndex,this.people[this.currentPeopleIndex]);
         this.printPeopleInfo(this.people[this.currentPeopleIndex]);
         this.currentPeopleIndex++;
-        canvasObj
         this.timeout = window.setTimeout("canvasObj.printPeople()", 5000);
     }
     /*
@@ -310,7 +313,12 @@ canvasWorker.prototype.printPeople = function() {
         });
     })(this); */
     //this.bindEvents(document.getElementById('container'));
-}
+};
+
+canvasWorker.prototype.onPersonUpdate = function(person){
+	
+};
+
 /**
              * binds the events to the canvas elements and calc if the 
              * click is on the picture ! in path

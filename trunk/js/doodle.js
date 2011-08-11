@@ -10,6 +10,7 @@ var debugMode = 'console'; //conosle, window, none
 var debug = new Array();
 var debugBorder = new Array();
 var activeStep = 0;
+
 function step(n) {
     /*
      *undo if possible & neccessary an old state
@@ -221,6 +222,26 @@ function init() {
     //init the people class :P
     window.canvasObj = new canvasWorker();
     window.nightStar = new nightStar();
+    
+    /*
+     * add people as html
+     */
+    
+    for ( i in window.canvasObj.people) {
+    	
+    	$('#main').append('<section id="person' +  window.canvasObj.people[i].dynmapId + '" class="future"><h3>' + window.canvasObj.people[i].name + '</h3><a href="' +  window.canvasObj.people[i].wikiUrl + '">' +  window.canvasObj.people[i].founded + '</a></section>');
+    }
+    
+    /*
+     * start showing "superstars"
+     */
+    window.canvasObj.onPersonUpdate = function(person) {
+    	$('#person' + person.dynmapId).prev().attr('class', 'past');
+    	$('#person' + person.dynmapId).attr('class', 'current');
+    };
+	
+
+    
     document.getElementById('translateZ').value = translateZDefault;
 
     rotateYValue = document.getElementById('rotateY').value;
@@ -506,23 +527,6 @@ function updateZ(transZ,containerId) {
             p211.style.webkitTransform = 'translateX(263px) translateY(217px) translateZ(' + transZ  + 'px) ';
             p212.style.webkitTransform = 'translateX(354px) translateY(269px) rotateZ(-57deg) translateZ(' + transZ  + 'px) ';
         }
-
-
-
-		
-		
-
-		
-		
-		
-		
-		
-		
-		
-
-		
-		
-		
 
     }
 	
