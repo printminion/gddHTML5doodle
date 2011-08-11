@@ -405,3 +405,59 @@ css for the info box german stars
     -webkit-transition: all .2s ease-in-out;
     position:absolute;
 }
+
+
+/**
+ css properties for the nyan flying cat
+
+**/
+@-webkit-keyframes nyanAnimation {
+    0% {
+
+    -webkit-transform: rotateY(360deg) ;
+    }
+    100% {
+        -webkit-transform: rotateY(0deg) ;
+
+    }
+}
+
+.nyanContainer {
+    position: absolute;
+    top: 160px;
+    left: 0px;
+
+    border:1px solid red;
+}
+
+#cube {
+    -webkit-transform-style: preserve-3d;
+    -webkit-animation: nyanAnimation 2s infinite linear;
+
+
+    border:1px solid green;
+    width: 200px;
+    height: 200px;
+
+}
+
+
+#cube figure {
+    width: 196px;
+    height: 196px;
+    display: block;
+    position: absolute;
+    border: 2px solid black;
+    line-height:196px;
+    font-size:120px;
+    color:white;
+    top: 0px;
+    margin:0px;
+
+}
+
+
+
+#cube .front  { -webkit-transform: rotateY(   180deg )  rotateX(-170deg ) translateZ( 180px ); }
+#cube .front img { margin:0px;padding:0px;}
+#cube {  }

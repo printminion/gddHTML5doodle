@@ -9,9 +9,15 @@ var container = undefined;
 var debugMode = 'console'; //conosle, window, none
 var debug = new Array();
 var debugBorder = new Array();
-
+var activeStep = 0;
 function step(n) {
-	
+    /*
+     *undo if possible & neccessary an old state
+     *
+     **/
+    if(activeStep != 0) {
+        undoLastStep(activeStep);
+    }
     switch (n) {
 	case 1:
             step1();
@@ -39,9 +45,17 @@ function step(n) {
 	
 	
 }
-
+function undoLastStep(n) {
+     switch (n) {
+	
+	case 3:
+          undoStep3();  
+            break;
+    }
+}
 
 function step1() {
+   activeStep = 1;
     /*
      * start music - 2257__Andrew_Duke__click1.wav
      */
@@ -67,6 +81,7 @@ function step1() {
 }
 
 function step2() {
+    activeStep = 2;
     /*
      * transform to 3d - rotate, music beat
      */
@@ -85,6 +100,7 @@ function step2() {
 }
 
 function step3() {
+    activeStep = 3;
     /*
      * onBuzzer click
      */
@@ -103,7 +119,7 @@ function step3() {
     /*
      * add nyan cat - running around the globe
      */
-	
+    document.getElementById('nyannyan').style.display = 'block';
     /*
      * start nyan song loop - if with copyright is ok
      */
@@ -112,6 +128,11 @@ function step3() {
      * add end titles with superstars, credits and so on
      */
 	
+}
+
+function undoStep3() {
+     window.nightStar.toggleDayNight();
+     document.getElementById('nyannyan').style.display = 'none';
 }
 
 function step4() {
