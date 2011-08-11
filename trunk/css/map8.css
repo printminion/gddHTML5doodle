@@ -6,37 +6,53 @@
 100%
 {
 -webkit-transform
-
-
 :
-
- 
-
 rotateY
-
-
 (360
 deg
 );
-
-
 }
 }
 body {
-	-webkit-perspective: 800;
-	-webkit-perspective-origin: 50% 30%;
 	overflow: hidden;
 	height: 600px;
 	font-family: 'Rationale', cursive;
 }
 
-#toolbox {
-	background: #e4e4e4;
-	padding: 2px;
+#footer {
+	padding: 5px;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
 }
 
-details {
+#logo {
+	width: 149px;
+	height: 128px;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	background-image: url(../images/gdd11_logo.png);
+	background-repeat: no-repeat;
+}
+
+#toolbox {
+	background-color: #e4e4e4;
+	padding: 5px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1000;
+	border: 1px solid #FF3333;
+	border-radius: 0px 0px 10px 1px;
+	-moz-border-radius: 0px 0px 10px 1px;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 1px;
+}
+
+#toolbox details {
 	z-index: 2;
+	padding: 5px;
 }
 
 .shape-container {
@@ -71,10 +87,14 @@ div#icosahedron.plane {
 }
 
 #container {
+	-webkit-perspective: 800;
+	-webkit-perspective-origin: 50% 30%;
 	height: 100%;
 	border: 1px solid #e4e4e4;
 	background-position: center;
 	background-repeat: no-repeat;
+	padding: 0;
+	margin: 0;
 }
 
 .container { /* position: relative;
