@@ -228,7 +228,6 @@ function init() {
      */
     
     for ( i in window.canvasObj.people) {
-    	
     	$('#main').append('<section id="person' +  window.canvasObj.people[i].dynmapId + '" class="future"><h3>' + window.canvasObj.people[i].name + '</h3><a href="' +  window.canvasObj.people[i].wikiUrl + '" target="_blank">' +  window.canvasObj.people[i].founded + '</a></section>');
     }
     

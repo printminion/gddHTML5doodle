@@ -3,147 +3,174 @@ var canvasWorker = function () {
     this.originContent = new Array();
     this.people = new Array();
     this.timeout = undefined;
+    
+    //+6, 7, +16, 17, 8, 9, 10, +20
+    
+    
     this.people[0] = {
         name: 'Albert Einstein',
-        dynmapId:'01', 
+        dynmapId:'20', 
         picUrl: 'images/germanPeople/aeinstein.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Albert_Einstein',
         founded: 'General relativity'
     };
+    
     this.people[1] = {
+            name: 'Otto Hahn',
+            dynmapId:'16', 
+            picUrl: 'images/germanPeople/ottohahn.jpg', 
+            wikiUrl: 'http://en.wikipedia.org/wiki/Otto_Hahn',
+            founded: 'Nuclear fussion - discovery of radioactive elements'
+	};
+    
+    this.people[2] = {
         name: 'Wilhelm R&ouml;ntgen',
-        dynmapId:'02', 
+        dynmapId:'07', 
         picUrl: 'images/germanPeople/konradroentgen.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Konrad_Rontgen',
         founded: 'X-rays'
     };
-    this.people[2] = {
+    
+    
+    this.people[3] = {
         name: 'Konrad Zuse',
-        dynmapId:'03', 
+        dynmapId:'17', 
         picUrl: 'images/germanPeople/konradzuse.jpg', 
         wikiUrl: 'http://de.wikipedia.org/wiki/Konrad_Zuse',
-        founded: 'Z1,Z3 ( the first programable computer )'
+        founded: 'First programable computer. Aka Z1, Z3'
     };
-    this.people[3] = {
+
+    this.people[4] = {
+            name: 'Karlheinz Brandenburg',
+            dynmapId:'08', 
+            picUrl: 'images/germanPeople/karlheinzbrandenburg.jpg', 
+            wikiUrl: 'http://en.wikipedia.org/wiki/Karlheinz_Brandenburg',
+            founded: 'MP3 file format - co-developer'
+        };
+    
+    this.people[5] = {
         name: 'Philip Reis',
-        dynmapId:'04', 
+        dynmapId:'10', 
         picUrl: 'images/germanPeople/philipreis.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Philip_Reis',
-        founded: 'the first make-and-break telephone'
+        founded: 'The first make-and-break telephone'
     };
-    this.people[4] = {
+    
+    this.people[6] = {
         name: 'Heinrich Hertz',
-        dynmapId:'05', 
+        dynmapId:'01', 
         picUrl: 'images/germanPeople/heinrichhertz.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Heinrich_Hertz',
-        founded: 'Electromagnetic radiation Photoelectric effect  (MHz, KHz,..)'
-    };
-    this.people[5] = {
-        name: 'Johannes Gutenberg',
-        dynmapId:'06', 
-        picUrl: 'images/germanPeople/johannesgutenberg.jpg', 
-        wikiUrl: 'http://en.wikipedia.org/wiki/Johannes_Gutenberg',
-        founded: 'global inventor of the printing press, Gutenberg Bible'
-    };
-    this.people[6] = {
-        name: 'William IV, Duke of Bavaria',
-        dynmapId:'07', 
-        picUrl: 'images/germanPeople/wilhelmvonbayern.jpg', 
-        wikiUrl: 'http://en.wikipedia.org/wiki/William_IV,_Duke_of_Bavaria',
-        founded: 'issued purity regulation for the brewing of Bavarian Beer'
+        founded: 'MHz, KHz - Electromagnetic radiation Photoelectric effect'
     };
     this.people[7] = {
+            name: 'William IV, Duke of Bavaria',
+            dynmapId:'02', 
+            picUrl: 'images/germanPeople/wilhelmvonbayern.jpg', 
+            wikiUrl: 'http://en.wikipedia.org/wiki/William_IV,_Duke_of_Bavaria',
+            founded: 'Bavarian Beer - issued purity regulation for the brewing '
+        };
+    
+    
+    this.people[8] = {
+            name: 'Melitta Bentz',
+            dynmapId:'03', 
+            picUrl: 'images/germanPeople/melittabentz.jpg', 
+            wikiUrl: 'http://en.wikipedia.org/wiki/Melitta_Bentz',
+            founded: 'Coffee filter - invented in 1908'
+    };
+    
+    this.people[9] = {
+            name: 'You',
+            dynmapId:'06', 
+            picUrl: 'images/germanPeople/you.jpg', 
+            wikiUrl: 'http://google.com',
+            founded: ''
+        };  
+    
+    
+    this.people[10] = {
+        name: 'Johannes Gutenberg',
+        dynmapId:'04', 
+        picUrl: 'images/germanPeople/johannesgutenberg.jpg', 
+        wikiUrl: 'http://en.wikipedia.org/wiki/Johannes_Gutenberg',
+        founded: 'Printing press - global inventor, Gutenberg Bible'
+    };
+    
+
+    
+    this.people[11] = {
         name: 'Julius Lothar Meyer',
-        dynmapId:'08', 
+        dynmapId:'05', 
         picUrl: 'images/germanPeople/Lmeyer.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Lothar_Meyer',
         founded: 'Periodic table of chemical elements'
     };
-    this.people[8] = {
-        name: 'Karlheinz Brandenburg',
-        dynmapId:'09', 
-        picUrl: 'images/germanPeople/karlheinzbrandenburg.jpg', 
-        wikiUrl: 'http://en.wikipedia.org/wiki/Karlheinz_Brandenburg',
-        founded: 'co-developer of the MP3 file format'
-    };
-    this.people[9] = {
+
+    this.people[12] = {
         name: 'Gottlieb Daimler',
-        dynmapId:'10', 
+        dynmapId:'11', 
         picUrl: 'images/germanPeople/gottliebdaimler.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Gottlieb_Daimler',
-        founded: 'automotive pioneer,  invented the first high-speed petrol engine'
+        founded: 'First high-speed petrol engine - inventor, automotive pioneer'
     };
-    this.people[10] = {
-        name: 'Otto Hahn',
-        dynmapId:'16', 
-        picUrl: 'images/germanPeople/ottohahn.jpg', 
-        wikiUrl: 'http://en.wikipedia.org/wiki/Otto_Hahn',
-        founded: 'Nuclear fission,Discovery of radioactive elements '
-    };
-    this.people[11] = {
-        name: 'Melitta Bentz',
-        dynmapId:'17', 
-        picUrl: 'images/germanPeople/melittabentz.jpg', 
-        wikiUrl: 'http://en.wikipedia.org/wiki/Melitta_Bentz',
-        founded: 'invented the coffee filter in 1908'
-    };
-    this.people[12] = {
+    
+
+    this.people[13] = {
         name: 'Felix Hoffmann',
-        dynmapId:'18', 
+        dynmapId:'12', 
         picUrl: 'images/germanPeople/felixhoffmann.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Felix_Hoffmann',
-        founded: 'synthesized acetylsalicylic acid ( known as ASPIRIN )'
+        founded: 'ASPIRIN - synthesized. Aka acetylsalicylic acid'
     };             
-    this.people[13] = {
+    this.people[14] = {
         name: 'Hans von Ohain',
-        dynmapId:'19', 
+        dynmapId:'13', 
         picUrl: 'images/germanPeople/hansvonohain.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Hans_Joachim_Pabst_von_Ohain',
-        founded: 'one of the inventors of jet propulsion'
+        founded: 'Jet propulsion - one of the inventors'
     };                            
                                   
-    this.people[14] = {
+    this.people[15] = {
         name: 'Robert Koch',
-        dynmapId:'20', 
+        dynmapId:'14', 
         picUrl: 'images/germanPeople/robertkoch.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Robert_Koch',
         founded: 'Isolation of anthrax, tuberculosis and cholera'
-    };    
-    this.people[15] = {
-        name: 'Artur Fischer',
-        dynmapId:'21', 
-        picUrl: 'images/germanPeople/arturfischer.jpg', 
-        wikiUrl: 'http://en.wikipedia.org/wiki/Artur_Fischer',
-        founded: 'inventor of "S Plug" (Split-)Wallplug'
-    };  
+    };
+    
     this.people[16] = {
         name: 'Artur Fischer',
-        dynmapId:'22', 
+        dynmapId:'15', 
         picUrl: 'images/germanPeople/arturfischer.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Artur_Fischer',
-        founded: 'inventor of "S Plug" (Split-)Wallplug'
+        founded: 'S Plug - inventor. Aka (Split-)Wallplug'
     };  
     this.people[17] = {
         name: 'Emil Berner',
-        dynmapId:'23', 
+        dynmapId:'18', 
         picUrl: 'images/germanPeople/emilberner.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Emil_Berliner',
-        founded: 'developing the disc record gramophone '
+        founded: 'Disc record gramophone - developer'
     };  
     this.people[18] = {
         name: 'Martin Luther',
-        dynmapId:'24', 
+        dynmapId:'19', 
         picUrl: 'images/germanPeople/martinluther.jpeg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Martin_Luther',
-        founded: 'initiated the Protestant Reformation'
-    };   
+        founded: 'Protestant Reformation - initiator'
+    };
+    
     this.people[19] = {
         name: 'Otto von Guericke',
-        dynmapId:'25', 
+        dynmapId:'20', 
         picUrl: 'images/germanPeople/ottovonguerick.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Otto_von_Guericke',
         founded: 'Research and experiment for vacuums'
-    };                                   
+    };
+    
+
+    
     //http://de.wikipedia.org/wiki/Melitta_Bentz
                                  
 
