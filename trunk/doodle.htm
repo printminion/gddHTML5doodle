@@ -2,11 +2,12 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; UTF-8">
-	<title>.</title>
+	<title>doodle</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 	
 	<link href='http://fonts.googleapis.com/css?family=Rationale' rel='stylesheet' type='text/css'>
 	<link href='css/map8.css' rel='stylesheet' type='text/css'/>
+
 <script type="text/javascript" src="js/dsp.js"></script>	
 <script type="text/javascript" src="js/analyser.js"></script>
 <script type="text/javascript" src="js/doodle.js"></script>
@@ -16,8 +17,15 @@
     <div class="background">
     </div>
 
+	
+	<script type="text/javascript" src="js/music.js"></script>
+	<script type="text/javascript" src="js/doodle.js"></script>
+</head>
+<body onload="init()">
 
-<div id="toolbox" style="position: absolute; top:0px; left:0px; z-index: 1000;">
+
+
+<div id="toolbox">
 
 <details open="open">
   <summary>Position</summary>
@@ -51,6 +59,19 @@
   <button id="shape3d" onclick="changeShape('3d')">3d</button>
   <button id="shapePlane" onclick="changeShape('plane')" disabled>plane</button>
 </details>
+
+<details open="open">
+  <summary>Steps</summary>
+  <button onclick="step(1)">step 1</button><br/>
+  <button onclick="step(2)">step 2</button><br/>
+  <button onclick="step(3)">step 3</button><br/>
+  <button onclick="step(4)">step 4</button><br/>
+  <button onclick="step(5)">step 5</button><br/>
+  <button onclick="step(6)">step 6</button><br/>
+  <button onclick="step(7)">step 7</button><br/>
+</details>
+
+
 </div>
 
 
@@ -78,37 +99,48 @@
     <div id="p05" class="r plane"><img src="./images/path02.png"></div>
 
     <div id="p06" class="g plane triangle-mask">
-    
+
 			<video autoplay="true" loop="true" muted volume="0" autobuffer="true" style="position: relative; width:240px; height:220px; left:-16px; top:28px;">
 			Your browser does not support the <code>video</code> element.
 					<!-- <source src="http://dl.dropbox.com/u/14210264/html5_challenge/assets/VID_20110810_165002.m4v" type="video/mp4"/> -->
 			</video>
+
+		<video autoplay="true" loop="true" muted volume="0" autobuffer="true" style="position: relative; width:240px; height:220px; left:-16px; top:28px;">
+		Your browser does not support the <code>video</code> element.
+				<source src="http://dl.dropbox.com/u/14210264/html5_challenge/assets/VID_20110810_165002.m4v" type="video/mp4"/>
+		</video>
+
     
     	<img src="./images/path01.png">
     
     </div>
+    
     <div id="p07" class="r plane"><img src="./images/path01.png"></div>
     <div id="p08" class="g plane"><img src="./images/path01.png"></div>
     <div id="p09" class="r plane"><img src="./images/path01.png"></div>
     <div id="p10" class="g plane"><img src="./images/path01.png"></div>
 
     <div id="p16" class="r plane triangle-mask-flipped">
-      		<video autoplay="true" loop="true" muted volume="0" autobuffer="true" style="position: relative; width:240px; height:220px; left:-26px; top:-31px;">
+      	<video autoplay="true" loop="true" muted volume="0" autobuffer="true" style="position: relative; width:240px; height:220px; left:-26px; top:-31px;">
 			Your browser does not support the <code>video</code> element.
 		<source src="http://dl.dropbox.com/u/14210264/html5_challenge/assets/VID_20110810_165002.m4v" type="video/mp4"/>
 		</video>
     
-    <img src="./images/path02.png"></div>
+    	<img src="./images/path02.png">
+    </div>
+    
     <div id="p17" class="g plane"><img src="./images/path02.png"></div>
     <div id="p18" class="r plane"><img src="./images/path02.png"></div>
     <div id="p19" class="r plane"><img src="./images/path02.png"></div>
+    
     <div id="p20" class="g plane triangle-mask-flipped">
   		<video autoplay="true" loop="true" muted volume="0" autobuffer="true" style="position: relative; width:240px; height:220px; left:-26px; top:-31px;">
 			Your browser does not support the <code>video</code> element.
 		<source src="http://dl.dropbox.com/u/14210264/html5_challenge/assets/VID_20110810_165002.m4v" type="video/mp4"/>
 		</video>
-	<img src="./images/path02.png">
+		<img src="./images/path02.png">
     </div>
+    
     <div id="p201" class="g plane"><img src="./images/path201.png"></div>
     <div id="p202" class="g plane"><img src="./images/path202.png"></div>
   </div>
@@ -120,11 +152,20 @@
 
 </div>
 
-<div id="show-canvas">..</div>
-<div id="gradient">...</div>
-<div id="fft">...</div>
 
-  safari 5 or chrome 9 on a mac
+<div class="hd">
+	<div id="show-canvas">..</div>
+	<div id="gradient">...</div>
+	<div id="fft">...</div>
+</div>
 
 
-</body></html>
+<div id="logo">.</div>
+
+<div id="footer">
+  Tested with Google Chrome 15.0.848.0 canary
+</div>
+
+
+</body>
+</html>

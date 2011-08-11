@@ -1,7 +1,47 @@
+/*functions from doodle.html*/
+var translateZDefault = 140;
+var currentState = 'plane';
+
+var p01, p02, p03, p04, p05, p06, p07, p08, p09, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p211, p212, p201, p202 = undefined;
+
+var rotateYValue, rotateXValue, translateZValue = 0;
+var container = undefined;
+
+
+function step(n) {
+	
+	switch (n) {
+	case 1:
+		step1();
+		break;
+	case 2:
+		step2();
+		break;
+	case 3:
+		step3();
+		break;
+	case 4:
+		step4();
+		break;
+	case 5:
+		step5();
+		break;
+	case 6:
+		step6();
+		break;
+
+	default:
+		alert('not implemented step' + n);
+		break;
+	}
+	
+	
+}
+
 
 function step1() {
 	/*
-	 * start music
+	 * start music - 2257__Andrew_Duke__click1.wav
 	 */
 	
 	/*
@@ -9,27 +49,72 @@ function step1() {
 	 */
 	
 	/*
-	 * beat on each cell
+	 * start music - gdd2011beat.mp3
+	 */
+	
+	
+	/*
+	 * start beat on each cell
 	 */	
 	
 	/*
-	 * show maps pieces
+	 * fade each cell into show maps pieces
 	 */
 	
 }
 
 function step2() {
 	/*
-	 * transform to 3d
+	 * transform to 3d - rotate, music beat
 	 */
-        
+	
+	/*
+	 * start showing "superstars"
+	 */
+
+	
+	/*
+	 * on 10th - superstar - show buzzer
+	 */
+
 }
 
 function step3() {
+	/*
+	 * onBuzzer click
+	 */
+	
+	/*
+	 * move earth - to the left
+	 */
+	
+	
+	/*
+	 * add 3 videos of us
+	 */
+	
+	/*
+	 * add nyan cat - running around the globe
+	 */
+	
+	/*
+	 * start nyan song loop - if with copyright is ok
+	 */
+	
+	/*
+	 * add end titles with superstars, credits and so on
+	 */
 	
 }
 
 function step4() {
+	
+}
+
+function step5() {
+	
+}
+function step6() {
 	
 }
 
@@ -42,8 +127,7 @@ var currentState = 'plane';
 var analyserState = false;
 var p01, p02, p03, p04, p05, p06, p07, p08, p09, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p211, p212, p201, p202 = undefined;
 
-var rotateYValue, rotateXValue, translateZValue = 0;
-var container = undefined;
+
 
 function init() {
          if(analyserState==true) {
