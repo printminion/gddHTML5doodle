@@ -1,3 +1,43 @@
+/*functions from doodle.html*/
+var translateZDefault = 140;
+var currentState = 'plane';
+
+var p01, p02, p03, p04, p05, p06, p07, p08, p09, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p211, p212, p201, p202 = undefined;
+
+var rotateYValue, rotateXValue, translateZValue = 0;
+var container = undefined;
+
+
+function step(n) {
+	
+	switch (n) {
+	case 1:
+		step1();
+		break;
+	case 2:
+		step2();
+		break;
+	case 3:
+		step3();
+		break;
+	case 4:
+		step4();
+		break;
+	case 5:
+		step5();
+		break;
+	case 6:
+		step6();
+		break;
+
+	default:
+		alert('not implemented step' + n);
+		break;
+	}
+	
+	
+}
+
 
 function step1() {
 	/*
@@ -32,17 +72,16 @@ function step4() {
 	
 }
 
+function step5() {
+	
+}
+function step6() {
+	
+}
 
 
 
-/*functions from doodle.html*/
-var translateZDefault = 140;
-var currentState = 'plane';
 
-var p01, p02, p03, p04, p05, p06, p07, p08, p09, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p211, p212, p201, p202 = undefined;
-
-var rotateYValue, rotateXValue, translateZValue = 0;
-var container = undefined;
 
 function init() {
 
