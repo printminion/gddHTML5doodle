@@ -15,6 +15,16 @@ body {
 	background: white;
 }
 
+input[type="range"] {
+height: 10px;
+cursor: pointer;
+width: auto;
+background-color: #e4e4e4;
+}
+
+#steps button.selected{
+	font-weight: bold;;
+}
 
 body.day .background {
 /*
@@ -212,6 +222,7 @@ text-shadow: 0px 0px 2px white, 0px 0px 4px #BBB;
 	-moz-border-radius: 0px 0px 10px 1px;
 	-webkit-border-bottom-right-radius: 10px;
 	-webkit-border-bottom-left-radius: 1px;
+	width: 220px;
 }
 
 #toolbox details {

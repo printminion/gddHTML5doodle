@@ -12,40 +12,43 @@ var debugBorder = new Array();
 var activeStep = 0;
 
 function step(n) {
-    /*
-     *undo if possible & neccessary an old state
-     *
-     **/
-    if(activeStep != 0) {
-        undoLastStep(activeStep);
-    }
-    switch (n) {
+	/*
+	 * undo if possible & neccessary an old state
+	 */
+	if (activeStep != 0) {
+		undoLastStep(activeStep);
+	}
+	
+	$('#steps button').removeClass('selected');
+	$('#steps button#btnStep' + n).addClass('selected');
+
+	switch (n) {
 	case 1:
-            step1();
-            break;
+		step1();
+		break;
 	case 2:
-            step2();
-            break;
+		step2();
+		break;
 	case 3:
-            step3();
-            break;
+		step3();
+		break;
 	case 4:
-            step4();
-            break;
+		step4();
+		break;
 	case 5:
-            step5();
-            break;
+		step5();
+		break;
 	case 6:
-            step6();
-            break;
+		step6();
+		break;
 
 	default:
-            alert('not implemented step' + n);
-            break;
-    }
-	
-	
+		alert('not implemented step' + n);
+		break;
+	}
+
 }
+
 function undoLastStep(n) {
      switch (n) {
 	
@@ -62,7 +65,7 @@ function step1() {
     //be sure that we will be in the plane mode when we start with step1 
    if(currentState != "plane")
         changeShape('plane');
-   activeStep = 1;
+   		activeStep = 1;
     /*
      * start music - 2257__Andrew_Duke__click1.wav
      */
@@ -71,6 +74,11 @@ function step1() {
      * map container z rotate => isometric image
      */
 	
+	$('#container').css('-webkit-transform', 'rotateX(21deg) rotateY(3deg)');
+   		
+   		
+   		
+   		
     /*
      * start music - gdd2011beat.mp3
      */
@@ -280,45 +288,29 @@ function init() {
 
 
     document.getElementById('rotateY').addEventListener('change', function(e) {
-	rotateYValue = this.valueAsNumber;
-
-	document.getElementById('rotateYValue').innerText = rotateYValue;
-
-
-	container.style.webkitTransform = 'rotateY(' + rotateYValue + 'deg)';
-
+		rotateYValue = this.valueAsNumber;
+		document.getElementById('rotateYValue').innerText = rotateYValue;
+		container.style.webkitTransform = 'rotateX(' + rotateXValue + 'deg) rotateY(' + rotateYValue + 'deg) rotateZ(' + rotateZValue + 'deg)';
+		
     }, false);
 
 
     document.getElementById('rotateX').addEventListener('change', function(e) {
-	rotateXValue = this.valueAsNumber;
-
-	document.getElementById('rotateXValue').innerText = rotateXValue;
-
-        /*
-	var p01 = document.getElementById('p01');
-	p01.style.webkitTransform = 'rotateX(' + rotateXValue + 'deg) rotateY(0deg) translateZ(' + translateZValue + 'px)';
-
-	var p03 = document.getElementById('p03');
-	p03.style.webkitTransform = 'rotateX(' + rotateXValue + 'deg) rotateY(72deg) translateZ(' + translateZValue + 'px)';
-
-	var p05 = document.getElementById('p05');
-	p05.style.webkitTransform = 'rotateX(' + rotateXValue + 'deg) rotateY(144deg) translateZ(' + translateZValue + 'px)';
-         */
-
-
-
+    	rotateXValue = this.valueAsNumber;
+		document.getElementById('rotateXValue').innerText = rotateXValue;
+		container.style.webkitTransform = 'rotateX(' + rotateXValue + 'deg) rotateY(' + rotateYValue + 'deg) rotateZ(' + rotateZValue + 'deg)';
     }, false);
-
-
-
+    
+    document.getElementById('rotateZ').addEventListener('change', function(e) {
+    	rotateZValue = this.valueAsNumber;
+		document.getElementById('rotateZValue').innerText = rotateZValue;
+		container.style.webkitTransform = 'rotateX(' + rotateXValue + 'deg) rotateY(' + rotateYValue + 'deg) rotateZ(' + rotateZValue + 'deg)';
+    }, false);
+    
     document.getElementById('translateZ').addEventListener('change', function(e) {
-
-	translateZValue = this.valueAsNumber;
-	document.getElementById('translateZValue').innerText = translateZValue;
-
-	updateZ(translateZValue);
-
+		translateZValue = this.valueAsNumber;
+		document.getElementById('translateZValue').innerText = translateZValue;
+		updateZ(translateZValue);
     }, false);
 }
 

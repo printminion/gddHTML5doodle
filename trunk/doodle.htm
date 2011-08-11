@@ -32,28 +32,11 @@
 <details open="open">
   <summary>Position</summary>
 
-  <label>rotateY:</label><input type="range" min="0" step="1" id="rotateY" max="360" value="0"><br>
-  <div id="rotateYValue"></div>
+ <label>rotateX:</label><input type="range" min="0" step="1" id="rotateX" max="360" value="0">:<span id="rotateXValue"></span><br>
+ <label>rotateY:</label><input type="range" min="0" step="1" id="rotateY" max="360" value="0">:<span id="rotateYValue"></span><br>
+ <label>rotateZ:</label><input type="range" min="0" step="1" id="rotateZ" max="360" value="0">:<span id="rotateZValue"></span><br>
+ <label>translateZ:</label><input type="range" value="156" min="140" max="200" id="translateZ">:<span id="translateZValue"></span><br>
 
-<div class="hd">
-  <label>rotateX:</label><input type="range" min="-180" step="1" id="rotateX" max="180" value="0"><br>
-  <div id="rotateXValue"></div>
-</div>
-
-  <label>translateZ:</label><input type="range" value="156" min="140" max="200" id="translateZ"><br>
-  <div id="translateZValue"></div>
-
-</details>
-
-<details open="open">
-  <summary>Options</summary>
-  <div>
-    <span>smoothing:</span><input type="range" min="0" max="0.95" step="0.05" value="0.0" id="smoothing"><br>
-    <span>time domain?:</span><input type="checkbox" id="waveform" checked><br>
-    <span>show canvas?:</span><input type="checkbox" id="show-canvas" checked>
-  </div>
-  <button onclick="runCmd(this)" data-func="play" disabled>play</button>
-  <button onclick="runCmd(this)" data-func="stop" disabled>stop</button>
 </details>
 
 <details open="open">
@@ -62,15 +45,15 @@
   <button id="shapePlane" onclick="changeShape('plane')" disabled>plane</button>
 </details>
 
-<details open="open">
+<details open="open" id="steps">
   <summary>Steps</summary>
-  <button onclick="step(1)">step 1</button><br/>
-  <button onclick="step(2)">step 2</button><br/>
-  <button onclick="step(3)">step 3</button><br/>
-  <button onclick="step(4)">step 4</button><br/>
-  <button onclick="step(5)">step 5</button><br/>
-  <button onclick="step(6)">step 6</button><br/>
-  <button onclick="step(7)">step 7</button><br/>
+  <button id="btnStep1" onclick="step(1)">step 1</button><br/>
+  <button id="btnStep2" onclick="step(2)">step 2</button><br/>
+  <button id="btnStep3" onclick="step(3)">step 3</button><br/>
+  <button id="btnStep4" onclick="step(4)">step 4</button><br/>
+  <button id="btnStep5" onclick="step(5)">step 5</button><br/>
+  <button id="btnStep6" onclick="step(6)">step 6</button><br/>
+  <button id="btnStep7" onclick="step(7)">step 7</button><br/>
 </details>
 
 
@@ -142,24 +125,20 @@
 
 </div>
 
-<div class="hd">
-	<div id="show-canvas">..</div>
-	<div id="gradient">...</div>
-	<div id="fft">...</div>
+<div id="humanInfo" style="display:none">
+
 </div>
 
-    <div id="humanInfo" style="display:none">
-
-    </div>
-<div id="logo">.</div>
+<div id="logo"><!--  --></div>
 
 <div id="footer">
   Tested with Google Chrome 15.0.848.0 canary
 </div>
+
 <video autoplay="true" loop="true" audio="off"  volume="0" autobuffer="true" style="position: relative; width:240px; height:220px; left:-26px; top:-31px;">
 			Your browser does not support the <code>video</code> element.
 		<!--   <source  muted src="http://dl.dropbox.com/u/14210264/html5_challenge/assets/VID_20110810_165002.m4v" type="video/mp4"/> -->
-		</video>
+</video>
 
 </body>
 </html>
