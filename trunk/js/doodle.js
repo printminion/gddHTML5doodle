@@ -72,7 +72,7 @@ function step2() {
      */
     changeShape('3d');
     //starting roate, adding spinanimation
-         
+    document.getElementById('shape-container').style.webkitAnimation = "spinanimation 10s infinite linear";         
     /*
      * start showing "superstars"
      */
@@ -98,6 +98,7 @@ function step3() {
     /*
      * add 3 videos of us
      */
+    
 	
     /*
      * add nyan cat - running around the globe
@@ -114,7 +115,7 @@ function step3() {
 }
 
 function step4() {
-	
+	document.getElementById('shape-container').style.webkitAnimation = "";  
 }
 
 function step5() {
@@ -288,7 +289,7 @@ function updateZ(transZ,containerId) {
                 case 12:
                     p17.style.webkitTransform = ' rotateY(108deg) rotateX(-11deg)  translateZ(' + transZ  + 'px) ';
                     break;
-                case 13: 
+                case 13:
                     p18.style.webkitTransform = ' rotateY(180deg) rotateX(-11deg)  translateZ(' + transZ  + 'px) ';
                     break;
                 case 14:
@@ -385,7 +386,7 @@ function updateZ(transZ,containerId) {
                     p17.style.webkitTransform = 'translateX(449px) translateY(103px) translateZ(' + transZ  + 'px) ';
                     p211.style.webkitTransform = 'translateX(263px) translateY(217px) translateZ(' + transZ  + 'px) ';
                     break;
-                case 13: 
+                case 13:
                     p18.style.webkitTransform = 'translateX(635px) translateY(103px) translateZ(' + transZ  + 'px) ';
                     break;
                 case 14:

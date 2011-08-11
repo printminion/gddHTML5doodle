@@ -73,7 +73,7 @@ var canvasWorker = function () {
         founded: 'automotive pioneer,  invented the first high-speed petrol engine'
     };
     this.people[10] = {
-        name: 'Karl Benz',
+        name: 'Otto Hahn',
         dynmapId:'16', 
         picUrl: 'images/germanPeople/ottohahn.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Otto_Hahn',
