@@ -41,7 +41,7 @@ function step(n) {
 
 function step1() {
 	/*
-	 * start music
+	 * start music - 2257__Andrew_Duke__click1.wav
 	 */
 	
 	/*
@@ -49,22 +49,60 @@ function step1() {
 	 */
 	
 	/*
-	 * beat on each cell
+	 * start music - gdd2011beat.mp3
+	 */
+	
+	
+	/*
+	 * start beat on each cell
 	 */	
 	
 	/*
-	 * show maps pieces
+	 * fade each cell into show maps pieces
 	 */
 	
 }
 
 function step2() {
 	/*
-	 * transform to 3d
+	 * transform to 3d - rotate, music beat
 	 */
+	
+	/*
+	 * start showing "superstars"
+	 */
+	
+	/*
+	 * on 10th - superstar - show buzzer
+	 */
+
 }
 
 function step3() {
+	/*
+	 * onBuzzer click
+	 */
+	
+	/*
+	 * move earth - to the left
+	 */
+	
+	
+	/*
+	 * add 3 videos of us
+	 */
+	
+	/*
+	 * add nyan cat - running around the globe
+	 */
+	
+	/*
+	 * start nyan song loop - if with copyright is ok
+	 */
+	
+	/*
+	 * add end titles with superstars, credits and so on
+	 */
 	
 }
 
