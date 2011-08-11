@@ -2,6 +2,7 @@ var canvasWorker = function () {
     this.currentPeopleIndex = 0;
     this.originContent = new Array();
     this.people = new Array();
+    this.timeout = undefined;
     this.people[0] = {
         name: 'Albert Einstein',
         dynmapId:'01', 
@@ -207,7 +208,7 @@ canvasWorker.prototype.drawRectDown = function (imgSrc,ctx) {
         ctx.clip();
 
         ctx.drawImage(img,0,0, 240,240);
-        console.log('im here', ctx, img);
+
     };
     img.src = imgSrc;
 }
@@ -244,6 +245,8 @@ canvasWorker.prototype.createCanvas = function (id, peopleObj) {
 }
 canvasWorker.prototype.toggleBackToWorld = function () {
     //removes all the pictures
+     var infoBox = document.getElementById('humanInfo');
+     infoBox.style.display = 'none';
     this.originContent.forEach(function(value,key) {
         var injectIn = document.getElementById('p'+value.pId);
         injectIn.removeChild(injectIn.firstChild);
@@ -291,7 +294,7 @@ canvasWorker.prototype.printPeople = function() {
         this.printPeopleInfo(this.people[this.currentPeopleIndex]);
         this.currentPeopleIndex++;
         canvasObj
-        window.setTimeout("canvasObj.printPeople()", 5000);
+        this.timeout = window.setTimeout("canvasObj.printPeople()", 5000);
     }
     /*
     (function(canvasWorkerObj){

@@ -51,10 +51,16 @@ function undoLastStep(n) {
 	case 3:
           undoStep3();  
             break;
+        case 2:
+            undoStep2();
+        break;
     }
 }
 
 function step1() {
+    //be sure that we will be in the plane mode when we start with step1 
+   if(currentState != "plane")
+        changeShape('plane');
    activeStep = 1;
     /*
      * start music - 2257__Andrew_Duke__click1.wav
@@ -76,7 +82,7 @@ function step1() {
     /*
      * fade each cell into show maps pieces
      */
-    window.setTimeout("step2()", 20000);
+    window.setTimeout("step2()", 18000);
 	
 }
 
@@ -99,7 +105,14 @@ function step2() {
 
 }
 
+function undoStep2() {
+    //removing the "german supertars"
+    window.canvasObj.toggleBackToWorld();
+}
+
 function step3() {
+    if(currentState != "3d")
+        changeShape('3d');
     activeStep = 3;
     /*
      * onBuzzer click

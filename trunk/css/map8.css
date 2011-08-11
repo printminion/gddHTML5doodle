@@ -459,5 +459,5 @@ css for the info box german stars
 
 
 #cube .front  { -webkit-transform: rotateY(   180deg )  rotateX(-170deg ) translateZ( 180px ); }
-#cube .front img { margin:0px;padding:0px;}
+#cube .front img { margin:0px;padding:0px;-webkit-transform: scaleY(-1);}
 #cube {  }
