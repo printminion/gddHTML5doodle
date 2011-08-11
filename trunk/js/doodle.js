@@ -124,7 +124,7 @@ function step6() {
 /*functions from doodle.html*/
 var translateZDefault = 140;
 var currentState = 'plane';
-var analyserState = false;
+var analyserState = true;
 var p01, p02, p03, p04, p05, p06, p07, p08, p09, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p211, p212, p201, p202 = undefined;
 
 
@@ -226,9 +226,10 @@ function updateCanvas(percent) {
 
 }
 
-function updateZ(transZ) {
+function updateZ(transZ,containerId) {
 
 	if (currentState == '3d') {
+         if(containerId!= undefined) {
             switch(containerId) {
                 case 1:
                     p01.style.webkitTransform = ' rotateY(0deg) rotateX(52.5deg) translateZ(' + transZ  + 'px) ';
@@ -291,8 +292,8 @@ function updateZ(transZ) {
                    p25.style.webkitTransform = ' rotateY(324deg) rotateX(-52.5deg)  translateZ(' + transZ  + 'px) ';
                  break;
     }
-	    //change	
-       /*     p01.style.webkitTransform = ' rotateY(0deg) rotateX(52.5deg) translateZ(' + transZ  + 'px) ';
+         } else {
+                p01.style.webkitTransform = ' rotateY(0deg) rotateX(52.5deg) translateZ(' + transZ  + 'px) ';
             p02.style.webkitTransform = ' rotateY(72deg)rotateX(52.5deg) translateZ(' + transZ  + 'px) ';
             p03.style.webkitTransform = ' rotateY(144deg) rotateX(52.5deg) translateZ(' + transZ  + 'px) ';
             p04.style.webkitTransform = ' rotateY(216deg) rotateX(52.5deg)  translateZ(' + transZ  + 'px) ';
@@ -314,10 +315,15 @@ function updateZ(transZ) {
             p22.style.webkitTransform = ' rotateY(108deg) rotateX(-52.5deg)  translateZ(' + transZ  + 'px) ';
             p23.style.webkitTransform = ' rotateY(180deg) rotateX(-52.5deg)  translateZ(' + transZ  + 'px) ';
             p24.style.webkitTransform = ' rotateY(252deg) rotateX(-52.5deg)  translateZ(' + transZ  + 'px) ';
-            p25.style.webkitTransform = ' rotateY(324deg) rotateX(-52.5deg)  translateZ(' + transZ  + 'px) ';*/
-
+            p25.style.webkitTransform = ' rotateY(324deg) rotateX(-52.5deg)  translateZ(' + transZ  + 'px) ';
+             
+         }
+	    //change	
+       /**/
+           
 	
 	} else {
+            if(containerId != undefined) {
                  switch(containerId) {
                 case 1:
                     p01.style.webkitTransform = ' translateX(259px) translateY(-116px)  rotateZ(57deg) translateZ(' + transZ  + 'px) ';
@@ -338,70 +344,94 @@ function updateZ(transZ) {
                     p06.style.webkitTransform = 'translateX(170px) translateY(47px) translateZ(' + transZ  + 'px) ';
                 break;
                 case 7:
-                   		p07.style.webkitTransform = 'translateX(356px) translateY(47px) translateZ(' + transZ  + 'px) ';
+                   p08.style.webkitTransform = 'translateX(542px) translateY(47px) translateZ(' + transZ  + 'px) ';
                 break;
                 case 8:
-                    p08.style.webkitTransform = 'translateX(542px) translateY(47px) translateZ(' + transZ  + 'px) ';
+                   p08.style.webkitTransform = 'translateX(542px) translateY(47px) translateZ(' + transZ  + 'px) ';
                 break;
                 case 9:
-                   p09.style.webkitTransform = ' rotateY(216deg) rotateX(11deg)  translateZ(' + transZ  + 'px) ';
+                   p09.style.webkitTransform = 'translateX(728px) translateY(47px) translateZ(' + transZ  + 'px) ';
                 break;
                 case 10:
-                    p10.style.webkitTransform = ' rotateY(288deg) rotateX(11deg)  translateZ(' + transZ  + 'px) ';
+                   p10.style.webkitTransform = 'translateX(914px) translateY(47px) translateZ(' + transZ  + 'px) ';
                 break;
                 case 11:
-                   p16.style.webkitTransform = ' rotateY(36deg) rotateX(-11deg)  translateZ(' + transZ  + 'px) ';
+                  p16.style.webkitTransform = 'translateX(263px) translateY(103px) translateZ(' + transZ  + 'px) ';
                 break;
                 case 12:
-                    p17.style.webkitTransform = ' rotateY(108deg) rotateX(-11deg)  translateZ(' + transZ  + 'px) ';
+                  p17.style.webkitTransform = 'translateX(449px) translateY(103px) translateZ(' + transZ  + 'px) ';
                 break;
                 case 13: 
-                   p18.style.webkitTransform = ' rotateY(180deg) rotateX(-11deg)  translateZ(' + transZ  + 'px) ';
+                   p18.style.webkitTransform = 'translateX(635px) translateY(103px) translateZ(' + transZ  + 'px) ';
                 break;
                 case 14:
-                     p19.style.webkitTransform = ' rotateY(252deg) rotateX(-11deg)  translateZ(' + transZ  + 'px) ';
+                    p19.style.webkitTransform = 'translateX(821px) translateY(103px) translateZ(' + transZ  + 'px) ';
                 break;
                 case 15:
-                   p20.style.webkitTransform = ' rotateY(324deg) rotateX(-11deg)  translateZ(' + transZ  + 'px) '; 
+                  p20.style.webkitTransform = 'translateX(1007px) translateY(103px) translateZ(' + transZ  + 'px) ';
                 break;
                 case 16:
-                    p21.style.webkitTransform = ' rotateY(34deg) rotateX(-52.5deg)  translateZ(' + transZ  + 'px) ';
+                   p201.style.webkitTransform = 'translateX(1007px) translateY(103px) translateZ(' + transZ  + 'px) ';
                 break;
                 case 17:
-                     p22.style.webkitTransform = ' rotateY(108deg) rotateX(-52.5deg)  translateZ(' + transZ  + 'px) ';
+                    p202.style.webkitTransform = 'translateX(70px) translateY(209px) rotateZ(-57deg) translateZ(' + transZ  + 'px) ';
                 break;
                 case 18:
-                   p23.style.webkitTransform = ' rotateY(180deg) rotateX(-52.5deg)  translateZ(' + transZ  + 'px) ';
+                   p21.style.webkitTransform = ' translateX(253px) translateY(217px) translateZ(' + transZ  + 'px) ';
                 break;
                 case 19:
-                     p24.style.webkitTransform = ' rotateY(252deg) rotateX(-52.5deg)  translateZ(' + transZ  + 'px) ';
+                    p22.style.webkitTransform = 'translateX(449px) translateY(217px) translateZ(' + transZ  + 'px) ';
+                    p23.style.webkitTransform = 'translateX(635px) translateY(217px) translateZ(' + transZ  + 'px) ';
+                    p24.style.webkitTransform = 'translateX(733px) translateY(271px) rotateZ(-62deg) translateZ(' + transZ  + 'px) ';
                  break;
                 case 20:
-                   p25.style.webkitTransform = ' rotateY(324deg) rotateX(-52.5deg)  translateZ(' + transZ  + 'px) ';
+                   p25.style.webkitTransform = 'translateX(167px) translateY(267px) rotateZ(-57deg) translateZ(' + transZ  + 'px) ';
+		   p211.style.webkitTransform = 'translateX(263px) translateY(217px) translateZ(' + transZ  + 'px) ';
+		  p212.style.webkitTransform = 'translateX(354px) translateY(269px) rotateZ(-57deg) translateZ(' + transZ  + 'px) ';
                  break;
+    }
+    } else  {
+          p01.style.webkitTransform = ' translateX(259px) translateY(-116px)  rotateZ(57deg) translateZ(' + transZ  + 'px) ';
+        p02.style.webkitTransform = 'translateX(356px) translateY(-65px) translateZ(' + transZ  + 'px) ';
+        p03.style.webkitTransform = 'translateX(453px) translateY(-118px)  rotateZ(-58deg) translateZ(' + transZ  + 'px) ';
+        p04.style.webkitTransform = 'translateX(728px) translateY(-65px) translateZ(' + transZ  + 'px) ';
+  p05.style.webkitTransform = 'translateX(914px) translateY(-65px) translateZ(' + transZ  + 'px) ';           
+p06.style.webkitTransform = 'translateX(170px) translateY(47px) translateZ(' + transZ  + 'px) ';
+        p08.style.webkitTransform = 'translateX(542px) translateY(47px) translateZ(' + transZ  + 'px) ';
+        p09.style.webkitTransform = 'translateX(728px) translateY(47px) translateZ(' + transZ  + 'px) ';
+          p10.style.webkitTransform = 'translateX(914px) translateY(47px) translateZ(' + transZ  + 'px) ';
+        p16.style.webkitTransform = 'translateX(263px) translateY(103px) translateZ(' + transZ  + 'px) ';
+        p17.style.webkitTransform = 'translateX(449px) translateY(103px) translateZ(' + transZ  + 'px) ';
+        p18.style.webkitTransform = 'translateX(635px) translateY(103px) translateZ(' + transZ  + 'px) ';
+         p19.style.webkitTransform = 'translateX(821px) translateY(103px) translateZ(' + transZ  + 'px) ';
+        p20.style.webkitTransform = 'translateX(1007px) translateY(103px) translateZ(' + transZ  + 'px) ';
+        p201.style.webkitTransform = 'translateX(1007px) translateY(103px) translateZ(' + transZ  + 'px) ';
+        p202.style.webkitTransform = 'translateX(70px) translateY(209px) rotateZ(-57deg) translateZ(' + transZ  + 'px) ';
+        p21.style.webkitTransform = ' translateX(253px) translateY(217px) translateZ(' + transZ  + 'px) ';
+        p22.style.webkitTransform = 'translateX(449px) translateY(217px) translateZ(' + transZ  + 'px) ';
+                    p23.style.webkitTransform = 'translateX(635px) translateY(217px) translateZ(' + transZ  + 'px) ';
+                    p24.style.webkitTransform = 'translateX(733px) translateY(271px) rotateZ(-62deg) translateZ(' + transZ  + 'px) ';
+                p25.style.webkitTransform = 'translateX(167px) translateY(267px) rotateZ(-57deg) translateZ(' + transZ  + 'px) ';
+		p211.style.webkitTransform = 'translateX(263px) translateY(217px) translateZ(' + transZ  + 'px) ';
+		p212.style.webkitTransform = 'translateX(354px) translateY(269px) rotateZ(-57deg) translateZ(' + transZ  + 'px) ';
     }
 
 
 
-		p09.style.webkitTransform = 'translateX(728px) translateY(47px) translateZ(' + transZ  + 'px) ';
-		p10.style.webkitTransform = 'translateX(914px) translateY(47px) translateZ(' + transZ  + 'px) ';
+		
+		
 
-		p16.style.webkitTransform = 'translateX(263px) translateY(103px) translateZ(' + transZ  + 'px) ';
-		p17.style.webkitTransform = 'translateX(449px) translateY(103px) translateZ(' + transZ  + 'px) ';
-		p18.style.webkitTransform = 'translateX(635px) translateY(103px) translateZ(' + transZ  + 'px) ';
-		p19.style.webkitTransform = 'translateX(821px) translateY(103px) translateZ(' + transZ  + 'px) ';
-		p20.style.webkitTransform = 'translateX(1007px) translateY(103px) translateZ(' + transZ  + 'px) ';
-		p201.style.webkitTransform = 'translateX(1007px) translateY(103px) translateZ(' + transZ  + 'px) ';
-		p202.style.webkitTransform = 'translateX(70px) translateY(209px) rotateZ(-57deg) translateZ(' + transZ  + 'px) ';
+		
+		
+		
+		
+		
+		
+		
 
-		p21.style.webkitTransform = ' translateX(253px) translateY(217px) translateZ(' + transZ  + 'px) ';
-		p22.style.webkitTransform = 'translateX(449px) translateY(217px) translateZ(' + transZ  + 'px) ';
-		p23.style.webkitTransform = 'translateX(635px) translateY(217px) translateZ(' + transZ  + 'px) ';
-		p24.style.webkitTransform = 'translateX(733px) translateY(271px) rotateZ(-62deg) translateZ(' + transZ  + 'px) ';
-		p25.style.webkitTransform = 'translateX(167px) translateY(267px) rotateZ(-57deg) translateZ(' + transZ  + 'px) ';
-
-		p211.style.webkitTransform = 'translateX(263px) translateY(217px) translateZ(' + transZ  + 'px) ';
-		p212.style.webkitTransform = 'translateX(354px) translateY(269px) rotateZ(-57deg) translateZ(' + transZ  + 'px) ';
+		
+		
+		
 
 	}
 	
