@@ -1,0 +1,73 @@
+window.addEventListener("DOMContentLoaded", fun, false);
+   
+function fun() {
+    var infoPic = document.getElementById('rectangle');
+    infoPic.setAttribute('height', '400px');
+    if (infoPic.getContext) {
+        // Filled triangle
+        ctx = infoPic.getContext('2d');
+        ctx.fillStyle = 'blue';
+        ctx.beginPath();
+        ctx.moveTo(35,35);
+        ctx.lineTo(155,105);
+        ctx.lineTo(105,155);
+        ctx.fill();
+    }
+    var world = document.getElementById('circle');
+    world.setAttribute('height','420px'); 
+    var img = new Image();
+    
+   img.onload = function () {   
+        // Filled triangle
+        ctx = world.getContext('2d');
+        ctx.fillStyle = 'transparent';
+        ctx.fillRect(0,0,world.width,world.height) //fill the background. color is
+        ctx.arc(150, 200, 150, 0, Math.PI*2, true);
+        
+        
+        ctx.clip();
+        ctx.drawImage(img,0,50,300,300);
+    };
+    img.src = 'looney.jpg';
+}
+
+function doItOnClick() {
+     var transformMe = document.getElementById('world');
+     transformMe.addClass();
+}
+
+/**
+ * 
+ */
+function pulseMe() {
+   var left = document.getElementsByClass('left');
+   var right = document.getElementsByClass('right');
+   right[0].addEventListener('click', function(event, mt) {console.log(this, event, mt); }, true);
+}
+
+document.addEventListener('mousemove', function (event) {
+			//console.log(event);
+			var cubus = document.getElementById('cube');
+		//calc here the new position from the cubus
+		//
+			console.log(cubus);
+			cubus.style.webkitTransform = 'rotateY('+ event.x + 'deg)';
+	}, true);
+	
+	document.addEventListener('keydown' , function(event) {
+		   var cubus = document.getElementById('cube');
+		   var left = document.getElementsByClassName('left');
+			var right = document.getElementsByClassName('right');
+			
+			
+			console.log(event);
+			switch (event.keyCode) {
+				case 40: 
+					left[0].style.webkitTransform = ' rotateY(   90deg ) translateZ('+ 120+ 'px)';
+				break;	
+				case 38: 
+					left[0].style.webkitTransform = ' rotateY(   90deg ) translateZ('+ 100+ 'px)';
+				break;	
+		 	}
+		}, true);
+

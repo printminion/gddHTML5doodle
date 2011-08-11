@@ -1,0 +1,117 @@
+/*1312167272,169775559*/
+
+.fbDarkWidget .fan_box,
+.fbDarkWidget .uiStream .uiStreamMessage{color:#808080}
+.fbDarkWidget .fan_box a{color:#ccc}
+.fan_box .full_widget{border:solid 1px #94a3c4;background:white}
+.fan_box .full_widget .connect_top{background:#eceff5}
+.fan_box .connect_top{padding:10px 10px 8px 10px}
+.pts .fan_box .connect_top{padding:5px 10px 8px 5px}
+.fan_box .profileimage{float:left;width:40px;height:40px;padding:0 10px 0 0;margin:0 0 4px 0}
+.fan_box .connect_action{padding:0 0 0 8px}
+.fan_box .connect_action .name{line-height:15px;font-size: 14px;font-weight:bold}
+.fan_box .connect_button{padding-top:5px}
+.fan_box .connect_button .uiButton{margin:1px 0 0 0}
+.fan_box .connect_action a.undo{margin:0 0 0 3px}
+.fan_box .page_stream, .fan_box .page_stream_short{text-align:center;padding:0 5px;overflow:auto;border-top:solid 1px #d8dfea;position:relative}
+.fan_box .storyContent{text-align:left}
+.fan_box .page_stream{height:300px;overflow-x:hidden}
+.fan_box .page_stream_short{height:250px}
+.fan_box .page_stream .loader{padding-top:20px}
+.fan_box .UIIntentionalStory{background:transparent;text-align:left;padding:7px 0 0 0}
+.fan_box .UIIntentionalStory .UIMediaItem_UnknownWidth{max-width:100px}
+.fan_box .connections{border-top:solid 1px #d8dfea;padding:10px 0 4px 10px;min-height:150px}
+.pts .fan_box .connections{padding:5px 0 4px 5px}
+.fan_box .connections .connections_grid{padding-top:5px}
+.fan_box .connections_grid .grid_item{float:left;padding:0 5px 8px 0;overflow:hidden;width:50px}
+.fan_box .connections_grid .grid_item .name{font-size: 9px;color:#808080;overflow:hidden;padding-top:2px;text-align:center;white-space:nowrap}
+.fan_box .connect_span{margin:0 0 1px}
+.fan_box .connect_widget .connect_widget_text{padding:0}
+.fan_box .connect_widget td.connect_widget_vertical_center{height:20px}
+.fan_box .connect_widget td.connect_widget_vertical_center a.connect_widget_like_button{margin-right:7px}
+.fan_box .connect_widget .connect_widget_interactive_area{margin:5px 0 0}
+.fbGalleryPrev,.fbDisabledGalleryPrev{float:left;margin-top:50px;opacity:.7}
+.fbGalleryPrev:hover{opacity:1}
+.fbGalleryNext,.fbDisabledGalleryNext{float:right;margin-top:50px;opacity:.7}
+.fbGalleryNext:hover{opacity:1}
+.fbConnectWidgetTopmost{border:1px solid #aaa;border-top-color:#315c99;overflow:hidden;padding:0;position:relative}
+div.fbDarkWidget{border:1px solid #666;border-top-color:#ccc;background-color:#000}
+.fbDarkWidget .fbWidgetTitle{color:#fff}
+.fbDarkWidget a,.fbDarkWidget .profileName{color:#fff}
+.fbDarkWidget a.uiLinkSubtle{color:#808080}
+div.fbConnectWidgetHeaderTitle{border-width:0 0 1px}
+div.ConnectActivityLogin{border-width:0 0 1px;zoom:1}
+.fbRecommendationWidgetContent .recommendations_metadata{padding-top:3px;color:#808080}
+.fbGalleryImage{max-height:125px;max-width:140px}
+.fbShowBothHidden{display:none}
+.fbRecommendationsContainer{display:none}
+.fbShowBothRecommendationsHighlighted .fbRecommendationsContainer{display:inline}
+.fbShowBothRecommendationsHighlighted .fbActivityContainer{display:none}
+.fbActivityContainer{display:inline}
+.fbGalleryRecommendationsFacepile{position:relative}
+.fbGalleryRecommendationsFooter{width:150px}
+.fbGalleryRecommendationsImageBlock{display:block;margin-left:auto;margin-right:auto;text-align:center;height:125px}
+.fbGalleryRecommendationsImageContainer{width:140px;height:125px;background:#edeff4 url(http://static.ak.fbcdn.net/rsrc.php/v1/ye/r/nZW4C56WJb6.png) repeat 0 0;overflow:hidden;display:inline-block}
+.fbDarkWidget .fbGalleryRecommendationsImageContainer{background-position:-125px 0}
+.fbGalleryRecommendationsNode{height:275px}
+.fbGalleryRecommendationsText{padding-top:3px;height:64px}
+.fbShowBothActivityHeader{display:none}
+.fbShowBothRecommendationsHighlighted .fbShowBothActivityHeader{display:inline}
+.fbShowBothRecommendationsHeader{display:inline}
+.fbShowBothRecommendationsHighlighted .fbShowBothRecommendationsHeader{display:none}
+.fbDarkWidget div.ConnectActivityLogin{border-color:#303030;background-color:#000}
+.fbProfilePic{height:35px;width:35px}
+.fbImageContainer{width:35px;height:35px;background:#edeff4 url(http://static.ak.fbcdn.net/rsrc.php/v1/ye/r/nZW4C56WJb6.png) no-repeat 0 0;overflow:hidden}
+.fbDarkWidget .fbImageContainer{background-position:-35px 0}
+.fbConnectWidgetHeaderTitle{color:#1c2a47;border:1px solid #c6cedd;padding-bottom:7px;padding-top:8px;cursor:default}
+.fbConnectWidgetHeaderTitleBranded{background:#3b5998;color:#fff;cursor:default;padding-bottom:5px;padding-top:7px}
+.fbDarkWidget .fbConnectWidgetHeaderTitle{background-color:#333;border:1px solid #444}
+.fbConnectWidgetTrackingPixel{display:inline;height:0;width:0}
+.fbLoginButton{float:left}
+.ConnectActivityLoginMessage{color:#666;line-height:14px;vertical-align:top;zoom:1}
+.fbDarkWidget .ConnectActivityLoginMessage{color:#808080}
+.fbConnectWidgetFooter{bottom:0;cursor:default;position:absolute;width:100%}
+.fbDarkWidget .fbConnectWidgetFooter{background-color:#000}
+.fbConnectWidgetFooter .fbFooterBorder{border-top:1px solid #ccc;margin:0 6px;padding:4px 3px}
+.fbDarkWidget .fbConnectWidgetFooter .fbFooterBorder{border-top:1px solid #444}
+.fbSeparator{color:#ccc;background-color:#ccc;height:1px}
+.fbDarkWidget .fbSeparator{color:#303030;background-color:#303030}
+.fbConnectWidgetContent,.fbImageContainer img{visibility:hidden}
+.fbConnectWidgetContent,.fbGalleryRecommendationsImageContainer img{visibility:hidden}
+div.fbHalfPage{overflow:hidden}
+div.fbAdminOptions{float:right}
+.fbpage_edit_header{padding:0;margin:0;height:31px;border:0;margin:-7px 0 19px;border-bottom:1px solid #ccc;background:#fff}
+.pages_edit .fbpage_edit_header{margin:0}
+.icon_dock{margin:0;padding:0;width:300px;float:right}
+.icon_dock .icon_dock_container{margin:0;padding:0;padding-top:8px;float:right;z-index:30}
+.icon_dock .edit_link{padding-right:8px;padding-top:10px;font-weight:bold;color:#666;display:block;margin:0;float:right}
+.icon_dock a{padding:0;padding-left:5px;padding-top:8px;margin:0 0 0 0}
+.edit_app_switcher{margin:0 0;padding-top:6px}
+.edit_app_switcher .app_switcher_button .name{padding:2px 0 2px 6px}
+.edit_app_switcher .app_switcher_menu{width:160px}
+.edit_app_switcher .app_switcher_menu .name{width:105px;text-align:left}
+.edit_app_switcher .app_switcher_button .arrow{padding:2px 0 1px}
+.fbpage_edit_header .left_header{float:left;font-size: 11px;font-weight:bold;overflow:hidden;padding:7px 0 2px;white-space:nowrap;width:250px}
+.fbpage_edit_header .left_header_text{padding-left:5px;position:relative;top:-4px}
+.fbpage_edit_header div.left_header .edit_link{font-weight:normal;padding-left:4px;color:#ccc}
+.fbpage_edit_header div.left_header .edit_link a{color:#6d84b4}
+.fan_status_inactive{background-color:#fffccc;color:#666;margin:0;padding:0 0 0 3px;line-height:18px}
+#wall_section_header .uiSelectorButton,#wall_section_header .uiSelectorButton:active,#wall_section_header .uiSelectorButton:focus,#wall_section_header .uiSelectorButton:hover{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v1/yi/r/XY1BTEJBstt.png);background-repeat:no-repeat;background-position:right -53px;background-color:transparent;border:none;-webkit-box-shadow:none;-webkit-box-shadow:none;margin:0;outline:0;padding:0 20px 2px 0}
+#wall_section_header .uiHeaderActions,#wall_section_header .uiSelectorButton .uiButtonText{color:#333;padding:0}
+#wall_section_header .uiSelectorButton:hover .uiButtonText{text-decoration:underline}
+#wall_section_header .openToggler .uiSelectorButton:hover .uiButtonText{text-decoration:none}
+.placePageStats{margin:0 6px 5px;overflow:hidden}
+.placePageStatsNumber{font-family:Helvetica,Arial,default;font-size: 18px;font-weight:bold}
+.placePageHereNowContent{margin-top:10px;overflow:hidden}
+.placeVisitorsFacepile{margin:2px 6px 14px 6px}
+.uiNumberGiant{font-family:arial, helvetica}
+.connect_widget{overflow:hidden}
+.connect_widget .connect_widget_facebook_logo_menubar{background-color:#3b5998;border:1px solid #244588;border-bottom:none;margin-bottom:-1px;position:relative}
+.connect_widget .connect_widget_facebook_logo{padding:3px 0 5px 6px;float:left}
+.connect_widget .connect_widget_facebook_logo span{background:transparent url(http://static.ak.fbcdn.net/rsrc.php/v1/yx/r/zZEOQP4uOC1.gif) no-repeat scroll 0 0;display:block;height:17px;width:90px}
+.connect_widget .connect_widget_facebook_logo:hover span{background-position:left -17px}
+.connect_widget .connect_widget_menu_options{float:right}
+.connect_widget .connect_widget_menu_link{float:left;height:17px;margin-right:5px;padding:5px 5px 3px 5px;color:#fff;font-size: 11px}
+.connect_widget .connect_widget_menu_link:hover{background-color:#5c75aa;text-decoration:none}
+
+#bootloader_V0oOP { height: 42px; }
