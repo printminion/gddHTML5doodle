@@ -12,11 +12,13 @@ var analyser = function () {
 analyser.prototype.init = function () {
     console.log("im here");
     //number of channels to visualize
-    this.visChannels = 19;
+    this.visChannels = 1   ; //this is the state how much pannels from the map will be moved
+    this.maxVisChannels = 21;
+    this.multiChannels = 4; //show only the first 4 channels
     this.context = null;
     this.source = 0;
     this.jsProcessor = 0;
-   
+    this.rolloutSpeed = 1000;
     this.topic = 'jsfftwebaudio';
     this.comment_teaser = 'Please leave a comment...'; 
     this.spectrum_on = true;	
@@ -57,7 +59,18 @@ analyser.prototype.init = function () {
     this.initAudio();
 }
 
-
+/**
+ * this method makes the "cool" rollout effekt for each channel
+ */
+analyser.prototype.rolloutPannels = function () {
+    console.log("rollout");
+    if(this.maxVisChannels>this.visChannels) {
+     this.visChannels++;
+     console.log("more", this.visChannels);
+     var t = window.setTimeout("window.analyserObj.rolloutPannels()",this.rolloutSpeed);
+    }
+     
+}
 window.onload = function () {
     console.log("FOO");
     
@@ -175,20 +188,27 @@ analyser.prototype.initSpectralAnalyser = function (length) {
     }*/
 }		
 analyser.prototype.visualizer = function () {
-	
+    var channel = 0;
     //ctx.clearRect(0,0, canvas.width, canvas.height);
     
-		   
+    //this.multiChannels		    //the number of channels wich will be visualized
     if (this.spectrum_on) {
         //this.ctx.fillStyle = '#000044';
-
+        //walk it this.visChannels times 
         for (var i=0; i<this.visChannels; i++) {
             // Draw rectangle bars for each frequency bin
-            var zIndex =  120+Math.round(this.currentvalue[i]);
+            
+            var zIndex =  120+Math.round(this.currentvalue[channel]);
             updateZ(zIndex, i+1);
+            
+            if(channel == this.multiChannels)  {
+                channel == 0;
+            } else {
+                channel++;
+            }
         }
     }
- 
+    //roll the sound out of each pannel
     t = setTimeout('window.analyserObj.visualizer()',50);
 }
 	
