@@ -10,6 +10,7 @@
 
 <script type="text/javascript" src="js/dsp.js"></script>	
 <script type="text/javascript" src="js/analyser.js"></script>
+<script type="text/javascript" src="js/canvasWorker.js"></script>
 <script type="text/javascript" src="js/doodle.js"></script>
 
 </head>
@@ -98,16 +99,7 @@
     <div id="p04" class="g plane"><img src="./images/path02.png"></div>
     <div id="p05" class="r plane"><img src="./images/path02.png"></div>
 
-    <div id="p06" class="g plane triangle-mask">
-
-			
-		<video controls autoplay loop muted  volume="0" autobuffer="true" style="position: relative; width:240px; height:220px; left:-16px; top:28px;">
-		Your browser does not support the <code>video</code> element.
-			<!-- <source src="http://dl.dropbox.com/u/14210264/html5_challenge/assets/VID_20110810_165002.m4v" type="video/mp4"/>  -->
-		</video>
-
-    
-    	<img src="./images/path01.png">
+    <div id="p06" class="g plane triangle-mask"><img src="./images/path01.png">
     
     </div>
     
@@ -116,26 +108,14 @@
     <div id="p09" class="r plane"><img src="./images/path01.png"></div>
     <div id="p10" class="g plane"><img src="./images/path01.png"></div>
 
-    <div id="p16" class="r plane triangle-mask-flipped">
-      	<video  autoplay="true" loop="true" muted="true" loudness="-100"  autobuffer="true" style="position: relative; width:240px; height:220px; left:-26px; top:-31px;">
-			Your browser does not support the <code>video</code> element.
-		<!-- <source src="http://dl.dropbox.com/u/14210264/html5_challenge/assets/VID_20110810_165002.m4v" type="video/mp4"/>--> 
-		</video>
-    
-    	<img src="./images/path02.png">
+    <div id="p16" class="r plane triangle-mask-flipped"><img src="./images/path02.png">
     </div>
     
     <div id="p17" class="g plane"><img src="./images/path02.png"></div>
     <div id="p18" class="r plane"><img src="./images/path02.png"></div>
     <div id="p19" class="r plane"><img src="./images/path02.png"></div>
     
-    <div id="p20" class="g plane triangle-mask-flipped">
-  		<video autoplay="true" loop="true" audio="off"  volume="0" autobuffer="true" style="position: relative; width:240px; height:220px; left:-26px; top:-31px;">
-			Your browser does not support the <code>video</code> element.
-		<!--   <source  muted src="http://dl.dropbox.com/u/14210264/html5_challenge/assets/VID_20110810_165002.m4v" type="video/mp4"/> -->
-		</video>
-		<img src="./images/path02.png">
-    </div>
+    <div id="p20" class="g plane triangle-mask-flipped"><img src="./images/path02.png"></div>
     
     <div id="p201" class="g plane"><img src="./images/path201.png"></div>
     <div id="p202" class="g plane"><img src="./images/path202.png"></div>
@@ -155,13 +135,18 @@
 	<div id="fft">...</div>
 </div>
 
+    <div id="humanInfo" style="display:none">
 
+    </div>
 <div id="logo">.</div>
 
 <div id="footer">
   Tested with Google Chrome 15.0.848.0 canary
 </div>
-
+<video autoplay="true" loop="true" audio="off"  volume="0" autobuffer="true" style="position: relative; width:240px; height:220px; left:-26px; top:-31px;">
+			Your browser does not support the <code>video</code> element.
+		<!--   <source  muted src="http://dl.dropbox.com/u/14210264/html5_challenge/assets/VID_20110810_165002.m4v" type="video/mp4"/> -->
+		</video>
 
 </body>
 </html>

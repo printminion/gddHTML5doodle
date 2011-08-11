@@ -12,7 +12,7 @@ var analyser = function () {
 analyser.prototype.init = function () {
     console.log("im here");
     //number of channels to visualize
-    this.visChannels = 1   ; //this is the state how much pannels from the map will be moved
+    this.visChannels = 0   ; //this is the state how much pannels from the map will be moved
     this.maxVisChannels = 21;
     this.multiChannels = 4; //show only the first 4 channels
     this.context = null;
@@ -66,7 +66,6 @@ analyser.prototype.rolloutPannels = function () {
     console.log("rollout");
     if(this.maxVisChannels>this.visChannels) {
      this.visChannels++;
-     console.log("more", this.visChannels);
      var t = window.setTimeout("window.analyserObj.rolloutPannels()",this.rolloutSpeed);
     }
      
@@ -198,9 +197,8 @@ analyser.prototype.visualizer = function () {
         for (var i=0; i<this.visChannels; i++) {
             // Draw rectangle bars for each frequency bin
             
-            var zIndex =  120+Math.round(this.currentvalue[channel]);
+            var zIndex =  Math.round(this.currentvalue[channel]);
             updateZ(zIndex, i+1);
-            
             if(channel == this.multiChannels)  {
                 channel == 0;
             } else {

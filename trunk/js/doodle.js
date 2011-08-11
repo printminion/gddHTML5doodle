@@ -62,6 +62,7 @@ function step1() {
 	/*
 	 * fade each cell into show maps pieces
 	 */
+        window.setTimeout("step2()", 20000);
 	
 }
 
@@ -69,11 +70,13 @@ function step2() {
 	/*
 	 * transform to 3d - rotate, music beat
 	 */
-	
+	 changeShape('3d');
+         //starting roate, adding spinanimation
+         
 	/*
 	 * start showing "superstars"
 	 */
-
+        window.canvasObj.printPeople();
 	
 	/*
 	 * on 10th - superstar - show buzzer
@@ -142,13 +145,15 @@ var p01, p02, p03, p04, p05, p06, p07, p08, p09, p10, p11, p12, p13, p14, p15, p
 
 
 function init() {
-    videoMuteHelper();
+        //fix an chrome bug, workaround
+        videoMuteHelper();
          if(analyserState==true) {
             window.analyserObj = new analyser();
             window.analyserObj.init();
         }
-
-	 document.getElementById('translateZ').value = translateZDefault;
+        //init the people class :P
+        window.canvasObj = new canvasWorker();
+	document.getElementById('translateZ').value = translateZDefault;
 
 	 rotateYValue = document.getElementById('rotateY').value;
 	 rotateXValue = document.getElementById('rotateX').value;
@@ -243,6 +248,7 @@ function updateZ(transZ,containerId) {
 
 	if (currentState == '3d') {
          if(containerId!= undefined) {
+             transZ = 140 +transZ;
             switch(containerId) {
                 case 1:
                     p01.style.webkitTransform = ' rotateY(0deg) rotateX(52.5deg) translateZ(' + transZ  + 'px) ';
@@ -337,6 +343,7 @@ function updateZ(transZ,containerId) {
 	
 	} else {
             if(containerId != undefined) {
+                transZ = 50+transZ;
                  switch(containerId) {
                 case 1:
                     p01.style.webkitTransform = ' translateX(259px) translateY(-116px)  rotateZ(57deg) translateZ(' + transZ  + 'px) ';
@@ -358,6 +365,7 @@ function updateZ(transZ,containerId) {
                 break;
                 case 7:
                    p08.style.webkitTransform = 'translateX(542px) translateY(47px) translateZ(' + transZ  + 'px) ';
+                    p25.style.webkitTransform = 'translateX(167px) translateY(267px) rotateZ(-57deg) translateZ(' + transZ  + 'px) ';
                 break;
                 case 8:
                    p08.style.webkitTransform = 'translateX(542px) translateY(47px) translateZ(' + transZ  + 'px) ';
@@ -373,6 +381,7 @@ function updateZ(transZ,containerId) {
                 break;
                 case 12:
                   p17.style.webkitTransform = 'translateX(449px) translateY(103px) translateZ(' + transZ  + 'px) ';
+                   p211.style.webkitTransform = 'translateX(263px) translateY(217px) translateZ(' + transZ  + 'px) ';
                 break;
                 case 13: 
                    p18.style.webkitTransform = 'translateX(635px) translateY(103px) translateZ(' + transZ  + 'px) ';
@@ -385,6 +394,7 @@ function updateZ(transZ,containerId) {
                 break;
                 case 16:
                    p201.style.webkitTransform = 'translateX(1007px) translateY(103px) translateZ(' + transZ  + 'px) ';
+                   p23.style.webkitTransform = 'translateX(635px) translateY(217px) translateZ(' + transZ  + 'px) ';
                 break;
                 case 17:
                     p202.style.webkitTransform = 'translateX(70px) translateY(209px) rotateZ(-57deg) translateZ(' + transZ  + 'px) ';
@@ -394,12 +404,12 @@ function updateZ(transZ,containerId) {
                 break;
                 case 19:
                     p22.style.webkitTransform = 'translateX(449px) translateY(217px) translateZ(' + transZ  + 'px) ';
-                    p23.style.webkitTransform = 'translateX(635px) translateY(217px) translateZ(' + transZ  + 'px) ';
+                    
                     p24.style.webkitTransform = 'translateX(733px) translateY(271px) rotateZ(-62deg) translateZ(' + transZ  + 'px) ';
                  break;
                 case 20:
-                   p25.style.webkitTransform = 'translateX(167px) translateY(267px) rotateZ(-57deg) translateZ(' + transZ  + 'px) ';
-		   p211.style.webkitTransform = 'translateX(263px) translateY(217px) translateZ(' + transZ  + 'px) ';
+                  
+		  
 		  p212.style.webkitTransform = 'translateX(354px) translateY(269px) rotateZ(-57deg) translateZ(' + transZ  + 'px) ';
                  break;
     }
@@ -408,8 +418,8 @@ function updateZ(transZ,containerId) {
         p02.style.webkitTransform = 'translateX(356px) translateY(-65px) translateZ(' + transZ  + 'px) ';
         p03.style.webkitTransform = 'translateX(453px) translateY(-118px)  rotateZ(-58deg) translateZ(' + transZ  + 'px) ';
         p04.style.webkitTransform = 'translateX(728px) translateY(-65px) translateZ(' + transZ  + 'px) ';
-  p05.style.webkitTransform = 'translateX(914px) translateY(-65px) translateZ(' + transZ  + 'px) ';           
-p06.style.webkitTransform = 'translateX(170px) translateY(47px) translateZ(' + transZ  + 'px) ';
+      p05.style.webkitTransform = 'translateX(914px) translateY(-65px) translateZ(' + transZ  + 'px) ';           
+    p06.style.webkitTransform = 'translateX(170px) translateY(47px) translateZ(' + transZ  + 'px) ';
         p08.style.webkitTransform = 'translateX(542px) translateY(47px) translateZ(' + transZ  + 'px) ';
         p09.style.webkitTransform = 'translateX(728px) translateY(47px) translateZ(' + transZ  + 'px) ';
           p10.style.webkitTransform = 'translateX(914px) translateY(47px) translateZ(' + transZ  + 'px) ';

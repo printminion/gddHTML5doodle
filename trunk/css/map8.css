@@ -388,3 +388,7 @@ div#icosahedron div {
 	mask: url("triangle#c1");
 	-webkit-mask-box-image: url("../images/triangle_flipped.svg");
 }
+
+#humanInfo {
+    border:1px solid black;width:300px;overflow:scroll;position:absolute;top:200px;right:100px;
+}
