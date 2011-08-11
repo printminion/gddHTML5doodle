@@ -8,6 +8,8 @@ var rotateYValue, rotateXValue, translateZValue = 0;
 var container = undefined;
 
 
+
+
 function step(n) {
 	
 	switch (n) {
@@ -117,7 +119,17 @@ function step5() {
 function step6() {
 	
 }
-
+/**
+ *fixed bug in chrome 
+ */
+function videoMuteHelper() {
+    var video = document.getElementsByTagName('video');
+    console.log(video);
+    var max = video.length;
+    for(i=0;i<video.length;i++) {
+        video[i].muted = true;
+    }
+}
 
 
 
@@ -130,6 +142,7 @@ var p01, p02, p03, p04, p05, p06, p07, p08, p09, p10, p11, p12, p13, p14, p15, p
 
 
 function init() {
+    videoMuteHelper();
          if(analyserState==true) {
             window.analyserObj = new analyser();
             window.analyserObj.init();
