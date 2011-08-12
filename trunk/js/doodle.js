@@ -151,6 +151,7 @@ function step2() {
 	 * on 10th - superstar - show buzzer
          * this is implementated :) todo:make buzzer nice ;) 
 	 */
+       
 
 }
 
@@ -208,6 +209,10 @@ function step3() {
 	/*
 	 * add end titles with superstars, credits and so on
 	 */
+        $('#credits').css('display', 'block');
+        var creditsCont = document.getElementById('creditCont'); 
+        creditsCont.setAttribute('class', '');
+        //$('#creditCont').removeClass('cdown').addClass('cup');
 
 }
 
