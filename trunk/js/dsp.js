@@ -2294,7 +2294,6 @@ Reverb.prototype.process = function (interleavedSamples){
   for (i = 0; i<outputSamples.length; i++) {
     outputSamples[i] *= this.masterVolume;
   }
-   
   return outputSamples;
 };
 
