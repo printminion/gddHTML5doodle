@@ -54,6 +54,7 @@ function playPreloadSound() {
 
 	audioElement.addEventListener('ended', function() {
 		this.currentTime = 0;
+                this.noteOff(0);
 	}, false);
 	audioElement.play();
 
@@ -79,7 +80,7 @@ function step1() {
 	 * start music - 2257__Andrew_Duke__click1.wav
          * stopp rotating
 	 */
-       
+     
 	/*
 	 * map container z rotate => isometric image
 	 */
@@ -152,10 +153,8 @@ function step3() {
 	/*
 	 * add 3 videos of us
 	 */
-        //i must found a way to check that the three videos of us are already in the browser cache
-        //fetch the video objects
-        //-vcontainer -video
-       window.videoObj.addVideos();
+ 
+        window.videoObj.addVideos();
 	/*
 	 * add nyan cat - running around the globe
 	 */
@@ -253,7 +252,7 @@ function showDebugBorder() {
  * here we can add some magic functions. we can wait until four our five things are loaded and say: "hey im ready"
  */
 function kickstart() {
-    //step1();
+    step1();
     debugAdd('now im starting');
 }
 
@@ -262,7 +261,7 @@ function init() {
 	videoMuteHelper();
     
         //adding here new eventListener, wait that all is loaded
-        window.document.addEventListener('analyserLoaded', function() {debugAdd('loaded All')}, true);
+        window.document.addEventListener('analyserLoaded', function() {debugAdd('loaded All.. now building BufferArray')}, true);
         window.document.addEventListener('analyserBuffered', function() {kickstart();debugAdd('the buffer is ready')}, true);
         window.document.addEventListener('analyserCriticalError', function() {alert('the mp3 is not found, maybe a network error?')}, true);
 	// remove the debug border analyserCriticalError
