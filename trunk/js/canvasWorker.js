@@ -9,7 +9,7 @@ var canvasWorker = function () {
     
     this.people[0] = {
         name: 'Albert Einstein',
-        dynmapId:'20', 
+        dynmapId:'25', 
         picUrl: 'images/germanPeople/aeinstein.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Albert_Einstein',
         founded: 'General relativity'
@@ -17,7 +17,7 @@ var canvasWorker = function () {
     
     this.people[1] = {
             name: 'Otto Hahn',
-            dynmapId:'16', 
+            dynmapId:'22', 
             picUrl: 'images/germanPeople/ottohahn.jpg', 
             wikiUrl: 'http://en.wikipedia.org/wiki/Otto_Hahn',
             founded: 'Nuclear fussion - discovery of radioactive elements'
@@ -34,7 +34,7 @@ var canvasWorker = function () {
     
     this.people[3] = {
         name: 'Konrad Zuse',
-        dynmapId:'17', 
+        dynmapId:'23', 
         picUrl: 'images/germanPeople/konradzuse.jpg', 
         wikiUrl: 'http://de.wikipedia.org/wiki/Konrad_Zuse',
         founded: 'First programable computer. Aka Z1, Z3'
@@ -80,12 +80,12 @@ var canvasWorker = function () {
             founded: 'Coffee filter - invented in 1908'
     };
     
-    this.people[9] = {
+    this.people[19] = {
             name: 'You',
             dynmapId:'06', 
             picUrl: 'images/germanPeople/you.jpg', 
-            wikiUrl: 'http://google.com',
-            founded: ''
+            wikiUrl: 'http://google.com/search?q=site:html5rocks.com',
+            founded: 'get inspired... make something new'
         };  
     
     
@@ -109,7 +109,7 @@ var canvasWorker = function () {
 
     this.people[12] = {
         name: 'Gottlieb Daimler',
-        dynmapId:'11', 
+        dynmapId:'16', 
         picUrl: 'images/germanPeople/gottliebdaimler.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Gottlieb_Daimler',
         founded: 'First high-speed petrol engine - inventor, automotive pioneer'
@@ -118,14 +118,14 @@ var canvasWorker = function () {
 
     this.people[13] = {
         name: 'Felix Hoffmann',
-        dynmapId:'12', 
+        dynmapId:'19', 
         picUrl: 'images/germanPeople/felixhoffmann.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Felix_Hoffmann',
         founded: 'ASPIRIN - synthesized. Aka acetylsalicylic acid'
     };             
     this.people[14] = {
         name: 'Hans von Ohain',
-        dynmapId:'13', 
+        dynmapId:'20', 
         picUrl: 'images/germanPeople/hansvonohain.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Hans_Joachim_Pabst_von_Ohain',
         founded: 'Jet propulsion - one of the inventors'
@@ -133,7 +133,7 @@ var canvasWorker = function () {
                                   
     this.people[15] = {
         name: 'Robert Koch',
-        dynmapId:'14', 
+        dynmapId:'21', 
         picUrl: 'images/germanPeople/robertkoch.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Robert_Koch',
         founded: 'Isolation of anthrax, tuberculosis and cholera'
@@ -141,7 +141,7 @@ var canvasWorker = function () {
     
     this.people[16] = {
         name: 'Artur Fischer',
-        dynmapId:'15', 
+        dynmapId:'17', 
         picUrl: 'images/germanPeople/arturfischer.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Artur_Fischer',
         founded: 'S Plug - inventor. Aka (Split-)Wallplug'
@@ -155,15 +155,15 @@ var canvasWorker = function () {
     };  
     this.people[18] = {
         name: 'Martin Luther',
-        dynmapId:'19', 
+        dynmapId:'09', 
         picUrl: 'images/germanPeople/martinluther.jpeg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Martin_Luther',
         founded: 'Protestant Reformation - initiator'
     };
     
-    this.people[19] = {
+    this.people[9] = {
         name: 'Otto von Guericke',
-        dynmapId:'20', 
+        dynmapId:'24', 
         picUrl: 'images/germanPeople/ottovonguerick.jpg', 
         wikiUrl: 'http://en.wikipedia.org/wiki/Otto_von_Guericke',
         founded: 'Research and experiment for vacuums'
