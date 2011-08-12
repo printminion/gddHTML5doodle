@@ -32,7 +32,6 @@ var canvasWorker = function () {
         founded: 'X-rays'
     };
     
-    
     this.people[3] = {
         name: 'Konrad Zuse',
         dynmapId:'23', 
@@ -170,7 +169,6 @@ var canvasWorker = function () {
         founded: 'Research and experiment for vacuums'
     };
     
-
     
     //http://de.wikipedia.org/wiki/Melitta_Bentz
                                  
@@ -289,6 +287,7 @@ canvasWorker.prototype.printPeopleInfo = function (humanObj) {
    
     this.onPersonUpdate(humanObj);
      
+    return;
 	 
     //build here the human info
     var infoBox = document.getElementById('humanInfo');
@@ -329,6 +328,7 @@ canvasWorker.prototype.printPeople = function() {
         this.currentPeopleIndex++;
         this.timeout = window.setTimeout("canvasObj.printPeople()", 5000);
     }//
+    
     if(this.currentPeopleIndex == this.showBuzzerId) {
         try {
             var buzzer = document.getElementById(this.buzzerId);
