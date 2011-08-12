@@ -83,13 +83,20 @@ analyser.prototype.loadSample = function (url) {
     var request = new XMLHttpRequest();
     request.open("GET", url, true);
     request.onreadystatechange = function (st) {
-        if(this.readyState == 4) {
+        
+        if(this.readyState == 4 ) {
             var evt = document.createEvent("Events")
             //Aim: initialize it to be the event we want
             evt.initEvent('analyserLoaded', true, true); //true for can bubble, true for cancelable
             window.document.dispatchEvent(evt);
         
-    };
+     }
+      if(this.readyState == 4 && this.status != 200) {
+          var evt = document.createEvent("Events")
+            //Aim: initialize it to be the event we want
+            evt.initEvent('analyserCriticalError', true, true); //true for can bubble, true for cancelable
+            window.document.dispatchEvent(evt);
+      }
     
 };
     request.responseType = "arraybuffer";

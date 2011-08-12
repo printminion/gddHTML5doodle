@@ -242,7 +242,8 @@ function init() {
         //adding here new eventListener, wait that all is loaded
         window.document.addEventListener('analyserLoaded', function() {console.log('loaded All')}, true);
         window.document.addEventListener('analyserBuffered', function() {console.log('the buffer is readay')}, true);
-	// remove the debug borderanalyserBuffered
+        window.document.addEventListener('analyserCriticalError', function() {alert('the mp3 is not found, maybe a network error?')}, true);
+	// remove the debug border analyserCriticalError
 	// removeDebugBorder();
 	if (analyserState == true) {
 		window.analyserObj = new analyser();
