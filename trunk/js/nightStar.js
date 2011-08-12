@@ -95,7 +95,7 @@ nightStar.prototype.GetRandom = function ( min, max ) {
  *changes the scale factor
  */
 nightStar.prototype.removeStars = function() {
-    setTimeout("nightStarObj.deleteStars()" , 2000 );
+    setTimeout("window.nightStar.deleteStars()" , 2000 );
     //setting scale to 0 and add eventListener
    
         for(i=0;i<this.stars;i++) {

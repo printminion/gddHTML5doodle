@@ -66,10 +66,9 @@ margin-left: -100px;
 
 body.day .background {
 	
-/*
+
 background: url('../images/day-night-bg.png');
 background-position: 0 -2400px;
-*/
 
 
 background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 1000, from(rgba(165,217,239, 0.1) ), to(rgba(165,217,239, 0.2) ) );
@@ -676,6 +675,7 @@ css for the info box german stars
 
 #creditCont .absatz {
     margin-top:400px;
+    font-color:#77A2D9;
 }
 #creditCont {
      position:relative;
