@@ -159,7 +159,9 @@ function step3() {
 	 * move earth - to the left
 	 */
         
-        document.getElementById('shape-container').style.webkitAnimation = "spinanimation 10s infinite linear";
+	$('#persons section.current').attr('class', 'past');
+	
+    document.getElementById('shape-container').style.webkitAnimation = "spinanimation 10s infinite linear";
          
 	/*
 	 * add 3 videos of us
