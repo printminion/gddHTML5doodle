@@ -251,7 +251,7 @@ h1,h2,h3,h4 {
 
 .shape-container {
 	-webkit-transform-style: preserve-3d;
-	border: 1px solid green;
+	border: 1px solid transparent;
 	width: 220px;
 	height: 200px;
 	margin: 0 auto;
