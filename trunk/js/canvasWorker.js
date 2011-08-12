@@ -273,6 +273,8 @@ canvasWorker.prototype.createCanvas = function (id, peopleObj) {
 }
 
 canvasWorker.prototype.toggleBackToWorld = function () {
+    //stop timeout
+   window.clearTimeout(this.timeout);
     //removes all the pictures
      var infoBox = document.getElementById('humanInfo');
      infoBox.style.display = 'none';

@@ -70,10 +70,7 @@ analyser.prototype.rolloutPannels = function () {
     }
      
 }
-window.onload = function () {
-    console.log("FOO");
-    
-};
+
  
 
 

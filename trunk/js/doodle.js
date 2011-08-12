@@ -119,6 +119,7 @@ function step2() {
 
 	/*
 	 * on 10th - superstar - show buzzer
+         * this is implementated :) todo:make buzzer nice ;) 
 	 */
 
 }
@@ -126,6 +127,9 @@ function step2() {
 function undoStep2() {
 	// removing the "german supertars"
 	window.canvasObj.toggleBackToWorld();
+        //stopping adding Superstars
+        
+        
 }
 
 function step3() {
@@ -143,7 +147,7 @@ function step3() {
 	 * move earth - to the left
 	 */
         
-        
+        document.getElementById('shape-container').style.webkitAnimation = "spinanimation 10s infinite linear";
          
 	/*
 	 * add 3 videos of us
@@ -170,6 +174,7 @@ function undoStep3() {
 	window.nightStar.toggleDayNight();
 	document.getElementById('nyannyan').style.display = 'none';
         window.videoObj.removeVideos();
+        document.getElementById('shape-container').style.webkitAnimation = '';
 }
 
 function step4() {
