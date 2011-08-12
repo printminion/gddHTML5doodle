@@ -49,6 +49,16 @@ function step(n) {
 
 }
 
+
+function playPreloadSound() {
+	audioElement = document.getElementById('audio');
+
+	audioElement.addEventListener('ended', function(){
+		this.currentTime = 0;
+	}, false);
+	audioElement.play();
+	
+}
 function undoLastStep(n) {
      switch (n) {
 	
@@ -91,7 +101,7 @@ function step1() {
     /*
      * fade each cell into show maps pieces
      */
-    window.setTimeout("step2()", 18000);
+    window.setTimeout("step(2)", 18000);
 	
 }
 
@@ -101,8 +111,10 @@ function step2() {
      * transform to 3d - rotate, music beat
      */
     changeShape('3d');
+    $('#container').css('-webkit-transform', 'rotateX(0deg) rotateY(0deg)');
+    
     //starting roate, adding spinanimation
-    document.getElementById('shape-container').style.webkitAnimation = "spinanimation 10s infinite linear";         
+    document.getElementById('shape-container').style.webkitAnimation = "spinanimation 10s infinite linear"; 
     /*
      * start showing "superstars"
      */
@@ -120,8 +132,10 @@ function undoStep2() {
 }
 
 function step3() {
-    if(currentState != "3d")
+    if(currentState != "3d") {
         changeShape('3d');
+    }
+    
     activeStep = 3;
     /*
      * onBuzzer click
@@ -181,11 +195,14 @@ function videoMuteHelper() {
 
 
 
+
+
 /*functions from doodle.html*/
 var translateZDefault = 140;
 var currentState = 'plane';
 var analyserState = true;
 var p01, p02, p03, p04, p05, p06, p07, p08, p09, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p211, p212, p201, p202 = undefined;
+var audioElement;
 
 function removeDebugBorder() {
     var d = $('.d');
@@ -221,12 +238,19 @@ function showDebugBorder () {
 function init() {
     //fix an chrome bug, workaround
     videoMuteHelper();
+    
     //remove the debug border
-    removeDebugBorder();
+    //removeDebugBorder();
     if(analyserState==true) {
         window.analyserObj = new analyser();
         window.analyserObj.init();
     }
+    
+    /*
+     * play preload sound
+     */
+    //playPreloadSound();
+    
     //init the people class :P
     window.canvasObj = new canvasWorker();
     window.nightStar = new nightStar();
@@ -527,20 +551,17 @@ function changeShape(type) {
     currentState = type;
 	
     if( type == '3d') {
-        document.getElementById('shape3d').disabled = true;
-        document.getElementById('shapePlane').disabled = false;
+        document.getElementById('shape3d').innerText = 'plane';
 
         $('#icosahedron').removeClass('plane').addClass('d3');
         $('div#icosahedron div').removeClass('plane').addClass('d3');
 
 		
     } else {
-        document.getElementById('shape3d').disabled = false;
-        document.getElementById('shapePlane').disabled = true;
+        document.getElementById('shape3d').innerText = '3d';
 		
         $('#icosahedron').removeClass('d3').addClass('plane');
         $('div#icosahedron div').removeClass('d3').addClass('plane');
-		
 
     }
 	

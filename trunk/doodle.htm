@@ -13,23 +13,22 @@
 <script type="text/javascript" src="js/canvasWorker.js"></script>
 <script type="text/javascript" src="js/nightStar.js"></script>
 <script type="text/javascript" src="js/doodle.js"></script>
+<script type="text/javascript" src="js/music.js"></script>
+<script type="text/javascript" src="js/doodle.js"></script>
 
 </head>
-<body  class="day" onload=";init()">
-    <div class="background" id="background">
-    </div>
+<body  class="day" onload="init()">
+<div id="body" class="r">
+<div class="background" id="background"><!--  --></div>
 
-	
-	<script type="text/javascript" src="js/music.js"></script>
-	<script type="text/javascript" src="js/doodle.js"></script>
-</head>
-<body onload="init()">
-
+<audio id="audio" preload>
+	<source src="./media/2257__Andrew_Duke__click1.wav"></source>
+</audio>
 
 
 <div id="toolbox">
 
-<details open="open">
+<details>
   <summary>Position</summary>
 
  <label>rotateX:</label><input type="range" min="0" step="1" id="rotateX" max="360" value="0">:<span id="rotateXValue"></span><br>
@@ -39,13 +38,12 @@
 
 </details>
 
-<details open="open">
+<details >
   <summary>Shape</summary>
-  <button id="shape3d" onclick="changeShape('3d')">3d</button>
-  <button id="shapePlane" onclick="changeShape('plane')" disabled>plane</button>
+  <button id="shape3d" onclick="changeShape(this.innerText)">3d</button>
 </details>
 
-<details open="open" id="steps">
+<details id="steps">
   <summary>Steps</summary>
   <button id="btnStep1" onclick="step(1)">step 1</button><br/>
   <button id="btnStep2" onclick="step(2)">step 2</button><br/>
@@ -60,19 +58,19 @@
 </div>
 
 
-<div id="container" style="-webkit-transform-style: preserve-3d;">
+<div id="container" class="r">
 <div id="shape-container" class="shape-container">
 <div id="shape" class="shape">
-    <section class="nyanContainer" id="nyannyan" style="display:none">
+    
+    <section class="nyanContainer r" id="nyannyan" style="display:none">
         <div id="cube" class="g">
             <figure id="ncf" class="front r">
                 <img src="images/nyan_cat_animation_de.gif" width="200" />
             </figure>
         </div>
     </section>  
+    
 <div id="icosahedron" class="plane">
-
-
 	
     <div id="p21" class="g plane"><img src="./images/path01.png"></div>
     <div id="p211" class="g plane"><img src="./images/path211.png"></div>
@@ -112,10 +110,13 @@
     <div id="p202" class="g plane"><img src="./images/path202.png"></div>
   </div>
   </div>
+  
   <div class="shadow-container"></div>
 	<div class="shadow-container" data-scale="1.3"></div>
-
   </div>
+
+
+  <button id="btnBuzzer" onclick="step(3)">buzzer</button>
 
 </div>
 
@@ -139,6 +140,8 @@
 			Your browser does not support the <code>video</code> element.
 		<!--   <source  muted src="http://dl.dropbox.com/u/14210264/html5_challenge/assets/VID_20110810_165002.m4v" type="video/mp4"/> -->
 </video>
+
+</div>
 
 </body>
 </html>

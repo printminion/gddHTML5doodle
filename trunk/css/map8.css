@@ -1,103 +1,80 @@
+@-webkit-keyframes spinanimation {
+	0% {
+		-webkit-transform: rotateY(0);
+	}
+	
+	100% {
+		-webkit-transform: rotateY(360deg);
+	}
 
-@-webkit-keyframes spinanimation { 0% {
-	-webkit-transform: rotateY(0);
-    }
-
-    100% {
-        -webkit-transform:rotateY(360deg);
-    }
 }
+
 body {
 	overflow: hidden;
-	height: 600px;
 	font-family: 'Rationale', cursive;
 	margin: 0px;
 	background: white;
+	height: 100%;
+	width: 100%;
+}
+
+#body {
+	position: absolute;
+	width: 100%;
+	height: 100%;
 }
 
 input[type="range"] {
-height: 10px;
-cursor: pointer;
-width: auto;
-background-color: #e4e4e4;
+	height: 10px;
+	cursor: pointer;
+	width: auto;
+	background-color: #e4e4e4;
 }
 
-#steps button.selected{
+#steps button.selected {
 	font-weight: bold;;
 }
 
-body.day .background {
-/*
+body.day .background { /*
 background: url('../images/day-night-bg.png');
 background-position: 0 -1000px;
 */
-
-background-image: -webkit-gradient(
-        radial, 
-        50% 50%, 0, 
-        50% 50%, 1000, 
-        from(rgba(255,255,255,1.0)), 
-        to(rgba(100,100,100,1.0))
-    );
-
-    background-image: -moz-radial-gradient(
-        50% 50% 90deg,
-        rgba(39,72,117,1.0) 0%, 
-        rgba(100,100,100,1.0) 100%
-    );
+	background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 1000, from(rgba(255, 255,
+		255, 1.0) ), to(rgba(100, 100, 100, 1.0) ) );
+	background-image: -moz-radial-gradient(50% 50% 90deg, rgba(39, 72, 117, 1.0)
+		0%, rgba(100, 100, 100, 1.0) 100% );
 }
 
-body.night .background {
-	/*
+body.night .background { /*
     background-position: 0 0px;
     */
-    background-image: -webkit-gradient(
-        radial, 
-        50% 50%, 0, 
-        50% 50%, 1000, 
-        from(rgba(245,245,245,1.0)), 
-        to(rgba(100,100,100,1.0))
-    );
-
-    background-image: -moz-radial-gradient(
-        50% 50% 90deg,
-        rgba(245,245,245,1.0) 0%, 
-        rgba(100,100,100,1.0) 100%
-    );
-    
+	background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 1000, from(rgba(245, 245,
+		245, 1.0) ), to(rgba(100, 100, 100, 1.0) ) );
+	background-image: -moz-radial-gradient(50% 50% 90deg, rgba(245, 245, 245, 1.0)
+		0%, rgba(100, 100, 100, 1.0) 100% );
 }
+
 body.grey .background {
-
 	background-position: 0 -1000px;
-    	   background-image: -webkit-gradient(
-        radial, 
-        50% 50%, 0, 
-        50% 50%, 1000, 
-        from(rgba(245,245,245,1.0)), 
-        to(rgba(100,100,100,1.0))
-    );
-
-    background-image: -moz-radial-gradient(
-        50% 50% 90deg,
-        rgba(245,245,245,1.0) 0%, 
-        rgba(100,100,100,1.0) 100%
-    );
-    
+	background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 1000, from(rgba(245, 245,
+		245, 1.0) ), to(rgba(100, 100, 100, 1.0) ) );
+	background-image: -moz-radial-gradient(50% 50% 90deg, rgba(245, 245, 245, 1.0)
+		0%, rgba(100, 100, 100, 1.0) 100% );
 }
 
 #main {
-position: absolute;
-width: 800px;
-height: 100px;
-left: 50%;
-top: 50%;
-margin-left: -400px;
-margin-top: 180px;
-text-align: center;
--webkit-perspective: 600px;
--webkit-perspective-origin: 50% 25%;
--webkit-perspective-origin-x: 50%;
--webkit-perspective-origin-y: 25%;
+	position: absolute;
+	width: 800px;
+	height: 100px;
+	left: 50%;
+	top: 50%;
+	margin-left: -400px;
+	margin-top: 180px;
+	text-align: center;
+	-webkit-perspective: 600px;
+	-webkit-perspective-origin: 50% 25%;
+	-webkit-perspective-origin-x: 50%;
+	-webkit-perspective-origin-y: 25%;
 }
 
 #main>section>h3 {
@@ -106,93 +83,79 @@ text-align: center;
 	width: 100%;
 	height: 30px;
 	margin: 0 auto;
-
 }
 
 #main>section>a {
 	position: absolute;
 	top: 60px;
-
 	width: 100%;
 	height: 30px;
 	margin: 0 auto;
 }
 
-#main>section, #main>section>section {
-    display: none;
-    
-    position: absolute;
-    width: 100%;
-    min-height: 600px;
-    
-    -webkit-transform-style: preserve-3d;
-    
-    -webkit-transition: all 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985); 
-       -moz-transition: all 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985); 
-         -o-transition: all 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985); 
-            transition: all 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+#main>section,#main>section>section {
+	display: none;
+	position: absolute;
+	width: 100%;
+	min-height: 600px;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: all 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+	-moz-transition: all 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+	-o-transition: all 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+	transition: all 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
 }
 
 #main section.past {
-    display: block;
-    opacity: 0;
-    
-    -webkit-transform:  translate3d(-100%, 0, 0) 
-                        rotateY(-90deg) 
-                        translate3d(-100%, 0, 0);
+	display: block;
+	opacity: 0;
+	-webkit-transform: translate3d(-100%, 0, 0) rotateY(-90deg)
+		translate3d(-100%, 0, 0);
 }
 
 #main section.current {
-    display: block;
+	display: block;
 }
 
 #main section.future {
-    display: block;
-    opacity: 0;
-    
-    -webkit-transform:  translate3d(100%, 0, 0) 
-                        rotateY(90deg) 
-                        translate3d(100%, 0, 0);
+	display: block;
+	opacity: 0;
+	-webkit-transform: translate3d(100%, 0, 0) rotateY(90deg)
+		translate3d(100%, 0, 0);
 }
 
 #main section>section.past {
-    display: block;
-    opacity: 0;
-    
-    -webkit-transform:  translate3d(0, -50%, 0) 
-                        rotateX(70deg) 
-                        translate3d(0, -50%, 0);
-}
-#main section>section.future {
-    display: block;
-    opacity: 0;
-    
-    -webkit-transform:  translate3d(0, 50%, 0) 
-                        rotateX(-70deg) 
-                        translate3d(0, 50%, 0);
+	display: block;
+	opacity: 0;
+	-webkit-transform: translate3d(0, -50%, 0) rotateX(70deg)
+		translate3d(0, -50%, 0);
 }
 
+#main section>section.future {
+	display: block;
+	opacity: 0;
+	-webkit-transform: translate3d(0, 50%, 0) rotateX(-70deg)
+		translate3d(0, 50%, 0);
+}
 
 /*********************************************
  * DEFAULT ELEMENT STYLES
  *********************************************/
-
 #main>section {
-    line-height: 1.2em;
-    text-shadow: 0px 0px 2px #fff, 0px 0px 4px #bbb;
-    font-weight: 600;
+	line-height: 1.2em;
+	text-shadow: 0px 0px 2px #fff, 0px 0px 4px #bbb;
+	font-weight: 600;
 }
 
-
-h1, h2, h3, h4 {
-margin: 30px 0 10px 0;
-font-family: 'League Gothic', Arial, Helvetica, sans-serif;
-line-height: 0.9em;
-letter-spacing: 0.02em;
-text-transform: uppercase;
-color: #222;
-text-shadow: 0px 0px 2px white, 0px 0px 4px #BBB;
+h1,h2,h3,h4 {
+	margin: 30px 0 10px 0;
+	font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+	line-height: 0.9em;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	color: #222;
+	text-shadow: 0px 0px 2px white, 0px 0px 4px #BBB;
 }
+
 #footer {
 	padding: 5px;
 	position: fixed;
@@ -208,7 +171,6 @@ text-shadow: 0px 0px 2px white, 0px 0px 4px #BBB;
 	right: 10px;
 	background-image: url(../images/gdd11_logo.png);
 	background-repeat: no-repeat;
-
 }
 
 #toolbox {
@@ -232,11 +194,13 @@ text-shadow: 0px 0px 2px white, 0px 0px 4px #BBB;
 
 .shape-container {
 	-webkit-transform-style: preserve-3d;
-	
 	border: 1px solid green;
 	width: 220px;
 	height: 200px;
 	margin: 0 auto;
+	top: 50%;
+	position: relative;
+	margin-top: -100px;
 }
 
 #shape.shape {
@@ -251,7 +215,7 @@ div#icosahedron.d3 {
 }
 
 div#icosahedron.plane {
-	left: -500px;
+	top: -100px;
 }
 
 #icosahedron {
@@ -260,49 +224,39 @@ div#icosahedron.plane {
 }
 
 #container {
-position: absolute;
-width: 800px;
-height: 500px;
-left: 50%;
-top: 50%;
-margin-left: -400px;
-margin-top: -260px;
-text-align: center;
--webkit-perspective: 600px;
--webkit-perspective-origin: 50% 25%;
--webkit-perspective-origin-x: 50%;
--webkit-perspective-origin-y: 39%;
-
+	-webkit-transform-style: preserve-3d;
+	position: relative;
+	width: 1000px;
+	height: 500px;
+	top: 50%;
+	left: 50%;
+	-webkit-perspective: 600px;
+	-webkit-perspective-origin: 50% 25%;
+	-webkit-perspective-origin-x: 50%;
+	-webkit-perspective-origin-y: 39%;
+	margin-top: -250px;
+	margin-left: -500px;
+	
 }
 
 .background {
-	
-     -webkit-transition: background-position 3s ease-out;
-     position:absolute;
-     width:100%;
-     height:100%;
-     background-position: center;
-     padding: 0;
-     margin: 0;
+	-webkit-transition: background-position 3s ease-out;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	padding: 0;
+	margin: 0;
 }
 
-.container { /* position: relative;
-top: 160px;
-margin: 0 auto;
-width: 400px;
-height: 400px;
-border: 1px solid red; */
-	
-}
-
-.container2 {
+/* .container2 {
 	-webkit-transform-style: preserve-3d;
 	-webkit-animation: spinanimation 10s infinite linear;
 	position: relative;
 	top: 160px;
 	margin: 0 auto;
 	width: 200px;
-}
+} */
 
 summary {
 	cursor: pointer;
@@ -445,19 +399,19 @@ div#icosahedron div {
 }
 
 #p02.plane {
-	-webkit-transform: translateX(356px) translateY(-65px);
+	-webkit-transform: translateX(355px) translateY(-67px);
 }
 
 #p03.plane {
-	-webkit-transform: translateX(453px) translateY(-118px) rotateZ(-58deg);
+	-webkit-transform: translateX(451px) translateY(-116px) rotateZ(-58deg);
 }
 
 #p04.plane {
-	-webkit-transform: translateX(728px) translateY(-65px);
+	-webkit-transform: translateX(728px) translateY(-67px);
 }
 
 #p05.plane {
-	-webkit-transform: translateX(914px) translateY(-65px);
+	-webkit-transform: translateX(914px) translateY(-67px);
 }
 
 #p06.plane {
@@ -561,78 +515,81 @@ div#icosahedron div {
 css for the info box german stars
 */
 #humanInfo {
-    border:1px solid black;width:300px;overflow:scroll;position:absolute;top:200px;right:100px;
+	border: 1px solid black;
+	width: 300px;
+	overflow: scroll;
+	position: absolute;
+	top: 200px;
+	right: 100px;
 }
 
 /*
  css for the night stars
 */
 .star {
-
-    -webkit-transition: all .2s ease-in-out;
-    position:absolute;
-    /*background-image: url('himmel/nyan_cat_stars.gif');*/
+	-webkit-transition: all .2s ease-in-out;
+	position: absolute;
+	/*background-image: url('himmel/nyan_cat_stars.gif');*/
 }
+
 .nyanStar {
-    background: url('himmel/nyan_cat_stars.gif');
-    width:400px;
-    height:400px;
-    -webkit-transition: all .2s ease-in-out;
-    position:absolute;
+	background: url('himmel/nyan_cat_stars.gif');
+	width: 400px;
+	height: 400px;
+	-webkit-transition: all .2s ease-in-out;
+	position: absolute;
 }
-
 
 /**
  css properties for the nyan flying cat
 
 **/
-@-webkit-keyframes nyanAnimation {
-    0% {
+@-webkit-keyframes nyanAnimation { 
+	0% {
+		-webkit-transform: rotateY(0deg);
+	}
 
-    -webkit-transform: rotateY(360deg) ;
-    }
-    100% {
-        -webkit-transform: rotateY(0deg) ;
-
-    }
+	100%{
+ 		-webkit-transform: rotateY(360deg);
+	}
 }
-
 .nyanContainer {
-    position: absolute;
-    top: 160px;
-    left: 0px;
+	position: absolute;
 
-    border:1px solid red;
+	left: 0px;
+	
+	
 }
 
 #cube {
-    -webkit-transform-style: preserve-3d;
-    -webkit-animation: nyanAnimation 2s infinite linear;
-
-
-    
-    width: 200px;
-    height: 200px;
-
+	-webkit-transform-style: preserve-3d;
+	-webkit-animation: nyanAnimation 10s infinite linear;
+	width: 200px;
+	height: 200px;
 }
-
 
 #cube figure {
-    width: 196px;
-    height: 196px;
-    display: block;
-    position: absolute;
-   
-    line-height:196px;
-    font-size:120px;
-    color:white;
-    top: 0px;
-    margin:0px;
-
+	width: 196px;
+	height: 196px;
+	display: block;
+	position: absolute;
+	line-height: 196px;
+	font-size: 120px;
+	color: white;
+	top: 0px;
+	margin: 0px;
 }
 
+#cube .front {
+	-webkit-transform: rotateY(326deg) rotateX(-187deg) rotateZ(1deg) translateZ(-213px) translateY(0.2px)
+}
 
+#cube .front img {
+	margin: 0px;
+	padding: 0px;
+	-webkit-transform: scaleY(-1);
+}
 
-#cube .front  { -webkit-transform: rotateY(   180deg )  rotateX(-170deg ) translateZ( 180px ); }
-#cube .front img { margin:0px;padding:0px;-webkit-transform: scaleY(-1);}
-#cube {  }
+#cube {
+	
+}
