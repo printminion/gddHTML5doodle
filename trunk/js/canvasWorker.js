@@ -326,11 +326,12 @@ canvasWorker.prototype.printPeople = function() {
         this.printPeopleInfo(this.people[this.currentPeopleIndex]);
         this.currentPeopleIndex++;
         this.timeout = window.setTimeout("canvasObj.printPeople()", 5000);
-    }//this.showBuzzerId
-    if(this.currentPeopleIndex == 1) {
+    }//
+    if(this.currentPeopleIndex == this.showBuzzerId) {
         try {
             var buzzer = document.getElementById(this.buzzerId);
             buzzer.style.display = 'block';
+            buzzer.style.zIndex = 1000  ;
             buzzer.addEventListener('click', function () { step(3);},true );
         } catch(e){
             debugAdd(e);

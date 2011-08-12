@@ -236,15 +236,23 @@ function showDebugBorder() {
 	});
 }
 
+/**
+ * this method started the step1 after the music is loaded
+ * here we can add some magic functions. we can wait until four our five things are loaded and say: "hey im ready"
+ */
+function kickstart() {
+    step1();
+}
+
 function init() {
 	// fix an chrome bug, workaround
 	videoMuteHelper();
         //adding here new eventListener, wait that all is loaded
-        window.document.addEventListener('analyserLoaded', function() {console.log('loaded All')}, true);
-        window.document.addEventListener('analyserBuffered', function() {console.log('the buffer is readay')}, true);
+        window.document.addEventListener('analyserLoaded', function() {debugAdd('loaded All')}, true);
+        window.document.addEventListener('analyserBuffered', function() {kickstart();debugAdd('the buffer is ready')}, true);
         window.document.addEventListener('analyserCriticalError', function() {alert('the mp3 is not found, maybe a network error?')}, true);
 	// remove the debug border analyserCriticalError
-	// removeDebugBorder();
+	 removeDebugBorder();
 	if (analyserState == true) {
 		window.analyserObj = new analyser();
 		window.analyserObj.init();
