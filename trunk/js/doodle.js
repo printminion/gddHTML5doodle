@@ -118,7 +118,8 @@ function step2() {
 	$('#container').css('-webkit-transform', 'rotateX(0deg) rotateY(0deg)');
 
 	// starting roate, adding spinanimation
-	document.getElementById('shape-container').style.webkitAnimation = "spinanimation 10s infinite linear";
+	spinEnable(true);
+	
 	/*
 	 * start showing "superstars"
 	 */
@@ -129,6 +130,10 @@ function step2() {
          * this is implementated :) todo:make buzzer nice ;) 
 	 */
 
+}
+
+function spinEnable(spin) {
+	document.getElementById('shape-container').style.webkitAnimation = spin ? "spinanimation 10s infinite linear" : '';
 }
 
 function undoStep2() {
@@ -291,11 +296,13 @@ function init() {
 	 */
 
 	for (i in window.canvasObj.people) {
-		$('#main')
+		$('#persons')
 				.append(
 						'<section id="person'
 								+ window.canvasObj.people[i].dynmapId
-								+ '" class="future"><h3>'
+								+ '" class="future">'
+								+ '<img src="' + window.canvasObj.people[i].picUrl + '" width="150"/>'
+								+ '<h3>'
 								+ window.canvasObj.people[i].name
 								+ '</h3><a href="'
 								+ window.canvasObj.people[i].wikiUrl
