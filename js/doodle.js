@@ -10,7 +10,9 @@ var debugMode = 'console'; // conosle, window, none
 var debug = new Array();
 var debugBorder = new Array();
 var activeStep = 0;
-
+//all global timeouts 
+var timeOutStep1 = undefined;
+var timeout2 = undefined;
 function step(n) {
 	/*
 	 * undo if possible & neccessary an old state
@@ -24,25 +26,34 @@ function step(n) {
 
 	switch (n) {
 	case 1:
+	    _gaq.push(['_trackPageview','/step/flatworld']);
+
 		step1();
 		break;
 	case 2:
+	    _gaq.push(['_trackPageview','/step/superstarsworld']);
+
 		step2();
 		break;
 	case 3:
+	    _gaq.push(['_trackPageview','/step/teamworld']);
+
 		step3();
 		break;
 	case 4:
+	    _gaq.push(['_trackPageview','/step/4world']);
+
 		step4();
 		break;
-	case 5:
-		step5();
-		break;
 	case 6:
+	    _gaq.push(['_trackPageview','/step/stopworld']);
+
 		step6();
 		break;
 
 	default:
+	    _gaq.push(['_trackPageview','/step/unknown']);
+		
 		alert('not implemented step' + n);
 		break;
 	}
@@ -76,6 +87,13 @@ function undoLastStep(n) {
 		break;
 	}
 }
+/**
+ * when the step is changed then remove all the timeouts
+ */
+function clearAllStepTimeouts() {
+    window.clearTimeout(timeOutStep1);
+    window.clearTimeout(timeout2);
+}
 
 function step1() {
 	// be sure that we will be in the plane mode when we start with step1
@@ -105,7 +123,7 @@ function step1() {
 	/*
 	 * fade each cell into show maps pieces
 	 */
-	window.setTimeout("step(2)", 18000);
+	timeOutStep1 = window.setTimeout("step(2)", 18000);
 
 }
 
@@ -125,7 +143,7 @@ function step2() {
 	 */
         window.addEventListener('humanShowEnded', function() {
             //wait 20sec and show step3
-            window.setTimeout("step(3)", 40000);
+            timeout2 = window.setTimeout("step(3)", 40000);
         }, false); // humanShowEnded
 	window.canvasObj.printPeople();
 
@@ -166,7 +184,7 @@ function step3() {
         
 
         
-        console.log($('#container'));
+
         document.getElementById('shape-container').style.webkitAnimation = "spinanimation 10s infinite linear";
         
         $('#container').addClass('leftNyan');
@@ -205,9 +223,6 @@ function step4() {
 	document.getElementById('shape-container').style.webkitAnimation = "";
 }
 
-function step5() {
-
-}
 function step6() {
 	showDebugBorder();
 }
@@ -216,7 +231,6 @@ function step6() {
  */
 function videoMuteHelper() {
 	var video = document.getElementsByTagName('video');
-	console.log(video);
 	var max = video.length;
 	for (i = 0; i < video.length; i++) {
 		video[i].muted = true;
@@ -266,9 +280,9 @@ function removeDebugBorder() {
 }
 
 function showDebugBorder() {
+        debugAdd("adding Borders to Elements");
 	debugBorder.forEach(function(item, key) {
 		$('#' + item.elementId).toggleClass(item.type);
-		console.log(item, key);
 	});
 }
 
@@ -278,7 +292,7 @@ function showDebugBorder() {
  */
 function kickstart() {
     playPreloadSound('stop');
-    step1();
+    step(1);
     debugAdd('now im starting');
 }
 

@@ -656,8 +656,8 @@ css for the info box german stars
 	padding: 0px;
 	-webkit-transform: scaleY(-1);
 }
-#container .leftNyan {
-    left: 20%;
+.leftNyan {
+    left: 20% !important;
 }
 
 #cube {
