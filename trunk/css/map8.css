@@ -685,7 +685,8 @@ css for the info box german stars
 }
 #creditCont {
      position:relative;
-    -webkit-transition: all 20s;
+    -webkit-transition: all 30s;
+    -moz-transition-timing-function: linear;
 }
 #creditCont.cdown {
    
@@ -694,5 +695,5 @@ css for the info box german stars
 }
 
 #creditCont.cup {
-    top:-300px;
+    top:-1000px;
 }
