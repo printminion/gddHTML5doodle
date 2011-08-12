@@ -24,25 +24,34 @@ function step(n) {
 
 	switch (n) {
 	case 1:
+	    _gaq.push(['_trackPageview','/step/flatworld']);
+
 		step1();
 		break;
 	case 2:
+	    _gaq.push(['_trackPageview','/step/superstarsworld']);
+
 		step2();
 		break;
 	case 3:
+	    _gaq.push(['_trackPageview','/step/teamworld']);
+
 		step3();
 		break;
 	case 4:
+	    _gaq.push(['_trackPageview','/step/4world']);
+
 		step4();
 		break;
-	case 5:
-		step5();
-		break;
 	case 6:
+	    _gaq.push(['_trackPageview','/step/stopworld']);
+
 		step6();
 		break;
 
 	default:
+	    _gaq.push(['_trackPageview','/step/unknown']);
+		
 		alert('not implemented step' + n);
 		break;
 	}
@@ -205,9 +214,6 @@ function step4() {
 	document.getElementById('shape-container').style.webkitAnimation = "";
 }
 
-function step5() {
-
-}
 function step6() {
 	showDebugBorder();
 }
@@ -278,7 +284,7 @@ function showDebugBorder() {
  */
 function kickstart() {
     playPreloadSound('stop');
-    step1();
+    step(1);
     debugAdd('now im starting');
 }
 
