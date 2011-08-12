@@ -66,10 +66,9 @@ margin-left: -100px;
 
 body.day .background {
 	
-/*
+
 background: url('../images/day-night-bg.png');
 background-position: 0 -2400px;
-*/
 
 
 background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 1000, from(rgba(165,217,239, 0.1) ), to(rgba(165,217,239, 0.2) ) );
@@ -251,7 +250,7 @@ h1,h2,h3,h4 {
 
 .shape-container {
 	-webkit-transform-style: preserve-3d;
-	border: 1px solid green;
+	border: 1px solid transparent;
 	width: 220px;
 	height: 200px;
 	margin: 0 auto;
@@ -329,10 +328,16 @@ div#icosahedron div {
 }
 
 .r {
-	border: 1px solid #ff0000;
 }
 
 .g {
+}
+
+.debugr {
+	border: 1px solid #ff0000;
+}
+
+.debugg {
 	border: 1px solid #00ff00;
 }
 
@@ -656,10 +661,39 @@ css for the info box german stars
 	padding: 0px;
 	-webkit-transform: scaleY(-1);
 }
+
 .leftNyan {
     left: 20% !important;
 }
 
 #cube {
 	
+}
+
+#credits {
+    width:400px;
+    height:400px;
+    overflow:hidden;
+    position:absolute;
+    right:20px;
+    top:100px;
+}
+
+#creditCont .cabsatz {
+    margin-top:10px;
+    color:#ffffff;
+}
+#creditCont {
+     position:relative;
+    -webkit-transition-duration: 30s;
+    -webkit-transition-timing-function: linear;
+}
+#creditCont.cdown {
+   
+    top:400px;
+    
+}
+
+#creditCont.cup {
+    top:-1000px;
 }

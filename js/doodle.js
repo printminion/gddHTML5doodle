@@ -37,7 +37,6 @@ function step(n) {
 		break;
 	case 3:
 	    _gaq.push(['_trackPageview','/step/teamworld']);
-
 		step3();
 		break;
 	case 4:
@@ -151,6 +150,7 @@ function step2() {
 	 * on 10th - superstar - show buzzer
          * this is implementated :) todo:make buzzer nice ;) 
 	 */
+       
 
 }
 
@@ -204,11 +204,20 @@ function step3() {
 	/*
 	 * start nyan song loop - if with copyright is ok
 	 */
-
+         document.getElementById('container').addEventListener("transitionend", function () {console.log('done')}, true);
+         document.getElementsByTagName('body')[0].addEventListener("transitionend", function () {console.log('done')}, true);
 	/*
 	 * add end titles with superstars, credits and so on
 	 */
+        $('#credits').css('display', 'block');
+        window.setTimeout("showCredits()", 3000);
+        
+        //$('#creditCont').removeClass('cdown').addClass('cup');
 
+}
+
+function showCredits() {
+    var creditsCont = document.getElementById('creditCont');         creditsCont.setAttribute('class', 'cup');
 }
 
 function undoStep3() {
