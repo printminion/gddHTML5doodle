@@ -125,11 +125,11 @@ body.grey .background {
 #persons>section>a {
 	position: absolute;
 	bottom: -20px;
-	width: 200px;
+	width: 240px;
 	height: 24px;
 	margin: 0 auto;
 	left: 50%;
-	margin-left: -100px;
+	margin-left: -120px;
 }
 
 #persons>section,#persons>section>section {
