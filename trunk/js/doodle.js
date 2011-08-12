@@ -239,8 +239,10 @@ function showDebugBorder() {
 function init() {
 	// fix an chrome bug, workaround
 	videoMuteHelper();
-
-	// remove the debug border
+        //adding here new eventListener, wait that all is loaded
+        window.document.addEventListener('analyserLoaded', function() {console.log('loaded All')}, true);
+        window.document.addEventListener('analyserBuffered', function() {console.log('the buffer is readay')}, true);
+	// remove the debug borderanalyserBuffered
 	// removeDebugBorder();
 	if (analyserState == true) {
 		window.analyserObj = new analyser();

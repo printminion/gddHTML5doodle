@@ -82,15 +82,32 @@ analyser.prototype.loadSample = function (url) {
 
     var request = new XMLHttpRequest();
     request.open("GET", url, true);
+    request.onreadystatechange = function (st) {
+        if(this.readyState == 4) {
+            var evt = document.createEvent("Events")
+            //Aim: initialize it to be the event we want
+            evt.initEvent('analyserLoaded', true, true); //true for can bubble, true for cancelable
+            window.document.dispatchEvent(evt);
+        
+    };
+    
+};
     request.responseType = "arraybuffer";
     (function(ObjContext) {
         request.onload = function() { 
             ObjContext.source.buffer = ObjContext.context.createBuffer(request.response, false);
+            //
+            console.log(ObjContext.source.buffer.length);
             ObjContext.source.looping = false;
             // ObjContext.source.noteOn(0);
             //ObjContext.bindEvents();
             //ObjContext.initSpectralAnalyser(ObjContext.currentvalue.length);
             ObjContext.visualizer();				// run jsfft visualizer
+            //analyser ready throw wevent
+            var evt = document.createEvent("Events")
+            //Aim: initialize it to be the event we want
+            evt.initEvent('analyserBuffered', true, true); //true for can bubble, true for cancelable
+            window.document.dispatchEvent(evt);
         }
     ;
     })(this);
@@ -98,7 +115,7 @@ analyser.prototype.loadSample = function (url) {
 }
 
 analyser.prototype.initAudio = function () {
-    this.context = new webkitAudioContext();
+    this.context =  new (window.AudioContext || window.webkitAudioContext)();
     this.source = this.context.createBufferSource();
 
     // This AudioNode will do the amplitude modulation effect directly in JavaScript

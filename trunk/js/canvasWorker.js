@@ -3,7 +3,8 @@ var canvasWorker = function () {
     this.originContent = new Array();
     this.people = new Array();
     this.timeout = undefined;
-    
+    this.buzzerId = 'btnBuzzer';
+    this.showBuzzerId = 10;//show buzzer after 10 elements ( humans are shown)
     //+6, 7, +16, 17, 8, 9, 10, +20
     
     
@@ -284,7 +285,7 @@ canvasWorker.prototype.toggleBackToWorld = function () {
             
 canvasWorker.prototype.printPeopleInfo = function (humanObj) {
    
-	this.onPersonUpdate(humanObj);
+    this.onPersonUpdate(humanObj);
      
 	 
     //build here the human info
@@ -325,6 +326,16 @@ canvasWorker.prototype.printPeople = function() {
         this.printPeopleInfo(this.people[this.currentPeopleIndex]);
         this.currentPeopleIndex++;
         this.timeout = window.setTimeout("canvasObj.printPeople()", 5000);
+    }//this.showBuzzerId
+    if(this.currentPeopleIndex == 1) {
+        try {
+            var buzzer = document.getElementById(this.buzzerId);
+            buzzer.style.display = 'block';
+            buzzer.addEventListener('click', function () { step(3);},true );
+        } catch(e){
+            debugAdd(e);
+            debugAdd('no buzzer in doc found');
+        }
     }
     /*
     (function(canvasWorkerObj){
