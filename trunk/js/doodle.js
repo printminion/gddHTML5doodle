@@ -205,14 +205,19 @@ function step3() {
 	 * start nyan song loop - if with copyright is ok
 	 */
          document.getElementById('container').addEventListener("transitionend", function () {console.log('done')}, true);
-
+         document.getElementsByTagName('body')[0].addEventListener("transitionend", function () {console.log('done')}, true);
 	/*
 	 * add end titles with superstars, credits and so on
 	 */
         $('#credits').css('display', 'block');
-        var creditsCont = document.getElementById('creditCont');         creditsCont.setAttribute('class', 'cup');
+        window.setTimeout("showCredits()", 3000);
+        
         //$('#creditCont').removeClass('cdown').addClass('cup');
 
+}
+
+function showCredits() {
+    var creditsCont = document.getElementById('creditCont');         creditsCont.setAttribute('class', 'cup');
 }
 
 function undoStep3() {
