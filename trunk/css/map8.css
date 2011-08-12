@@ -170,9 +170,20 @@ h1,h2,h3,h4 {
 #footer {
 	padding: 5px;
 	position: fixed;
+	bottom: 20px;
+	left: 93px;
+}
+
+
+#license {
+	width: 900px;
+	padding: 5px;
+	position: fixed;
 	bottom: 0px;
 	left: 0px;
+	
 }
+
 
 #logo {
 	width: 149px;
