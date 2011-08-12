@@ -37,7 +37,6 @@ function step(n) {
 		break;
 	case 3:
 	    _gaq.push(['_trackPageview','/step/teamworld']);
-
 		step3();
 		break;
 	case 4:
@@ -205,13 +204,13 @@ function step3() {
 	/*
 	 * start nyan song loop - if with copyright is ok
 	 */
+         document.getElementById('container').addEventListener("transitionend", function () {console.log('done')}, true);
 
 	/*
 	 * add end titles with superstars, credits and so on
 	 */
         $('#credits').css('display', 'block');
-        var creditsCont = document.getElementById('creditCont'); 
-        creditsCont.setAttribute('class', '');
+        var creditsCont = document.getElementById('creditCont');         creditsCont.setAttribute('class', 'cup');
         //$('#creditCont').removeClass('cdown').addClass('cup');
 
 }
