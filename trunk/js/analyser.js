@@ -121,7 +121,13 @@ analyser.prototype.loadSample = function (url) {
 
 analyser.prototype.initAudio = function () {
     this.controller = 0;
-    this.context =  new (window.AudioContext || window.webkitAudioContext)();
+
+    try {
+        this.context =  new (window.AudioContext || window.webkitAudioContext)();
+    } catch (e) {
+    	alert('Your browser does not support Web Audio API. \n\nPlease enable it in your Google Chrome browser in chrome://flags\n\nOtherwise this doodle will not run :(');
+    	return;
+    }
   
     this.source = this.context.createBufferSource();
  
