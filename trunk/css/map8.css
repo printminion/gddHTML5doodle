@@ -13,6 +13,15 @@ video {
     height:250px;
 }
 
+a {
+	color: #4076A1;
+	text-decoration: none;
+}
+
+a:HOVER {
+	text-decoration: underline;
+}
+
 body {
 	overflow: hidden;
 	font-family: 'Rationale', cursive;
