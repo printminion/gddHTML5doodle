@@ -673,9 +673,9 @@ css for the info box german stars
     top:100px;
 }
 
-#creditCont .absatz {
-    margin-top:400px;
-    font-color:#77A2D9;
+#creditCont .cabsatz {
+    margin-top:10px;
+    color:#77A2D9;
 }
 #creditCont {
      position:relative;
