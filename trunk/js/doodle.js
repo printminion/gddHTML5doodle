@@ -10,7 +10,9 @@ var debugMode = 'console'; // conosle, window, none
 var debug = new Array();
 var debugBorder = new Array();
 var activeStep = 0;
-
+//all global timeouts 
+var timeOutStep1 = undefined;
+var timeout2 = undefined;
 function step(n) {
 	/*
 	 * undo if possible & neccessary an old state
@@ -85,6 +87,13 @@ function undoLastStep(n) {
 		break;
 	}
 }
+/**
+ * when the step is changed then remove all the timeouts
+ */
+function clearAllStepTimeouts() {
+    window.clearTimeout(timeOutStep1);
+    window.clearTimeout(timeout2);
+}
 
 function step1() {
 	// be sure that we will be in the plane mode when we start with step1
@@ -114,7 +123,7 @@ function step1() {
 	/*
 	 * fade each cell into show maps pieces
 	 */
-	window.setTimeout("step(2)", 18000);
+	timeOutStep1 = window.setTimeout("step(2)", 18000);
 
 }
 
@@ -134,7 +143,7 @@ function step2() {
 	 */
         window.addEventListener('humanShowEnded', function() {
             //wait 20sec and show step3
-            window.setTimeout("step(3)", 40000);
+            timeout2 = window.setTimeout("step(3)", 40000);
         }, false); // humanShowEnded
 	window.canvasObj.printPeople();
 
