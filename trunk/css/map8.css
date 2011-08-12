@@ -679,7 +679,7 @@ css for the info box german stars
 }
 #creditCont {
      position:relative;
-    -webkit-transition: all 2s;
+    -webkit-transition: all 20s;
 }
 #creditCont.cdown {
    
