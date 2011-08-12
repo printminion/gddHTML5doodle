@@ -328,10 +328,16 @@ div#icosahedron div {
 }
 
 .r {
-	border: 1px solid #ff0000;
 }
 
 .g {
+}
+
+.debugr {
+	border: 1px solid #ff0000;
+}
+
+.debugg {
 	border: 1px solid #00ff00;
 }
 
