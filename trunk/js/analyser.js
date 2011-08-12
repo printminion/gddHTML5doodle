@@ -64,7 +64,6 @@ analyser.prototype.init = function () {
  * this method makes the "cool" rollout effekt for each channel
  */
 analyser.prototype.rolloutPannels = function () {
-    console.log("rollout");
     if(this.maxVisChannels>this.visChannels) {
      this.visChannels++;
      var t = window.setTimeout("window.analyserObj.rolloutPannels()",this.rolloutSpeed);
@@ -103,7 +102,7 @@ analyser.prototype.loadSample = function (url) {
             ObjContext.source.buffer = ObjContext.context.createBuffer(request.response, false);
             //
             ObjContext.sourceMaxLength = ObjContext.source.buffer.length;
-            console.log(ObjContext.source.buffer.length);
+            debugAdd('size arrayBuffer:'+ObjContext.source.buffer.length);
             ObjContext.source.looping = false;
             // ObjContext.source.noteOn(0);
             //ObjContext.bindEvents();
@@ -173,10 +172,8 @@ analyser.prototype.audioAvailable = function (event) {
         }
 			
     }
-    this.controller++;
-    if(this.controller == this.sourceMaxLength) {
-        console.log("im over");
-    }
+   
+    
     
 			
 			

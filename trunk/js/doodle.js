@@ -175,7 +175,7 @@ function step3() {
         
 
         
-        console.log($('#container'));
+
         document.getElementById('shape-container').style.webkitAnimation = "spinanimation 10s infinite linear";
         
         $('#container').addClass('leftNyan');
@@ -222,7 +222,6 @@ function step6() {
  */
 function videoMuteHelper() {
 	var video = document.getElementsByTagName('video');
-	console.log(video);
 	var max = video.length;
 	for (i = 0; i < video.length; i++) {
 		video[i].muted = true;
@@ -272,9 +271,9 @@ function removeDebugBorder() {
 }
 
 function showDebugBorder() {
+        debugAdd("adding Borders to Elements");
 	debugBorder.forEach(function(item, key) {
 		$('#' + item.elementId).toggleClass(item.type);
-		console.log(item, key);
 	});
 }
 
