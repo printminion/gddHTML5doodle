@@ -22,6 +22,7 @@ analyser.prototype.init = function () {
     this.topic = 'jsfftwebaudio';
     this.comment_teaser = 'Please leave a comment...'; 
     this.spectrum_on = true;	
+    this.sourceMaxLength = 0;
     //this.ctxD = document.getElementById('dIV');
     this.theme = ["rgba(255, 255, 255,","rgba(240, 240, 240,","rgba(210, 210, 210,","rgba(180, 180, 180,","rgba(150, 150, 150,","rgba(120, 120, 150,","rgba(90, 90, 150,","rgba(60, 60, 180,","rgba(30, 30, 180,","rgba(0, 0, 200,","rgba(0, 0, 210,","rgba(0, 0, 220,","rgba(0, 0, 230,","rgba(0, 0, 240,","rgba(0, 0, 255,","rgba(0, 30, 255,","rgba(0, 60, 255,","rgba(0, 90, 255,","rgba(0, 120, 255,","rgba(0, 150, 255,"];
 		
@@ -101,6 +102,7 @@ analyser.prototype.loadSample = function (url) {
         request.onload = function() { 
             ObjContext.source.buffer = ObjContext.context.createBuffer(request.response, false);
             //
+            ObjContext.sourceMaxLength = ObjContext.source.buffer.length;
             console.log(ObjContext.source.buffer.length);
             ObjContext.source.looping = false;
             // ObjContext.source.noteOn(0);
@@ -119,9 +121,11 @@ analyser.prototype.loadSample = function (url) {
 }
 
 analyser.prototype.initAudio = function () {
+    this.controller = 0;
     this.context =  new (window.AudioContext || window.webkitAudioContext)();
+  
     this.source = this.context.createBufferSource();
-
+ 
     // This AudioNode will do the amplitude modulation effect directly in JavaScript
     this.jsProcessor = this.context.createJavaScriptNode(2048);
 
@@ -169,6 +173,11 @@ analyser.prototype.audioAvailable = function (event) {
         }
 			
     }
+    this.controller++;
+    if(this.controller == this.sourceMaxLength) {
+        console.log("im over");
+    }
+    
 			
 			
 }
@@ -208,12 +217,9 @@ analyser.prototype.initSpectralAnalyser = function (length) {
     }*/
 }		
 analyser.prototype.visualizer = function () {
-    var channel = 0;
-    //ctx.clearRect(0,0, canvas.width, canvas.height);
-    
-    //this.multiChannels		    //the number of channels wich will be visualized
+    var channel = 0;  
+    //this.multiChannels  //the number of channels wich will be visualized
     if (this.spectrum_on) {
-        //this.ctx.fillStyle = '#000044';
         //walk it this.visChannels times 
         for (var i=0; i<this.visChannels; i++) {
             // Draw rectangle bars for each frequency bin
@@ -248,7 +254,6 @@ analyser.prototype.bindEvents = function () {
    try {
     (function(analyserObj) {
         breakMe.addEventListener('click', function (event) {
-               
                     analyserObj.breakPlay();
         }, true);
         playMe.addEventListener('click', function (event) {

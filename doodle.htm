@@ -8,18 +8,18 @@
 	<link href='http://fonts.googleapis.com/css?family=Rationale' rel='stylesheet' type='text/css'>
 	<link href='css/map8.css' rel='stylesheet' type='text/css'/>
 
-<script type="text/javascript" src="js/dsp.js"></script>	
-<script type="text/javascript" src="js/analyser.js"></script>
-<script type="text/javascript" src="js/canvasWorker.js"></script>
-<script type="text/javascript" src="js/nightStar.js"></script>
-<script type="text/javascript" src="js/doodle.js"></script>
-<script type="text/javascript" src="js/music.js"></script>
-<script type="text/javascript" src="js/video.js"></script>
-<script type="text/javascript" src="js/doodle.js"></script>
+	<script type="text/javascript" src="js/dsp.js"></script>	
+	<script type="text/javascript" src="js/analyser.js"></script>
+	<script type="text/javascript" src="js/canvasWorker.js"></script>
+	<script type="text/javascript" src="js/nightStar.js"></script>
+	<script type="text/javascript" src="js/doodle.js"></script>
+	<script type="text/javascript" src="js/music.js"></script>
+	<script type="text/javascript" src="js/video.js"></script>
+	<script type="text/javascript" src="js/doodle.js"></script>
 
 </head>
-<body  class="day" onload="init()">
-<div id="body" class="r">
+<body class="day" onload="init()">
+<div id="body">
 <div class="background" id="background"><!--  --></div>
 
 <audio id="audio" preload>
@@ -28,7 +28,8 @@
 
 
 <div id="toolbox">
-
+<details id="menu">
+  <summary>menu</summary>
 <details>
   <summary>Position</summary>
 
@@ -44,22 +45,22 @@
   <button id="shape3d" onclick="changeShape(this.innerText)">3d</button>
 </details>
 
-<details id="steps">
-  <summary>Steps</summary>
-  <button id="btnStep1" onclick="step(1)">step 1</button><br/>
-  <button id="btnStep2" onclick="step(2)">step 2</button><br/>
-  <button id="btnStep3" onclick="step(3)">step 3</button><br/>
-  <button id="btnStep4" onclick="step(4)">step 4</button><br/>
-  <button id="btnStep5" onclick="step(5)">step 5</button><br/>
-  <button id="btnStep6" onclick="step(6)">step 6</button><br/>
-  <button id="btnStep7" onclick="step(7)">step 7</button><br/>
+	<details id="steps">
+	  <summary>Steps</summary>
+	  <button id="btnStep1" onclick="step(1)">step 1</button><br/>
+	  <button id="btnStep2" onclick="step(2)">step 2</button><br/>
+	  <button id="btnStep3" onclick="step(3)">step 3</button><br/>
+	  <button id="btnStep4" onclick="step(4)">step 4</button><br/>
+	  <button id="btnStep5" onclick="step(5)">step 5</button><br/>
+	  <button id="btnStep6" onclick="step(6)">step 6</button><br/>
+	  <button id="btnStep7" onclick="step(7)">step 7</button><br/>
+	</details>
 </details>
-
 
 </div>
 
 
-<div id="container" class="r">
+<div id="container" style="border: 1px solid transparent;">
 <div id="shape-container" class="shape-container">
 <div id="shape" class="shape">
     
@@ -89,24 +90,18 @@
     <div id="p04" class="g plane"><img src="./images/path02.png"></div>
     <div id="p05" class="r plane"><img src="./images/path02.png"></div>
 
-    <div id="p06" class="g plane triangle-mask -vcontainer"><img src="./images/path01.png">
-    
-    </div>
-    
+    <div id="p06" class="g plane triangle-mask -vcontainer"><img src="./images/path01.png"></div>
     <div id="p07" class="r plane"><img src="./images/path01.png"></div>
     <div id="p08" class="g plane"><img src="./images/path01.png"></div>
     <div id="p09" class="r plane"><img src="./images/path01.png"></div>
     <div id="p10" class="g plane"><img src="./images/path01.png"></div>
 
-    <div id="p16" class="r plane triangle-mask-flipped -vcontainer"><img src="./images/path02.png">
-    </div>
-    
+    <div id="p16" class="r plane triangle-mask-flipped -vcontainer"><img src="./images/path02.png"></div>
     <div id="p17" class="g plane"><img src="./images/path02.png"></div>
     <div id="p18" class="r plane"><img src="./images/path02.png"></div>
     <div id="p19" class="r plane"><img src="./images/path02.png"></div>
     
     <div id="p20" class="g plane triangle-mask-flipped -vcontainer"><img src="./images/path02.png"></div>
-    
     <div id="p201" class="g plane"><img src="./images/path201.png"></div>
     <div id="p202" class="g plane"><img src="./images/path202.png"></div>
   </div>
@@ -117,38 +112,40 @@
   </div>
 
 
-  <button id="btnBuzzer" style="display:none" >buzzer</button>
+
 
 </div>
 
 
 <!-- placeholder for names -->
-<div id="main">
+<div id="persons"><!--  --></div>
+
+<div id="humanInfo" style="display:none" class="hd">
 
 </div>
 
-<div id="humanInfo" style="display:none">
-
-</div>
-
+<button id="btnBuzzer" style="display: none;">finish it!</button>
+  
 <div id="logo"><!--  --></div>
 
 <div id="footer">
-  Tested with Google Chrome 15.0.848.0 canary
+  Tested with Google Chrome 15.0.848.0 <a href="http://tools.google.com/dlpage/chromesxs" target="_blank">canary</a>
 </div>
-
+<div id="credits" style="display:none">
+    
+</div>    
 <div id="license">
-<a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">GDD 2011 HTML5 doodle</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/russenreaktor/gddHTML5doodle" property="cc:attributionName" rel="cc:attributionURL">Kay Schneider, Misha Matiyenko-Kupriyanov, Hanno E. Allen</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
+	<a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">GDD 2011 HTML5 doodle</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/russenreaktor/gddHTML5doodle" property="cc:attributionName" rel="cc:attributionURL">Kay Schneider, Misha Matiyenko-Kupriyanov, Hanno E. Allen</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
 <div>
 
-<video id="videoHanno" class="-video" loop="true"   volume="0" autobuffer="true" preload  style="display:none">
-			Your browser does not support the <code>video</code> element.
-		 <source  muted src="media/hanno.m4v" type="video/mp4"/>
-</video>
-<video id="videoMisha" class="-video"  loop="true"   volume="0" autobuffer="true" preload  style="display:none">
-			Your browser does not support the <code>video</code> element.
-		 <source  muted src="media/misha.m4v" type="video/mp4"/>
-</video>
+	<video id="videoHanno" class="-video" loop="true"   volume="0" autobuffer="true" preload  style="display:none">
+				Your browser does not support the <code>video</code> element.
+			 <source  muted src="media/hanno.m4v" type="video/mp4"/>
+	</video>
+	<video id="videoMisha" class="-video"  loop="true"   volume="0" autobuffer="true" preload  style="display:none">
+				Your browser does not support the <code>video</code> element.
+			 <source  muted src="media/misha.m4v" type="video/mp4"/>
+	</video>
 </div>
 
 </body>

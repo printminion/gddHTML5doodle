@@ -11,8 +11,17 @@
 
 video {
     height:250px;
-    
 }
+
+a {
+	color: #4076A1;
+	text-decoration: none;
+}
+
+a:HOVER {
+	text-decoration: underline;
+}
+
 body {
 	overflow: hidden;
 	font-family: 'Rationale', cursive;
@@ -28,15 +37,31 @@ body {
 	height: 100%;
 }
 
+#menu {
+}
+
+
 input[type="range"] {
 	height: 10px;
 	cursor: pointer;
 	width: auto;
-	background-color: #e4e4e4;
+	background-color: #77A2D9;
 }
 
 #steps button.selected {
 	font-weight: bold;;
+}
+
+#btnBuzzer {
+position: absolute;
+bottom: -46px;
+left: 50%;
+width: 200px;
+height: 30px;
+margin-left: -100px;
+/*
+	-webkit-gradient(linear, 0% 0%, 0% 100%, from(#77A2D9), to(#4076A1), color-stop(.6,#4987B8));
+*/		
 }
 
 body.day .background {
@@ -74,14 +99,14 @@ body.grey .background {
 		0%, rgba(100, 100, 100, 1.0) 100% );
 }
 
-#main {
+#persons {
 	position: absolute;
-	width: 800px;
+	width: 400px;
 	height: 100px;
 	left: 50%;
 	top: 50%;
-	margin-left: -400px;
-	margin-top: 180px;
+	margin-left: -200px;
+	margin-top: -28px;
 	text-align: center;
 	-webkit-perspective: 600px;
 	-webkit-perspective-origin: 50% 25%;
@@ -89,27 +114,29 @@ body.grey .background {
 	-webkit-perspective-origin-y: 25%;
 }
 
-#main>section>h3 {
+#persons>section>h3 {
 	position: absolute;
-	top: 40px;
+	bottom: 0px;
 	width: 100%;
 	height: 30px;
 	margin: 0 auto;
 }
 
-#main>section>a {
+#persons>section>a {
 	position: absolute;
-	top: 60px;
-	width: 100%;
-	height: 30px;
+	bottom: -20px;
+	width: 240px;
+	height: 24px;
 	margin: 0 auto;
+	left: 50%;
+	margin-left: -120px;
 }
 
-#main>section,#main>section>section {
+#persons>section,#persons>section>section {
 	display: none;
 	position: absolute;
 	width: 100%;
-	min-height: 600px;
+	min-height: 248px;
 	-webkit-transform-style: preserve-3d;
 	-webkit-transition: all 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
 	-moz-transition: all 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
@@ -117,32 +144,39 @@ body.grey .background {
 	transition: all 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
 }
 
-#main section.past {
+#persons section.past {
 	display: block;
 	opacity: 0;
+	/*
 	-webkit-transform: translate3d(-100%, 0, 0) rotateY(-90deg)
 		translate3d(-100%, 0, 0);
+		*/
+	-webkit-transform: translate3d(0, 0, 0) rotateX(90deg) translate3d(0, -513px, 0);
+		
 }
 
-#main section.current {
+#persons section.current {
 	display: block;
 }
 
-#main section.future {
+#persons section.future {
 	display: block;
 	opacity: 0;
+	/*
 	-webkit-transform: translate3d(100%, 0, 0) rotateY(90deg)
-		translate3d(100%, 0, 0);
+		translate3d(100%, 0, 0);*/
+		
+	-webkit-transform: translate3d(0, 127px, 0) rotateX(-43deg) translate3d(0, 185%, 0);
 }
 
-#main section>section.past {
+#persons section>section.past {
 	display: block;
 	opacity: 0;
 	-webkit-transform: translate3d(0, -50%, 0) rotateX(70deg)
 		translate3d(0, -50%, 0);
 }
 
-#main section>section.future {
+#persons section>section.future {
 	display: block;
 	opacity: 0;
 	-webkit-transform: translate3d(0, 50%, 0) rotateX(-70deg)
@@ -152,7 +186,7 @@ body.grey .background {
 /*********************************************
  * DEFAULT ELEMENT STYLES
  *********************************************/
-#main>section {
+#persons>section {
 	line-height: 1.2em;
 	text-shadow: 0px 0px 2px #fff, 0px 0px 4px #bbb;
 	font-weight: 600;
@@ -197,7 +231,7 @@ h1,h2,h3,h4 {
 }
 
 #toolbox {
-	background-color: #e4e4e4;
+	background-color: #77A2D9;
 	padding: 5px;
 	position: absolute;
 	top: 0px;
@@ -259,6 +293,7 @@ div#icosahedron.plane {
 	-webkit-perspective-origin-y: 39%;
 	margin-top: -250px;
 	margin-left: -500px;
+        -webkit-transition-duration: 1s;
 	
 }
 
@@ -620,6 +655,9 @@ css for the info box german stars
 	margin: 0px;
 	padding: 0px;
 	-webkit-transform: scaleY(-1);
+}
+#container .leftNyan {
+    left: 20%;
 }
 
 #cube {

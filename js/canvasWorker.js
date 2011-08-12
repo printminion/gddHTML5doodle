@@ -32,7 +32,6 @@ var canvasWorker = function () {
         founded: 'X-rays'
     };
     
-    
     this.people[3] = {
         name: 'Konrad Zuse',
         dynmapId:'23', 
@@ -170,7 +169,6 @@ var canvasWorker = function () {
         founded: 'Research and experiment for vacuums'
     };
     
-
     
     //http://de.wikipedia.org/wiki/Melitta_Bentz
                                  
@@ -274,7 +272,7 @@ canvasWorker.prototype.createCanvas = function (id, peopleObj) {
 
 canvasWorker.prototype.toggleBackToWorld = function () {
     //stop timeout
-   window.clearTimeout(this.timeout);
+    window.clearTimeout(this.timeout);
     //removes all the pictures
      var infoBox = document.getElementById('humanInfo');
      infoBox.style.display = 'none';
@@ -289,6 +287,7 @@ canvasWorker.prototype.printPeopleInfo = function (humanObj) {
    
     this.onPersonUpdate(humanObj);
      
+    return;
 	 
     //build here the human info
     var infoBox = document.getElementById('humanInfo');
@@ -328,7 +327,14 @@ canvasWorker.prototype.printPeople = function() {
         this.printPeopleInfo(this.people[this.currentPeopleIndex]);
         this.currentPeopleIndex++;
         this.timeout = window.setTimeout("canvasObj.printPeople()", 5000);
-    }//
+    } 
+    if(this.currentPeopleIndex == this.people.length) {
+            var evt = document.createEvent("Events")
+            //Aim: initialize it to be the event we want
+            evt.initEvent('humanShowEnded', true, true); //true for can bubble, true for cancelable
+            window.document.dispatchEvent(evt);
+    }
+    
     if(this.currentPeopleIndex == this.showBuzzerId) {
         try {
             var buzzer = document.getElementById(this.buzzerId);

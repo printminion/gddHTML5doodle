@@ -118,10 +118,15 @@ function step2() {
 	$('#container').css('-webkit-transform', 'rotateX(0deg) rotateY(0deg)');
 
 	// starting roate, adding spinanimation
-	document.getElementById('shape-container').style.webkitAnimation = "spinanimation 10s infinite linear";
+	spinEnable(true);
+	
 	/*
 	 * start showing "superstars"
 	 */
+        window.addEventListener('humanShowEnded', function() {
+            //wait 20sec and show step3
+            window.setTimeout("step(3)", 40000);
+        }, false); // humanShowEnded
 	window.canvasObj.printPeople();
 
 	/*
@@ -129,6 +134,10 @@ function step2() {
          * this is implementated :) todo:make buzzer nice ;) 
 	 */
 
+}
+
+function spinEnable(spin) {
+	document.getElementById('shape-container').style.webkitAnimation = spin ? "spinanimation 10s infinite linear" : '';
 }
 
 function undoStep2() {
@@ -140,6 +149,7 @@ function undoStep2() {
 }
 
 function step3() {
+     
 	if (currentState != "3d") {
 		changeShape('3d');
 	}
@@ -154,8 +164,16 @@ function step3() {
 	 * move earth - to the left
 	 */
         
+
+        
+        console.log($('#container'));
         document.getElementById('shape-container').style.webkitAnimation = "spinanimation 10s infinite linear";
-         
+        
+        $('#container').addClass('leftNyan');
+
+	$('#persons section.current').attr('class', 'past');
+	
+    
 	/*
 	 * add 3 videos of us
 	 */
@@ -177,6 +195,7 @@ function step3() {
 
 function undoStep3() {
 	window.nightStar.toggleDayNight();
+         $('#container').removeClass('leftNyan');
 	document.getElementById('nyannyan').style.display = 'none';
         window.videoObj.removeVideos();
         document.getElementById('shape-container').style.webkitAnimation = '';
@@ -291,11 +310,13 @@ function init() {
 	 */
 
 	for (i in window.canvasObj.people) {
-		$('#main')
+		$('#persons')
 				.append(
 						'<section id="person'
 								+ window.canvasObj.people[i].dynmapId
-								+ '" class="future"><h3>'
+								+ '" class="future">'
+								+ '<img src="' + window.canvasObj.people[i].picUrl + '" width="150"/>'
+								+ '<h3>'
 								+ window.canvasObj.people[i].name
 								+ '</h3><a href="'
 								+ window.canvasObj.people[i].wikiUrl
