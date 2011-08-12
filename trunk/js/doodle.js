@@ -48,16 +48,22 @@ function step(n) {
 	}
 
 }
+function startAgain(audioEl) {
+ 
+                    audioEl.currentTime = 0;
 
-function playPreloadSound() {
+            
+}
+function playPreloadSound(stop) {
 	audioElement = document.getElementById('audio');
-
-	audioElement.addEventListener('ended', function() {
-		this.currentTime = 0;
-                this.noteOff(0);
-	}, false);
-	audioElement.play();
-
+        if(stop != undefined) {
+            
+            audioElement.removeEventListener('ended', startAgain, true);
+        }
+        else {
+            audioElement.addEventListener('ended', startAgain(this), false);
+            audioElement.play();
+        }
 }
 function undoLastStep(n) {
 	switch (n) {
@@ -252,6 +258,7 @@ function showDebugBorder() {
  * here we can add some magic functions. we can wait until four our five things are loaded and say: "hey im ready"
  */
 function kickstart() {
+    playPreloadSound('stop');
     step1();
     debugAdd('now im starting');
 }
@@ -274,7 +281,7 @@ function init() {
 	/*
 	 * play preload sound
 	 */
-	// playPreloadSound();
+	playPreloadSound();
 	// init the people class :P
 	window.canvasObj = new canvasWorker();
 	window.nightStar = new nightStar();
