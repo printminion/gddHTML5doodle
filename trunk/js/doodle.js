@@ -123,6 +123,10 @@ function step2() {
 	/*
 	 * start showing "superstars"
 	 */
+        window.addEventListener('humanShowEnded', function() {
+            //wait 20sec and show step3
+            window.setTimeout("step(3)", 40000);
+        }, false); // humanShowEnded
 	window.canvasObj.printPeople();
 
 	/*
@@ -145,6 +149,7 @@ function undoStep2() {
 }
 
 function step3() {
+     
 	if (currentState != "3d") {
 		changeShape('3d');
 	}
@@ -159,8 +164,11 @@ function step3() {
 	 * move earth - to the left
 	 */
         
+        
+        console.log($('#container'));
         document.getElementById('shape-container').style.webkitAnimation = "spinanimation 10s infinite linear";
-         
+        
+        $('#container').addClass('leftNyan');
 	/*
 	 * add 3 videos of us
 	 */
@@ -182,6 +190,7 @@ function step3() {
 
 function undoStep3() {
 	window.nightStar.toggleDayNight();
+         $('#container').removeClass('leftNyan');
 	document.getElementById('nyannyan').style.display = 'none';
         window.videoObj.removeVideos();
         document.getElementById('shape-container').style.webkitAnimation = '';

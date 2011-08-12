@@ -272,7 +272,7 @@ canvasWorker.prototype.createCanvas = function (id, peopleObj) {
 
 canvasWorker.prototype.toggleBackToWorld = function () {
     //stop timeout
-   window.clearTimeout(this.timeout);
+    window.clearTimeout(this.timeout);
     //removes all the pictures
      var infoBox = document.getElementById('humanInfo');
      infoBox.style.display = 'none';
@@ -327,7 +327,13 @@ canvasWorker.prototype.printPeople = function() {
         this.printPeopleInfo(this.people[this.currentPeopleIndex]);
         this.currentPeopleIndex++;
         this.timeout = window.setTimeout("canvasObj.printPeople()", 5000);
-    }//
+    } 
+    if(this.currentPeopleIndex == this.people.length) {
+            var evt = document.createEvent("Events")
+            //Aim: initialize it to be the event we want
+            evt.initEvent('humanShowEnded', true, true); //true for can bubble, true for cancelable
+            window.document.dispatchEvent(evt);
+    }
     
     if(this.currentPeopleIndex == this.showBuzzerId) {
         try {
