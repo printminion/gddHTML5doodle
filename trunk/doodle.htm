@@ -19,7 +19,7 @@
 
 </head>
 <body  class="day" onload="init()">
-<div id="body" class="r">
+<div id="body">
 <div class="background" id="background"><!--  --></div>
 
 <audio id="audio" preload>
@@ -28,7 +28,8 @@
 
 
 <div id="toolbox">
-
+<details id="menu">
+  <summary>menu</summary>
 <details>
   <summary>Position</summary>
 
@@ -54,12 +55,12 @@
   <button id="btnStep6" onclick="step(6)">step 6</button><br/>
   <button id="btnStep7" onclick="step(7)">step 7</button><br/>
 </details>
-
+</details>
 
 </div>
 
 
-<div id="container" class="r">
+<div id="container" style="border: 1px solid transparent;">
 <div id="shape-container" class="shape-container">
 <div id="shape" class="shape">
     
@@ -138,17 +139,17 @@
 </div>
 
 <div id="license">
-<a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">GDD 2011 HTML5 doodle</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/russenreaktor/gddHTML5doodle" property="cc:attributionName" rel="cc:attributionURL">Kay Schneider, Misha Matiyenko-Kupriyanov, Hanno E. Allen</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
+	<a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">GDD 2011 HTML5 doodle</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/russenreaktor/gddHTML5doodle" property="cc:attributionName" rel="cc:attributionURL">Kay Schneider, Misha Matiyenko-Kupriyanov, Hanno E. Allen</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
 <div>
 
-<video id="videoHanno" class="-video" loop="true"   volume="0" autobuffer="true" preload  style="display:none">
-			Your browser does not support the <code>video</code> element.
-		 <source  muted src="media/hanno.m4v" type="video/mp4"/>
-</video>
-<video id="videoMisha" class="-video"  loop="true"   volume="0" autobuffer="true" preload  style="display:none">
-			Your browser does not support the <code>video</code> element.
-		 <source  muted src="media/misha.m4v" type="video/mp4"/>
-</video>
+	<video id="videoHanno" class="-video" loop="true"   volume="0" autobuffer="true" preload  style="display:none">
+				Your browser does not support the <code>video</code> element.
+			 <source  muted src="media/hanno.m4v" type="video/mp4"/>
+	</video>
+	<video id="videoMisha" class="-video"  loop="true"   volume="0" autobuffer="true" preload  style="display:none">
+				Your browser does not support the <code>video</code> element.
+			 <source  muted src="media/misha.m4v" type="video/mp4"/>
+	</video>
 </div>
 
 </body>

@@ -11,8 +11,8 @@
 
 video {
     height:250px;
-    
 }
+
 body {
 	overflow: hidden;
 	font-family: 'Rationale', cursive;
@@ -27,6 +27,10 @@ body {
 	width: 100%;
 	height: 100%;
 }
+
+#menu {
+}
+
 
 input[type="range"] {
 	height: 10px;
