@@ -664,3 +664,29 @@ css for the info box german stars
 #cube {
 	
 }
+
+#credits {
+    width:400px;
+    height:400px;
+    overflow:hidden;
+    position:absolute;
+    right:20px;
+    top:100px;
+}
+
+#creditCont .absatz {
+    margin-top:400px;
+}
+#creditCont {
+     position:relative;
+    -webkit-transition: all 2s;
+}
+#creditCont.cdown {
+   
+    top:400px;
+    
+}
+
+#creditCont.cup {
+    top:-300px;
+}
