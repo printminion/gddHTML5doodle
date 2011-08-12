@@ -395,101 +395,101 @@ div#icosahedron div {
 
 */
 #p01.plane {
-	-webkit-transform: translateX(259px) translateY(-116px) rotateZ(57deg);
+	-webkit-transform: translateX(-241px) translateY(-116px) rotateZ(57deg);
 }
 
 #p02.plane {
-	-webkit-transform: translateX(355px) translateY(-67px);
+	-webkit-transform: translateX(-145px) translateY(-67px);
 }
 
 #p03.plane {
-	-webkit-transform: translateX(451px) translateY(-116px) rotateZ(-58deg);
+	-webkit-transform: translateX(-49px) translateY(-116px) rotateZ(-58deg);
 }
 
 #p04.plane {
-	-webkit-transform: translateX(728px) translateY(-67px);
+	-webkit-transform: translateX(228px) translateY(-67px);
 }
 
 #p05.plane {
-	-webkit-transform: translateX(914px) translateY(-67px);
+	-webkit-transform: translateX(414px) translateY(-67px);
 }
 
 #p06.plane {
-	-webkit-transform: translateX(170px) translateY(47px);
+	-webkit-transform: translateX(-330px) translateY(47px);
 }
 
 #p07.plane {
-	-webkit-transform: translateX(356px) translateY(47px);
+	-webkit-transform: translateX(-144px) translateY(47px);
 }
 
 #p08.plane {
-	-webkit-transform: translateX(542px) translateY(47px);
+	-webkit-transform: translateX(42px) translateY(47px);
 }
 
 #p09.plane {
-	-webkit-transform: translateX(728px) translateY(47px);
+	-webkit-transform: translateX(228px) translateY(47px);
 }
 
 #p10.plane {
-	-webkit-transform: translateX(914px) translateY(47px);
+	-webkit-transform: translateX(414px) translateY(47px);
 }
 
 #p16.plane {
-	-webkit-transform: translateX(263px) translateY(103px);
+	-webkit-transform: translateX(-237px) translateY(103px);
 }
 
 #p17.plane {
-	-webkit-transform: translateX(449px) translateY(103px);
+	-webkit-transform: translateX(-51px) translateY(103px);
 }
 
 #p18.plane {
-	-webkit-transform: translateX(635px) translateY(103px);
+	-webkit-transform: translateX(135px) translateY(103px);
 }
 
 #p19.plane {
-	-webkit-transform: translateX(821px) translateY(103px);
+	-webkit-transform: translateX(321px) translateY(103px);
 }
 
 #p20.plane {
 	display: none;
-	-webkit-transform: translateX(1007px) translateY(103px);
+	-webkit-transform: translateX(507px) translateY(103px);
 }
 
 #p201.plane {
-	-webkit-transform: translateX(1007px) translateY(103px);
+	-webkit-transform: translateX(507px) translateY(103px);
 }
 
 #p202.plane {
-	-webkit-transform: translateX(70px) translateY(209px) rotateZ(-57deg);
+	-webkit-transform: translateX(-430px) translateY(209px) rotateZ(-57deg);
 }
 
 #p21.plane {
 	display: none;
-	-webkit-transform: translateX(253px) translateY(217px);
+	-webkit-transform: translateX(-247px) translateY(217px);
 }
 
 #p22.plane {
-	-webkit-transform: translateX(449px) translateY(217px);
+	-webkit-transform: translateX(-51px) translateY(217px);
 }
 
 #p23.plane {
-	-webkit-transform: translateX(635px) translateY(217px);
+	-webkit-transform: translateX(135px) translateY(217px);
 }
 
 #p24.plane {
-	-webkit-transform: translateX(733px) translateY(271px) rotateZ(-62deg);
+	-webkit-transform: translateX(233px) translateY(271px) rotateZ(-62deg);
 }
 
 #p25.plane {
-	-webkit-transform: translateX(167px) translateY(267px) rotateZ(-57deg);
+	-webkit-transform: translateX(-333px) translateY(267px) rotateZ(-57deg);
 }
 
 #p211.plane {
-	-webkit-transform: translateX(263px) translateY(217px);
+	-webkit-transform: translateX(-237px) translateY(217px);
 }
 
 #p212.plane {
-	-webkit-transform: translateX(354px) translateY(269px) rotateZ(-57deg);
+	-webkit-transform: translateX(-146px) translateY(269px) rotateZ(-57deg);
 }
 
 .circle-mask2 {
