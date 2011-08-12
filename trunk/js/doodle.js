@@ -164,11 +164,16 @@ function step3() {
 	 * move earth - to the left
 	 */
         
+
         
         console.log($('#container'));
         document.getElementById('shape-container').style.webkitAnimation = "spinanimation 10s infinite linear";
         
         $('#container').addClass('leftNyan');
+
+	$('#persons section.current').attr('class', 'past');
+	
+    
 	/*
 	 * add 3 videos of us
 	 */
