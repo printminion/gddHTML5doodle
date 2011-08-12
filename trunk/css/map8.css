@@ -8,7 +8,10 @@
 	}
 
 }
-
+video {
+    height:250px;
+    
+}
 body {
 	overflow: hidden;
 	font-family: 'Rationale', cursive;
@@ -514,10 +517,19 @@ div#icosahedron div {
 	mask: url("triangle#c1");
 	-webkit-mask-box-image: url("../images/triangle.svg");
 }
+.triangle-mask video {
+    margin-top: 0px;
+    margin-left: -70px
+}
 
 .triangle-mask-flipped {
 	mask: url("triangle#c1");
 	-webkit-mask-box-image: url("../images/triangle_flipped.svg");
+}
+
+.triangle-mask-flipped video {
+    margin-top: 0px;
+    margin-left: -70px
 }
 /*
 css for the info box german stars

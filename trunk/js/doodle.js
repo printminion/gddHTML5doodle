@@ -77,8 +77,9 @@ function step1() {
 	activeStep = 1;
 	/*
 	 * start music - 2257__Andrew_Duke__click1.wav
+         * stopp rotating
 	 */
-
+       
 	/*
 	 * map container z rotate => isometric image
 	 */
@@ -141,11 +142,16 @@ function step3() {
 	/*
 	 * move earth - to the left
 	 */
-
+        
+        
+         
 	/*
 	 * add 3 videos of us
 	 */
-
+        //i must found a way to check that the three videos of us are already in the browser cache
+        //fetch the video objects
+        //-vcontainer -video
+       window.videoObj.addVideos();
 	/*
 	 * add nyan cat - running around the globe
 	 */
@@ -163,6 +169,7 @@ function step3() {
 function undoStep3() {
 	window.nightStar.toggleDayNight();
 	document.getElementById('nyannyan').style.display = 'none';
+        window.videoObj.removeVideos();
 }
 
 function step4() {
@@ -241,12 +248,14 @@ function showDebugBorder() {
  * here we can add some magic functions. we can wait until four our five things are loaded and say: "hey im ready"
  */
 function kickstart() {
-    step1();
+    //step1();
+    debugAdd('now im starting');
 }
 
 function init() {
 	// fix an chrome bug, workaround
 	videoMuteHelper();
+    
         //adding here new eventListener, wait that all is loaded
         window.document.addEventListener('analyserLoaded', function() {debugAdd('loaded All')}, true);
         window.document.addEventListener('analyserBuffered', function() {kickstart();debugAdd('the buffer is ready')}, true);
@@ -265,7 +274,7 @@ function init() {
 	// init the people class :P
 	window.canvasObj = new canvasWorker();
 	window.nightStar = new nightStar();
-
+        window.videoObj = new videoDev();
 	/*
 	 * add people as html
 	 */
@@ -681,9 +690,18 @@ function changeShape(type) {
 
 		$('#icosahedron').removeClass('d3').addClass('plane');
 		$('div#icosahedron div').removeClass('d3').addClass('plane');
-
+                /*stop rotateing in plane
+                 ***/
+                document.getElementById('shape-container').style.webkitAnimation = "";
 	}
 
+}
+/**
+ *this method shows the developer videos from us in the world
+ *but im very tired
+ */
+function addDeveloperVideos() {
+    
 }
 
 /*
