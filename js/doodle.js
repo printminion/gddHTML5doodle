@@ -254,14 +254,10 @@ var p01, p02, p03, p04, p05, p06, p07, p08, p09, p10, p11, p12, p13, p14, p15, p
 var audioElement;
 
 function removeDebugBorder() {
-	/*var d = $('.d');
-	var g = $('.g');
-	var r = $('.r');*/
 
 	try {
-		$('#logo').bind('click', function() {
-			showDebugBorder();
-		});
+            document.getElementById('logo').addEventListener('click', showDebugBorder, false);
+	
 	} catch (e) {
 
 	}
