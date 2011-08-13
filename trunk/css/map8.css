@@ -78,6 +78,34 @@ background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 1000, from(rgba(
 		0%, rgba(100, 100, 100, 1.0) 100% );*/
 }
 
+.loader {
+    position:absolute;
+    top:0px;left:0px;
+   background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 1000, from(rgba(0,28,79, 0.1) ), to(rgba(0,28,79, 0.5) ) );
+    width:100%;
+    height:110%;
+    z-index:1000;
+    display:block
+}
+
+.bootkonsole {
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:250px;
+    height:100px;
+    margin-left:-125px;
+    margin-top:-100px;
+    background-color:grey;
+    color: black;
+    overflow:hidden;
+}
+.bootkonsole p {
+    margin-left:10px;
+    color: white;
+    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 1000, from(rgba(165,217,239, 0.1) ), to(rgba(165,217,239, 0.2) ) );
+}
+
 body.night .background {
 background: url('../images/day-night-bg.png');
 background-position: 0 0px;

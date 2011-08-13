@@ -13,6 +13,7 @@ var activeStep = 0;
 //all global timeouts 
 var timeOutStep1 = undefined;
 var timeout2 = undefined;
+var loader = undefined;
 function step(n) {
 	/*
 	 * undo if possible & neccessary an old state
@@ -278,18 +279,31 @@ function showDebugBorder() {
  * here we can add some magic functions. we can wait until four our five things are loaded and say: "hey im ready"
  */
 function kickstart() {
+    showBootstrap('stop');
     playPreloadSound('stop');
     step(1);
     debugAdd('now im starting');
 }
-
+function showBootstrap(stop) {
+    
+    var wait = document.getElementById('loadingIndicator');
+    if(stop == undefined) {
+        console.log("wqit");
+        wait.style.display = 'block';
+        loader = 'active';
+    } else {
+        loader = undefined;
+        wait.style.display = 'none';
+    }
+}
 function init() {
 	// fix an chrome bug, workaround
 	videoMuteHelper();
-    
+        //show wait 
+        showBootstrap();
         //adding here new eventListener, wait that all is loaded
         window.document.addEventListener('analyserLoaded', function() {debugAdd('loaded All.. now building BufferArray')}, true);
-        window.document.addEventListener('analyserBuffered', function() {kickstart();debugAdd('the buffer is ready')}, true);
+        window.document.addEventListener('analyserBuffered', function() { /*kickstart()*/;debugAdd('the buffer is ready')}, true);
         window.document.addEventListener('analyserCriticalError', function() {alert('the mp3 is not found, maybe a network error?')}, true);
 	// remove the debug border analyserCriticalError
 	removeDebugBorder();
@@ -758,6 +772,19 @@ function debugShow(msg) {
 		}
 		break;
 	}
+        if(loader != undefined) {
+            /**
+             * show bootstrap
+             */
+            try {
+			var debugContainer = document.getElementById('boot');
+			var node = document.createElement('p');
+			node.innerHTML = msg;
+			debugContainer.insertBefore(node, debugContainer.firstChild);
+		} catch (e) {
+
+		}
+        }
 
 }
 function debugAdd(msg) {
