@@ -1,0 +1,662 @@
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; UTF-8"> 
+  <title>.</title> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+  
+  <style> 
+ 
+@
+-webkit-keyframes spinanimation { 0% {
+	-webkit-transform: rotateY(0);
+}
+ 
+100% {
+-webkit-transform: rotateY(360deg);}
+}
+body {
+	-webkit-perspective: 800;
+	-webkit-perspective-origin: 50% 30%;
+	overflow: hidden;
+	height: 600px;
+}
+ 
+ 
+#toolbox {
+background: #e4e4e4;
+padding: 2px;
+}
+ 
+details {
+	z-index: 2;
+}
+ 
+.shape-container {
+	-webkit-transform-style: preserve-3d;
+	-webkit-animation: spinanimation 10s infinite linear;
+	border: 1px solid green;
+	width: 220px;
+	height: 200px;
+	margin: 0 auto;
+}
+ 
+#shape.shape {
+	position: relative;
+	margin: 0 auto;
+	-webkit-transform-style: preserve-3d;
+	box-shadow: 20px 0 20px rgba(0, 0, 0, 0.8);
+}
+ 
+div#icosahedron.d3 {
+ 
+	top: 160px;
+	left: 0px;
+}
+ 
+div#icosahedron.plane {
+	top: 160px;
+	left: -500px;
+}
+ 
+ 
+#icosahedron {
+	position: absolute;
+	-webkit-transform-style: preserve-3d;
+}
+ 
+#container {
+	height: 100%;
+	border: 1px solid #e4e4e4;
+	background-position: center;
+	background-repeat: no-repeat;
+ 
+}
+ 
+.container { /* position: relative;
+top: 160px;
+margin: 0 auto;
+width: 400px;
+height: 400px;
+border: 1px solid red; */
+ 
+}
+ 
+.container2 {
+	-webkit-transform-style: preserve-3d;
+	-webkit-animation: spinanimation 10s infinite linear;
+	position: relative;
+	top: 160px;
+	margin: 0 auto;
+	width: 200px;
+}
+ 
+summary {
+	cursor: pointer;
+}
+ 
+div#icosahedron div {
+	-webkit-backface-visibility: visible;
+	position: absolute;
+	width: 240px;
+	height: 220px;
+	-webkit-transition: all .4s;
+}
+ 
+.r {
+	border: 1px solid #ff0000;
+}
+ 
+.g {
+	border: 1px solid #00ff00;
+}
+ 
+.hd {
+	display: none;
+}
+ 
+/* img:hover{
+      -webkit-transform: translateZ(0px);
+    }
+*/
+.a {
+	-webkit-transform:
+}
+ 
+ 
+ 
+#p01.d3 {
+	-webkit-transform: rotateY(0deg) rotateX(52.5deg) translateZ(140px);
+}
+ 
+#p02.d3 {
+	-webkit-transform: rotateY(72deg) rotateX(52.5deg) translateZ(140px);
+}
+ 
+#p03.d3 {
+	-webkit-transform: rotateY(144deg) rotateX(52.5deg) translateZ(140px);
+}
+ 
+#p04.d3 {
+	-webkit-transform: rotateY(216deg) rotateX(52.5deg) translateZ(140px);
+}
+ 
+#p05.d3 {
+	-webkit-transform: rotateY(288deg) rotateX(52.5deg) translateZ(140px);
+}
+ 
+#p06.d3 {
+	-webkit-transform: rotateY(0deg) rotateX(11deg) translateZ(140px);
+}
+ 
+#p07.d3 {
+	-webkit-transform: rotateY(72deg) rotateX(11deg) translateZ(140px);
+}
+ 
+#p08.d3 {
+	-webkit-transform: rotateY(144deg) rotateX(11deg) translateZ(140px);
+}
+ 
+#p09.d3 {
+	-webkit-transform: rotateY(216deg) rotateX(11deg) translateZ(140px);
+}
+ 
+#p10.d3 {
+	-webkit-transform: rotateY(288deg) rotateX(11deg) translateZ(140px);
+}
+ 
+#p16.d3 {
+	-webkit-transform: rotateY(36deg) rotateX(-11deg) translateZ(140px);
+}
+ 
+#p17.d3 {
+	-webkit-transform: rotateY(108deg) rotateX(-11deg) translateZ(140px);
+}
+ 
+#p18.d3 {
+	-webkit-transform: rotateY(180deg) rotateX(-11deg) translateZ(140px);
+}
+ 
+#p19.d3 {
+	-webkit-transform: rotateY(252deg) rotateX(-11deg) translateZ(140px);
+}
+ 
+#p20.d3 {
+	display: block;
+	-webkit-transform: rotateY(324deg) rotateX(-11deg) translateZ(140px);
+}
+ 
+#p201.d3 {
+	display: none;
+}
+ 
+#p202.d3 {
+	display: none;
+}
+ 
+ 
+#p21.d3 {
+	-webkit-transform: rotateY(34deg) rotateX(-52.6deg) translateZ(140px);
+}
+ 
+#p22.d3 {
+	-webkit-transform: rotateY(108deg) rotateX(-52.6deg) translateZ(140px);
+}
+ 
+#p23.d3 {
+	-webkit-transform: rotateY(180deg) rotateX(-52.6deg) translateZ(140px);
+}
+ 
+#p24.d3 {
+	-webkit-transform: rotateY(252deg) rotateX(-52.6deg) translateZ(140px);
+}
+ 
+#p25.d3 {
+	-webkit-transform: rotateY(324deg) rotateX(-52.6deg) translateZ(140px);
+}
+ 
+#p211.d3 {
+	display: none;
+}
+ 
+#p212.d3 {
+	display: none;
+}
+ 
+ 
+/*
++166
+170, 260, 336px, 502px
+ 
+47px
+ 
+*/
+#p01.plane{
+	-webkit-transform: translateX(259px) translateY(-116px) rotateZ(57deg);
+}
+ 
+#p02.plane {
+-webkit-transform: translateX(356px) translateY(-65px);
+}
+ 
+#p03.plane {
+-webkit-transform: translateX(453px) translateY(-118px)  rotateZ(-58deg);
+}
+ 
+#p04.plane {
+-webkit-transform: translateX(728px) translateY(-65px);
+}
+ 
+#p05.plane {
+-webkit-transform: translateX(914px) translateY(-65px);
+}
+ 
+ 
+ 
+#p06.plane {
+-webkit-transform: translateX(170px) translateY(47px);
+}
+ 
+#p07.plane {
+-webkit-transform: translateX(356px) translateY(47px);
+}
+ 
+#p08.plane {
+-webkit-transform: translateX(542px) translateY(47px);
+}
+ 
+#p09.plane {
+-webkit-transform: translateX(728px) translateY(47px);
+}
+ 
+#p10.plane {
+-webkit-transform: translateX(914px) translateY(47px);
+}
+ 
+ 
+#p16.plane {
+-webkit-transform: translateX(263px) translateY(103px);
+}
+ 
+#p17.plane {
+-webkit-transform: translateX(449px) translateY(103px);
+}
+ 
+#p18.plane {
+-webkit-transform: translateX(635px) translateY(103px);
+}
+ 
+#p19.plane {
+-webkit-transform: translateX(821px) translateY(103px);
+}
+ 
+#p20.plane {
+display: none;
+-webkit-transform: translateX(1007px) translateY(103px);
+}
+ 
+ 
+ 
+#p201.plane {
+-webkit-transform: translateX(1007px) translateY(103px);
+}
+ 
+#p202.plane {
+-webkit-transform: translateX(70px) translateY(209px) rotateZ(-57deg);
+}
+ 
+#p21.plane {
+display: none;
+-webkit-transform: translateX(253px) translateY(217px);
+}
+ 
+ 
+ 
+ 
+#p22.plane {
+-webkit-transform: translateX(449px) translateY(217px);
+}
+ 
+#p23.plane {
+-webkit-transform: translateX(635px) translateY(217px);
+}
+ 
+#p24.plane {
+-webkit-transform: translateX(733px) translateY(271px) rotateZ(-62deg);
+}
+ 
+#p25.plane {
+ 
+-webkit-transform: translateX(167px) translateY(267px) rotateZ(-57deg);
+}
+ 
+#p211.plane {
+-webkit-transform: translateX(263px) translateY(217px);
+}
+ 
+#p212.plane {
+-webkit-transform: translateX(354px) translateY(269px) rotateZ(-57deg);
+}
+.circle-mask2 {
+	-webkit-mask-image: url(mask.png);
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-size: 100% 100%;
+	-webkit-transform: matrix3d(0.64, 0, 0.64, 0, 0, 0.83, 0, 0, -0.53, 0, 0.76, 0, 0, 0, 0, 1);
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-timing-function: cubic-bezier(0, 0, 0.58, 1);
+}
+</style> 
+ 
+<script type="text/javascript" src="music.js"></script> 
+<script type="text/javascript"> 
+var translateZDefault = 140;
+var currentState = 'plane';
+ 
+var p01, p02, p03, p04, p05, p06, p07, p08, p09, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p211, p212, p201, p202 = undefined;
+ 
+var rotateYValue, rotateXValue, translateZValue = 0;
+var container = undefined;
+ 
+function init() {
+ 
+	 document.getElementById('translateZ').value = translateZDefault;
+ 
+	 rotateYValue = document.getElementById('rotateY').value;
+	 rotateXValue = document.getElementById('rotateX').value;
+	 translateZValue = document.getElementById('translateZ').value;
+ 
+	 container = document.getElementById('shape');
+ 
+	 p01 = document.getElementById('p01');
+	 p02 = document.getElementById('p02');
+	 p03 = document.getElementById('p03');
+	 p04 = document.getElementById('p04');
+	 p05 = document.getElementById('p05');
+	 p06 = document.getElementById('p06');
+	 p07 = document.getElementById('p07');
+	 p08 = document.getElementById('p08');
+	 p09 = document.getElementById('p09');
+	 p10 = document.getElementById('p10');
+	 p11 = document.getElementById('p11');
+	 p12 = document.getElementById('p12');
+	 p13 = document.getElementById('p13');
+	 p14 = document.getElementById('p14');
+	 p15 = document.getElementById('p15');
+	 p16 = document.getElementById('p16');
+	 p17 = document.getElementById('p17');
+	 p18 = document.getElementById('p18');
+	 p19 = document.getElementById('p19');
+	 p20 = document.getElementById('p20');
+	 
+	 p211 = document.getElementById('p211');
+	 p212 = document.getElementById('p212');
+	 
+	 p201 = document.getElementById('p201');
+	 p202 = document.getElementById('p202');
+	 
+ 
+ 
+ 
+	 document.getElementById('rotateY').addEventListener('change', function(e) {
+	rotateYValue = this.valueAsNumber;
+ 
+	document.getElementById('rotateYValue').innerText = rotateYValue;
+ 
+ 
+	container.style.webkitTransform = 'rotateY(' + rotateYValue + 'deg)';
+ 
+}, false);
+ 
+ 
+document.getElementById('rotateX').addEventListener('change', function(e) {
+	rotateXValue = this.valueAsNumber;
+ 
+	document.getElementById('rotateXValue').innerText = rotateXValue;
+ 
+/*
+	var p01 = document.getElementById('p01');
+	p01.style.webkitTransform = 'rotateX(' + rotateXValue + 'deg) rotateY(0deg) translateZ(' + translateZValue + 'px)';
+ 
+	var p03 = document.getElementById('p03');
+	p03.style.webkitTransform = 'rotateX(' + rotateXValue + 'deg) rotateY(72deg) translateZ(' + translateZValue + 'px)';
+ 
+	var p05 = document.getElementById('p05');
+	p05.style.webkitTransform = 'rotateX(' + rotateXValue + 'deg) rotateY(144deg) translateZ(' + translateZValue + 'px)';
+*/
+ 
+ 
+ 
+}, false);
+ 
+ 
+ 
+document.getElementById('translateZ').addEventListener('change', function(e) {
+ 
+	translateZValue = this.valueAsNumber;
+	document.getElementById('translateZValue').innerText = translateZValue;
+ 
+	updateZ(translateZValue);
+ 
+}, false);
+}
+ 
+ 
+function resetCanvas(){
+ 
+}
+ 
+function updateCanvas(percent) {
+	updateZ(translateZValue + percent);
+ 
+}
+ 
+function updateZ(transZ) {
+ 
+	if (currentState == '3d') {
+		
+	p01.style.webkitTransform = ' rotateY(0deg) rotateX(52.5deg) translateZ(' + transZ  + 'px) ';
+	p02.style.webkitTransform = ' rotateY(72deg)rotateX(52.5deg) translateZ(' + transZ  + 'px) ';
+	p03.style.webkitTransform = ' rotateY(144deg) rotateX(52.5deg) translateZ(' + transZ  + 'px) ';
+	p04.style.webkitTransform = ' rotateY(216deg) rotateX(52.5deg)  translateZ(' + transZ  + 'px) ';
+	p05.style.webkitTransform = ' rotateY(288deg) rotateX(52.5deg)  translateZ(' + transZ  + 'px) ';
+ 
+    p06.style.webkitTransform = ' rotateY(0deg) rotateX(11deg)  translateZ(' + transZ  + 'px) ';
+	p07.style.webkitTransform = ' rotateY(72deg) rotateX(11deg)  translateZ(' + transZ  + 'px) ';
+	p08.style.webkitTransform = ' rotateY(144deg) rotateX(11deg)  translateZ(' + transZ  + 'px) ';
+	p09.style.webkitTransform = ' rotateY(216deg) rotateX(11deg)  translateZ(' + transZ  + 'px) ';
+	p10.style.webkitTransform = ' rotateY(288deg) rotateX(11deg)  translateZ(' + transZ  + 'px) ';
+ 
+	p16.style.webkitTransform = ' rotateY(36deg) rotateX(-11deg)  translateZ(' + transZ  + 'px) ';
+	p17.style.webkitTransform = ' rotateY(108deg) rotateX(-11deg)  translateZ(' + transZ  + 'px) ';
+	p18.style.webkitTransform = ' rotateY(180deg) rotateX(-11deg)  translateZ(' + transZ  + 'px) ';
+	p19.style.webkitTransform = ' rotateY(252deg) rotateX(-11deg)  translateZ(' + transZ  + 'px) ';
+	p20.style.webkitTransform = ' rotateY(324deg) rotateX(-11deg)  translateZ(' + transZ  + 'px) ';
+ 
+	p21.style.webkitTransform = ' rotateY(34deg) rotateX(-52.5deg)  translateZ(' + transZ  + 'px) ';
+	p22.style.webkitTransform = ' rotateY(108deg) rotateX(-52.5deg)  translateZ(' + transZ  + 'px) ';
+	p23.style.webkitTransform = ' rotateY(180deg) rotateX(-52.5deg)  translateZ(' + transZ  + 'px) ';
+	p24.style.webkitTransform = ' rotateY(252deg) rotateX(-52.5deg)  translateZ(' + transZ  + 'px) ';
+	p25.style.webkitTransform = ' rotateY(324deg) rotateX(-52.5deg)  translateZ(' + transZ  + 'px) ';
+	
+	
+	} else {
+ 
+		p01.style.webkitTransform = ' translateX(259px) translateY(-116px)  rotateZ(57deg) translateZ(' + transZ  + 'px) ';
+		p02.style.webkitTransform = 'translateX(356px) translateY(-65px) translateZ(' + transZ  + 'px) ';
+		p03.style.webkitTransform = 'translateX(453px) translateY(-118px)  rotateZ(-58deg) translateZ(' + transZ  + 'px) ';
+		p04.style.webkitTransform = 'translateX(728px) translateY(-65px) translateZ(' + transZ  + 'px) ';
+		p05.style.webkitTransform = 'translateX(914px) translateY(-65px) translateZ(' + transZ  + 'px) ';
+ 
+		p06.style.webkitTransform = 'translateX(170px) translateY(47px) translateZ(' + transZ  + 'px) ';
+		p07.style.webkitTransform = 'translateX(356px) translateY(47px) translateZ(' + transZ  + 'px) ';
+		p08.style.webkitTransform = 'translateX(542px) translateY(47px) translateZ(' + transZ  + 'px) ';
+		p09.style.webkitTransform = 'translateX(728px) translateY(47px) translateZ(' + transZ  + 'px) ';
+		p10.style.webkitTransform = 'translateX(914px) translateY(47px) translateZ(' + transZ  + 'px) ';
+ 
+		p16.style.webkitTransform = 'translateX(263px) translateY(103px) translateZ(' + transZ  + 'px) ';
+		p17.style.webkitTransform = 'translateX(449px) translateY(103px) translateZ(' + transZ  + 'px) ';
+		p18.style.webkitTransform = 'translateX(635px) translateY(103px) translateZ(' + transZ  + 'px) ';
+		p19.style.webkitTransform = 'translateX(821px) translateY(103px) translateZ(' + transZ  + 'px) ';
+		p20.style.webkitTransform = 'translateX(1007px) translateY(103px) translateZ(' + transZ  + 'px) ';
+		p201.style.webkitTransform = 'translateX(1007px) translateY(103px) translateZ(' + transZ  + 'px) ';
+		p202.style.webkitTransform = 'translateX(70px) translateY(209px) rotateZ(-57deg) translateZ(' + transZ  + 'px) ';
+ 
+		p21.style.webkitTransform = ' translateX(253px) translateY(217px) translateZ(' + transZ  + 'px) ';
+		p22.style.webkitTransform = 'translateX(449px) translateY(217px) translateZ(' + transZ  + 'px) ';
+		p23.style.webkitTransform = 'translateX(635px) translateY(217px) translateZ(' + transZ  + 'px) ';
+		p24.style.webkitTransform = 'translateX(733px) translateY(271px) rotateZ(-62deg) translateZ(' + transZ  + 'px) ';
+		p25.style.webkitTransform = 'translateX(167px) translateY(267px) rotateZ(-57deg) translateZ(' + transZ  + 'px) ';
+ 
+		p211.style.webkitTransform = 'translateX(263px) translateY(217px) translateZ(' + transZ  + 'px) ';
+		p212.style.webkitTransform = 'translateX(354px) translateY(269px) rotateZ(-57deg) translateZ(' + transZ  + 'px) ';
+	
+ 
+	
+	}
+	
+}
+ 
+function changeShape(type) {
+	currentState = type;
+	
+	if( type == '3d') {
+		document.getElementById('shape3d').disabled = true;
+		document.getElementById('shapePlane').disabled = false;
+ 
+		//$('#icosahedron').removeClass('plane').addClass('d3');
+		$('div#icosahedron div').removeClass('plane').addClass('d3');
+ 
+		
+	} else {
+		document.getElementById('shape3d').disabled = false;
+		document.getElementById('shapePlane').disabled = true;
+		
+		//$('#icosahedron').removeClass('d3').addClass('plane');
+		$('div#icosahedron div').removeClass('d3').addClass('plane');
+		
+ 
+	}
+	
+	
+	
+	
+}
+ 
+</script> 
+ 
+</head> 
+<body bgcolor="#ccc" onload="initialize();init()"> 
+ 
+ 
+ 
+<div id="toolbox" style="position: absolute; top:0px; left:0px; z-index: 1000;"> 
+ 
+<details open="open"> 
+  <summary>Position</summary> 
+ 
+  <label>rotateY:</label><input type="range" min="0" step="1" id="rotateY" max="360" value="0"><br> 
+  <div id="rotateYValue"></div> 
+ 
+<div class="hd"> 
+  <label>rotateX:</label><input type="range" min="-180" step="1" id="rotateX" max="180" value="0"><br> 
+  <div id="rotateXValue"></div> 
+</div> 
+ 
+  <label>translateZ:</label><input type="range" value="156" min="140" max="200" id="translateZ"><br> 
+  <div id="translateZValue"></div> 
+ 
+</details> 
+ 
+<details open="open"> 
+  <summary>Options</summary> 
+  <div> 
+    <span>smoothing:</span><input type="range" min="0" max="0.95" step="0.05" value="0.0" id="smoothing"><br> 
+    <span>time domain?:</span><input type="checkbox" id="waveform" checked><br> 
+    <span>show canvas?:</span><input type="checkbox" id="show-canvas" checked> 
+  </div> 
+  <button onclick="runCmd(this)" data-func="play" disabled>play</button> 
+  <button onclick="runCmd(this)" data-func="stop" disabled>stop</button> 
+</details> 
+ 
+<details open="open"> 
+  <summary>Shape</summary> 
+  <button id="shape3d" onclick="changeShape('3d')">3d</button> 
+  <button id="shapePlane" onclick="changeShape('plane')" disabled>plane</button> 
+</details> 
+</div> 
+ 
+ 
+<div id="container" style="-webkit-transform-style: preserve-3d;"> 
+<div id="shape-container" class="shape-container"> 
+<div id="shape" class="shape"> 
+<div id="icosahedron" class="plane"> 
+ 
+ 
+	
+    <div id="p21" class="g plane"><img src="./img2/path01.png"></div> 
+    <div id="p211" class="g plane"><img src="./img2/path211.png"></div> 
+    <div id="p212" class="g plane"><img src="./img2/path212.png"></div> 
+ 
+    <div id="p22" class="g plane"><img src="./img2/path01.png"></div> 
+    <div id="p23" class="g plane"><img src="./img2/path01.png"></div> 
+    <div id="p24" class="g plane"><img src="./img2/path01.png"></div> 
+    <div id="p25" class="g plane"><img src="./img2/path01.png"></div> 
+    
+ 
+    <div id="p01" class="r plane"><img src="./img2/path02.png"></div> 
+    <div id="p02" class="g plane"><img src="./img2/path02.png"></div> 
+    <div id="p03" class="r plane"><img src="./img2/path02.png"></div> 
+    <div id="p04" class="g plane"><img src="./img2/path02.png"></div> 
+    <div id="p05" class="r plane"><img src="./img2/path02.png"></div> 
+ 
+    <div id="p06" class="g plane"><img src="./img2/path01.png"></div> 
+    <div id="p07" class="r plane"><img src="./img2/path01.png"></div> 
+    <div id="p08" class="g plane"><img src="./img2/path01.png"></div> 
+    <div id="p09" class="r plane"><img src="./img2/path01.png"></div> 
+    <div id="p10" class="g plane"><img src="./img2/path01.png"></div> 
+ 
+    <div id="p16" class="r plane"><img src="./img2/path02.png"></div> 
+    <div id="p17" class="g plane"><img src="./img2/path02.png"></div> 
+    <div id="p18" class="r plane"><img src="./img2/path02.png"></div> 
+    <div id="p19" class="r plane"><img src="./img2/path02.png"></div> 
+    <div id="p20" class="g plane"><img src="./img2/path02.png"></div> 
+    <div id="p201" class="g plane"><img src="./img2/path201.png"></div> 
+    <div id="p202" class="g plane"><img src="./img2/path202.png"></div> 
+    
+    
+    <!--img class="h " src="./Spinning HTML5Logo_files/HTML5_Semantics_512.png" --> 
+    <!-- div class="h  circle-mask">
+			<video autoplay="true" loop="true" class="circle-mask">
+			Your browser does not support the <code>video</code> element.
+					<source src="http://craftymind.com/factory/html5video/BigBuckBunny_640x360.mp4" type="video/mp4"/>
+					<source src="http://craftymind.com/factory/html5video/BigBuckBunny_640x360.ogv" type="video/ogg"/>
+			</video>
+    </div--> 
+ 
+    <!--img class="i " src="./Spinning HTML5Logo_files/HTML5_Styling_512.png"--> 
+    <!-- div class="i  circle-mask">
+			<video autoplay="true" loop="true" class="circle-mask">
+			Your browser does not support the <code>video</code> element.
+					<source src="http://craftymind.com/factory/html5video/BigBuckBunny_640x360.mp4" type="video/mp4"/>
+					<source src="http://craftymind.com/factory/html5video/BigBuckBunny_640x360.ogv" type="video/ogg"/>
+			</video>
+    </div--> 
+  </div> 
+  </div> 
+  <div class="shadow-container"></div> 
+	<div class="shadow-container" data-scale="1.3"></div> 
+ 
+  </div> 
+ 
+</div> 
+ 
+<div id="show-canvas">..</div> 
+<div id="gradient">...</div> 
+<div id="fft">...</div> 
+ 
+  safari 5 or chrome 9 on a mac
+ 
+ 
+</body></html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>google developer day 2011</title>
+	<script type="text/javascript" src="html5.js" ></script>
+        <link rel="stylesheet" type="text/css" href="canvas.css" />  
+	</script>	
+</head>
+<body>
+    
+    <div class="submenu" style="border:1px solid yellow;display:none">
+        <canvas id="rectangle" >
+                
+        </canvas>
+    </div>
+    <div class="world" id="world" style="border:1px solid yellow;">
+        <canvas id="circle" >
+
+        </canvas>
+    </div>
+
+</body>
+</html>
+

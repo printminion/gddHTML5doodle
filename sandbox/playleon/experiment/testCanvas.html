@@ -1,0 +1,264 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    
+    <body onload="makeCanvas()">
+        <script>
+            var canvasWorker = function () {
+                this.people = new Array();
+                this.people[0] = {     name: 'Albert Einstein',
+                                       dynmapId:'1', picUrl: '../germanPeople/aeinstein.jpg', 
+                                       wikiUrl: 'http://en.wikipedia.org/wiki/Albert_Einstein',
+                                       founded: 'General relativity'
+                                  };
+                this.people[1] = {     name: 'Wilhelm Röntgen',
+                                       dynmapId:'2', picUrl: '../germanPeople/konradroentgen.jpg', 
+                                       wikiUrl: 'http://en.wikipedia.org/wiki/Konrad_Rontgen',
+                                       founded: 'X-rays'
+                                  };
+                this.people[2] = {     name: 'Konrad Zuse',
+                                       dynmapId:'3', picUrl: '../germanPeople/konradzuse.jpg', 
+                                       wikiUrl: 'http://de.wikipedia.org/wiki/Konrad_Zuse',
+                                       founded: 'Z1,Z3 ( the first programable computer )'
+                                  };
+                this.people[3] = {     name: 'Philip Reis',
+                                       dynmapId:'4', picUrl: '../germanPeople/philipreis.jpg', 
+                                       wikiUrl: 'http://en.wikipedia.org/wiki/Philip_Reis',
+                                       founded: 'the first make-and-break telephone'
+                                  };
+               this.people[4] = {     name: 'Heinrich Hertz',
+                                       dynmapId:'5', picUrl: '../germanPeople/heinrichhertz.jpg', 
+                                       wikiUrl: 'http://en.wikipedia.org/wiki/Heinrich_Hertz',
+                                       founded: 'Electromagnetic radiation Photoelectric effect  (MHz, KHz,..)'
+                                  };
+               this.people[5] = {     name: 'Johannes Gutenberg',
+                                       dynmapId:'6', picUrl: '../germanPeople/johannesgutenberg.jpg', 
+                                       wikiUrl: 'http://en.wikipedia.org/wiki/Johannes_Gutenberg',
+                                       founded: 'global inventor of the printing press, Gutenberg Bible'
+                                  };
+               this.people[6] = {     name: 'William IV, Duke of Bavaria',
+                                       dynmapId:'7', picUrl: '../germanPeople/wilhelmvonbayern.jpg', 
+                                       wikiUrl: 'http://en.wikipedia.org/wiki/William_IV,_Duke_of_Bavaria',
+                                       founded: 'issued purity regulation for the brewing of Bavarian Beer'
+                                  };
+               this.people[7] = {     name: 'Julius Lothar Meyer',
+                                       dynmapId:'8', picUrl: '../germanPeople/Lmeyer.jpg', 
+                                       wikiUrl: 'http://en.wikipedia.org/wiki/Lothar_Meyer',
+                                       founded: 'Periodic table of chemical elements'
+                                  };
+              this.people[8] = {     name: 'Karlheinz Brandenburg',
+                                       dynmapId:'9', picUrl: '../germanPeople/karlheinzbrandenburg.jpg', 
+                                       wikiUrl: 'http://en.wikipedia.org/wiki/Karlheinz_Brandenburg',
+                                       founded: 'co-developer of the MP3 file format'
+                                  };
+              this.people[9] = {     name: 'Gottlieb Daimler',
+                                       dynmapId:'10', picUrl: '../germanPeople/gottliebdaimler.jpg', 
+                                       wikiUrl: 'http://en.wikipedia.org/wiki/Gottlieb_Daimler',
+                                       founded: 'automotive pioneer,  invented the first high-speed petrol engine'
+                                  };
+              this.people[10] = {     name: 'Karl Benz',
+                                       dynmapId:'11', picUrl: '../germanPeople/ottohahn.jpg', 
+                                       wikiUrl: 'http://en.wikipedia.org/wiki/Otto_Hahn',
+                                       founded: 'Nuclear fission,Discovery of radioactive elements '
+                                  };
+            this.people[11] = {     name: 'Melitta Bentz',
+                                       dynmapId:'12', picUrl: '../germanPeople/melittabentz.jpg', 
+                                       wikiUrl: 'http://en.wikipedia.org/wiki/Melitta_Bentz',
+                                       founded: 'invented the coffee filter in 1908'
+                                  };
+            this.people[12] = {     name: 'Felix Hoffmann',
+                                       dynmapId:'13', picUrl: '../germanPeople/felixhoffmann.jpg', 
+                                       wikiUrl: 'http://en.wikipedia.org/wiki/Felix_Hoffmann',
+                                       founded: 'synthesized acetylsalicylic acid ( known as ASPIRIN )'
+                                  };             
+            this.people[13] = {     name: 'Hans von Ohain',
+                                       dynmapId:'14', picUrl: '../germanPeople/hansvonohain.jpg', 
+                                       wikiUrl: 'http://en.wikipedia.org/wiki/Hans_Joachim_Pabst_von_Ohain',
+                                       founded: 'one of the inventors of jet propulsion'
+                                  };                            
+                                  
+            this.people[14] = {     name: 'Robert Koch',
+                                       dynmapId:'15', picUrl: '../germanPeople/robertkoch.jpg', 
+                                       wikiUrl: 'http://en.wikipedia.org/wiki/Robert_Koch',
+                                       founded: 'Isolation of anthrax, tuberculosis and cholera'
+                                  };    
+            this.people[15] = {     name: 'Artur Fischer',
+                                       dynmapId:'16', picUrl: '../germanPeople/arturfischer.jpg', 
+                                       wikiUrl: 'http://en.wikipedia.org/wiki/Artur_Fischer',
+                                       founded: 'inventor of "S Plug" (Split-)Wallplug'
+                                  };  
+            this.people[16] = {     name: 'Artur Fischer',
+                                       dynmapId:'17', picUrl: '../germanPeople/arturfischer.jpg', 
+                                       wikiUrl: 'http://en.wikipedia.org/wiki/Artur_Fischer',
+                                       founded: 'inventor of "S Plug" (Split-)Wallplug'
+                                  };  
+            this.people[17] = {     name: 'Emil Berner',
+                                       dynmapId:'18', picUrl: '../germanPeople/emilberner.jpg', 
+                                       wikiUrl: 'http://en.wikipedia.org/wiki/Emil_Berliner',
+                                       founded: 'developing the disc record gramophone '
+                                  };  
+            this.people[18] = {     name: 'Martin Luther',
+                                       dynmapId:'19', picUrl: '../germanPeople/martinluther.jpeg', 
+                                       wikiUrl: 'http://en.wikipedia.org/wiki/Martin_Luther',
+                                       founded: 'initiated the Protestant Reformation'
+                                  };   
+            this.people[19] = {     name: 'Otto von Guericke',
+                                       dynmapId:'20', picUrl: '../germanPeople/ottovonguerick.jpg', 
+                                       wikiUrl: 'http://en.wikipedia.org/wiki/Otto_von_Guericke',
+                                       founded: 'Research and experiment for vacuums'
+                                  };                                   
+                                  //http://de.wikipedia.org/wiki/Melitta_Bentz
+                                 
+                console.log(this.people);
+            };
+            canvasWorker.prototype.drawRectTop = function (imgSrc,ctx) {
+               var img = new Image();          
+               img.onload = function () {   
+                    // Filled triangle
+                   ctx.strokeStyle="#002DAF"; //  line color
+                   ctx.lineWidth=1; // line width
+                   ctx.fillStyle = 'transparent';
+                   ctx.moveTo(0,0); // 1
+                   ctx.lineTo(160,0); // 2
+                   ctx.lineTo(80,170); // 3
+              
+                   ctx.closePath();	   
+                   ctx.stroke();
+                   ctx.fill();
+
+                    ctx.clip();
+
+                    ctx.drawImage(img,0,0, 170,160);
+                    console.log('im here', ctx, img);
+                };
+                img.src = imgSrc;
+            }
+            
+            /**
+             * creates an new canvas element in the dom and inject it into the given 
+             * object from the dymaxion map
+             */
+            canvasWorker.prototype.createCanvas = function (id, peopleObj) {
+                var canvas = document.createElement('canvas');
+                canvas.setAttribute('id', id);
+                canvas.setAttribute('mkpeople' , id);
+                var injectIn = document.getElementById('p'+peopleObj.dynmapId);
+                injectIn.appendChild(canvas);
+                var ctx = canvas.getContext('2d');
+                this.drawRectTop(peopleObj.picUrl,ctx);
+            }
+            
+            canvasWorker.prototype.printPeople = function() {
+                (function(canvasWorkerObj){
+                    canvasWorkerObj.people.forEach(function(value,key) {
+                        console.log(key,value);
+                        canvasWorkerObj.createCanvas(key,value);
+                    });
+                 })(this);
+                    
+            
+            }
+            
+            function makeCanvas() {
+                var cando = new canvasWorker();
+                cando.printPeople();
+                var canvas = document.getElementById('test');
+                ctx = canvas.getContext('2d');
+                 var img = new Image();
+                 var img2 = new Image();
+            
+               img.onload = function () {   
+                    // Filled triangle
+                   ctx.strokeStyle="#002DAF"; //  line color
+                   ctx.lineWidth=1; // line width
+                   ctx.fillStyle = 'transparent';
+                   ctx.moveTo(0,0); // 1
+                   ctx.lineTo(160,0); // 2
+                   ctx.lineTo(80,170); // 3
+              
+                   ctx.closePath();	   
+                   ctx.stroke();
+                   ctx.fill();
+
+                    ctx.clip();
+
+                    ctx.drawImage(img,0,0, 200,200);
+                    console.log('im here', ctx, img);
+                };
+                img.src = '../germanPeople/aeinstein.jpg';
+                        }
+        </script>
+        
+        <div id="container">
+            <div id="p1" >
+                
+            </div>
+            <div id="p2" >
+                
+            </div>
+            <div id="p3" >
+                
+            </div>
+            <div id="p4" >
+                
+            </div>
+            <div id="p5" >
+                
+            </div>
+            <div id="p6" >
+                
+            </div>
+            <div id="p7" >
+                
+            </div>
+            <div id="p8" >
+                
+            </div>
+            <div id="p9" >
+                
+            </div>
+            <div id="p10" >
+                
+            </div>
+            <div id="p11" >
+                
+            </div>
+            <div id="p12" >
+                
+            </div>
+            <div id="p13" >
+                
+            </div>
+            <div id="p14" >
+                
+            </div>
+            <div id="p15" >
+                
+            </div>
+            <div id="p16" >
+                
+            </div>
+            <div id="p17" >
+                
+            </div>
+            <div id="p18" >
+                
+            </div>
+            <div id="p19" >
+                
+            </div>
+            <div id="p20" >
+                
+            </div>
+            
+        </div>
+        <canvas id="test"></canvas>
+    </body>
+</html>

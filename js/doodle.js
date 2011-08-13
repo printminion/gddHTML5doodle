@@ -257,27 +257,7 @@ function removeDebugBorder() {
 	var d = $('.d');
 	var g = $('.g');
 	var r = $('.r');
-	for (i = 0; i < d.length; i++) {
-		debugBorder.push({
-			type : 'd',
-			elementId : d[i].id
-		});
-		$(d[i]).removeClass('d');
-	}
-	for (i = 0; i < g.length; i++) {
-		debugBorder.push({
-			type : 'g',
-			elementId : g[i].id
-		});
-		$(g[i]).removeClass('g');
-	}
-	for (i = 0; i < r.length; i++) {
-		debugBorder.push({
-			type : 'r',
-			elementId : r[i].id
-		});
-		$(r[i]).removeClass('r');
-	}
+
 	try {
 		$('#logo').bind('click', function() {
 			showDebugBorder();
@@ -290,9 +270,10 @@ function removeDebugBorder() {
 
 function showDebugBorder() {
         debugAdd("adding Borders to Elements");
-	debugBorder.forEach(function(item, key) {
-		$('#' + item.elementId).toggleClass(item.type);
-	});
+        $('.d').toggleClass('debugd');
+        $('.r').toggleClass('debugr');
+        $('.g').toggleClass('debugg');
+	
 }
 
 /**
@@ -314,7 +295,7 @@ function init() {
         window.document.addEventListener('analyserBuffered', function() {kickstart();debugAdd('the buffer is ready')}, true);
         window.document.addEventListener('analyserCriticalError', function() {alert('the mp3 is not found, maybe a network error?')}, true);
 	// remove the debug border analyserCriticalError
-	 removeDebugBorder();
+	//removeDebugBorder();
 	if (analyserState == true) {
 		window.analyserObj = new analyser();
 		window.analyserObj.init();

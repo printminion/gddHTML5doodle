@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <title>.</title>
+  <style>
+   /*
+    * Spinning HTML5Logo Demo
+    * by @boazsender: http://boazsender.com
+    * Thanks to http://webkit.org/blog/386/3d-transforms/
+    *
+    */ 
+
+    @-webkit-keyframes spinanimation {
+      0% {
+        -webkit-transform: rotateY(0);
+      }
+      100% {
+        -webkit-transform: rotateY(360deg);
+      }
+    }
+
+    body {
+      -webkit-perspective: 800; 
+      -webkit-perspective-origin: 50% 30%;
+      overflow: hidden;
+    }
+
+    .container {
+      -webkit-transform-style: preserve-3d;
+      position: relative;
+      top: 160px;
+      margin: 0 auto;
+      width: 200px;
+    }
+    
+    .container2 {
+      -webkit-transform-style: preserve-3d;
+      -webkit-animation: spinanimation 10s infinite linear;
+      position: relative;
+      top: 160px;
+      margin: 0 auto;
+      width: 200px;
+    }
+    
+    img {
+      -webkit-backface-visibility: visible;
+      position: absolute;
+      height: 200px;
+      -webkit-transition: all .4s;
+    }
+    
+    .r{
+    	border: 1px solid #ff0000;
+    }
+    
+    .g{
+    	border: 1px solid #00ff00;
+    }
+    
+    .hd{
+    	display: none;
+    }
+    
+
+   /* img:hover{
+      -webkit-transform: translateZ(0px);
+    }
+*/
+        
+    .a { -webkit-transform: }
+    #p01 { -webkit-transform: rotateY(0deg)   rotateX(0deg) translateZ(150px) translateY(80px); }
+    #p02 { -webkit-transform: rotateY(36deg)  rotateX(-18deg) translateZ(168px) translateY(24px); }
+    #p03 { -webkit-transform: rotateY(72deg)  rotateX(0deg)  translateZ(150px) translateY(80px); }
+    #p04 { -webkit-transform: rotateY(108deg) rotateX(-15deg) translateZ(156px); }
+    #p05 { -webkit-transform: rotateY(144deg) rotateX(0deg)  translateZ(150px) translateY(80px); }
+    #p06 { -webkit-transform: rotateY(180deg) rotateX(-15deg) translateZ(156px); }
+    #p07 { -webkit-transform: rotateY(216deg) rotateX(0deg) translateZ(150px) translateY(80px); }
+    #p08 { -webkit-transform: rotateY(252deg) rotateX(-15deg) translateZ(156px); }
+    #p09 { -webkit-transform: rotateY(288deg) rotateX(0deg)  translateZ(150px) translateY(80px); }
+    #p10 { -webkit-transform: rotateY(324deg) rotateX(-15deg) translateZ(156px); }
+ 
+    #p16 { -webkit-transform: rotateY(108deg) rotateX(-48deg) translateZ(112px); }
+   
+    #p17 { -webkit-transform: rotateY(180deg) rotateX(-48deg) translateZ(112px); }
+   
+    #p19 { -webkit-transform: rotateY(0deg)  rotateX(48deg) rotateZ(61.5deg) translateZ(112px) translateY(54px) translateX(27px) ; }
+    #p20 { -webkit-transform: rotateY(72deg) rotateX(48deg) translateZ(112px); }
+    #p21 { -webkit-transform: rotateY(144deg) rotateX(48deg) rotateZ(61.5deg) translateZ(112px) translateY(54px) translateX(27px);}
+    #p22 { -webkit-transform: rotateY(216deg) rotateX(48deg) translateZ(112px); }
+    #p23 { -webkit-transform: rotateY(288deg) rotateX(48deg) translateZ(112px); }
+    
+	.circle-mask2 {
+		-webkit-mask-image: url(mask.png);
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-size: 100% 100%;
+		-webkit-transform: matrix3d(0.64,0,0.64,0,0,0.83,0,0,-0.53,0,0.76,0,0,0,0,1);
+		-webkit-transform-style: preserve-3d;
+		-webkit-transition-duration: 0.5s;
+		-webkit-transition-timing-function: cubic-bezier(0, 0, 0.58, 1);
+	}
+			
+
+
+</style>
+
+<body bgcolor="#ccc">
+
+
+<details open="">
+  <summary>position</summary>
+  
+  rotateY:<input type="range" min="0" step="1" id="rotateY" max="360" value="0"><br>
+  <div id="rotateYValue"></div>
+  
+  rotateX:<input type="range" min="-180" step="1" id="rotateX" max="180" value="0"><br>
+  <div id="rotateXValue"></div>
+  translateZ: <input type="range" value="156" min="0" max="200" id="translateZ"><br>
+  <div id="translateZValue"></div>
+
+</details>
+
+
+
+
+<script type="text/javascript">
+(function() {
+	
+	
+var rotateYValue = document.getElementById('rotateY').value;
+var rotateXValue = document.getElementById('rotateX').value;
+var translateZValue = document.getElementById('translateZ').value;
+
+document.getElementById('rotateY').addEventListener('change', function(e) {
+	rotateYValue = this.valueAsNumber;
+	
+	document.getElementById('rotateYValue').innerText = rotateYValue;
+
+	var container = document.getElementById('container');
+	container.style.webkitTransform = 'rotateY(' + rotateYValue + 'deg)';
+	
+}, false);
+
+
+document.getElementById('rotateX').addEventListener('change', function(e) {
+	rotateXValue = this.valueAsNumber;
+	
+	document.getElementById('rotateXValue').innerText = rotateXValue;
+
+	var p01 = document.getElementById('p01');
+	p01.style.webkitTransform = 'rotateX(' + rotateXValue + 'deg) rotateY(0deg) translateZ(' + translateZValue + 'px)';
+
+	var p03 = document.getElementById('p03');
+	p03.style.webkitTransform = 'rotateX(' + rotateXValue + 'deg) rotateY(72deg) translateZ(' + translateZValue + 'px)';
+
+	var p05 = document.getElementById('p05');
+	p05.style.webkitTransform = 'rotateX(' + rotateXValue + 'deg) rotateY(144deg) translateZ(' + translateZValue + 'px)';
+
+
+	
+	
+}, false);
+
+document.getElementById('translateZ').addEventListener('change', function(e) {
+
+	translateZValue = this.valueAsNumber;
+	
+	document.getElementById('translateZValue').innerText = translateZValue;
+
+	var p01 = document.getElementById('p01');
+	p01.style.webkitTransform = 'rotateX(' + rotateXValue + 'deg) rotateY(0deg) translateZ(' + translateZValue + 'px)';
+
+	var p03 = document.getElementById('p03');
+	p03.style.webkitTransform = 'rotateX(' + rotateXValue + 'deg) rotateY(72deg) translateZ(' + translateZValue + 'px)';
+
+	var p05 = document.getElementById('p05');
+	p05.style.webkitTransform = 'rotateX(' + rotateXValue + 'deg) rotateY(144deg) translateZ(' + translateZValue + 'px)';
+
+	
+	
+}, false);
+
+
+
+
+})();  
+  
+</script>
+
+  <div id="container" class="container">
+    <!-- <img class="a" src="./img/path01.png"> -->
+    <img id="p01" class="r " src="./img/path01.png">
+    <img id="p02" class="g " src="./img/path02.png">
+    <img id="p03" class="r " src="./img/path03.png">
+    <img id="p04" class="g hd" src="./img/path04.png">
+    <img id="p05" class="r " src="./img/path05.png">
+    <img id="p06" class="g hd" src="./img/path06.png">
+    <img id="p07" class="r " src="./img/path07.png">
+    <img id="p08" class="g hd" src="./img/path08.png">
+    <img id="p09" class="r " src="./img/path09.png">
+    <img id="p10" class="g hd" src="./img/path10.png">
+  
+    <img id="p16" class="r hd" src="./img/path16.png">
+    <img id="p17" class="g hd" src="./img/path17.png">
+    
+    
+    <img id="p19" class="r " src="./img/path19.png">
+    <img id="p20" class="g " src="./img/path20.png">
+    <img id="p21" class="g " src="./img/path21.png">
+    <img id="p22" class="g " src="./img/path22.png">
+    <img id="p23" class="g " src="./img/path23.png">
+    
+    <!--img class="h " src="./Spinning HTML5Logo_files/HTML5_Semantics_512.png" -->
+    <!-- div class="h  circle-mask">
+			<video autoplay="true" loop="true" class="circle-mask">
+			Your browser does not support the <code>video</code> element.
+					<source src="http://craftymind.com/factory/html5video/BigBuckBunny_640x360.mp4" type="video/mp4"/>
+					<source src="http://craftymind.com/factory/html5video/BigBuckBunny_640x360.ogv" type="video/ogg"/>
+			</video>
+    </div-->
+
+    <!--img class="i " src="./Spinning HTML5Logo_files/HTML5_Styling_512.png"-->
+    <!-- div class="i  circle-mask">
+			<video autoplay="true" loop="true" class="circle-mask">
+			Your browser does not support the <code>video</code> element.
+					<source src="http://craftymind.com/factory/html5video/BigBuckBunny_640x360.mp4" type="video/mp4"/>
+					<source src="http://craftymind.com/factory/html5video/BigBuckBunny_640x360.ogv" type="video/ogg"/>
+			</video>
+    </div-->
+    
+  </div>
+  
+  safari 5 or chrome 9 on a mac
+  
+
+</body></html>
