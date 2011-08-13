@@ -289,7 +289,7 @@ function showBootstrap(stop) {
     
     var wait = document.getElementById('loadingIndicator');
     if(stop == undefined) {
-        console.log("wqit");
+        debugAdd("show init layer");
         wait.style.display = 'block';
         loader = 'active';
     } else {
