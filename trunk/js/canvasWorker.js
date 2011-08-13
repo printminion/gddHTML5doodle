@@ -257,15 +257,16 @@ canvasWorker.prototype.createCanvas = function (id, peopleObj) {
         };
     this.originContent.push(fallObj);
                 
-    var pathId = injectIn.firstChild.src.split('path0');
-
+    //var pathId = injectIn.firstChild.src.split('path0');
+    var pathId = injectIn.firstChild.getAttribute('path');
+    debugAdd(pathId);
     injectIn.removeChild(injectIn.firstChild);
     injectIn.appendChild(canvas);
     var ctx = canvas.getContext('2d');
-    if(pathId[1]=='1.png') {
+    if(pathId=='1') {
         this.drawRectTop(peopleObj.picUrl,ctx);
     }
-    if(pathId[1]=='2.png')
+    if(pathId=='2')
         this.drawRectDown(peopleObj.picUrl,ctx);
     
 }

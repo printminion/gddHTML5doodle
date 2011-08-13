@@ -696,3 +696,7 @@ css for the info box german stars
 #creditCont.cup {
     top:-1000px;
 }
+/*rotate something **/
+.wt90 {
+    -webkit-transform: rotate(90deg);
+}
