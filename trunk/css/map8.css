@@ -99,14 +99,16 @@ background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 1000, from(rgba(
     background-color:grey;
     color: black;
     overflow:hidden;
-    
+     background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 1000, from(rgba(165,217,239, 0.1) ), to(rgba(165,217,239, 0.2) ) );
     -webkit-border-radius:10px;
     -moz-border-radius:10px;
 }
 .bootkonsole p {
     margin-left:10px;
     color: white;
-    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 1000, from(rgba(165,217,239, 0.1) ), to(rgba(165,217,239, 0.2) ) );
+    margin-top:0px;
+    padding-top:0px;
+   
 }
 
 body.night .background {

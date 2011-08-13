@@ -304,7 +304,7 @@ function init() {
         showBootstrap();
         //adding here new eventListener, wait that all is loaded
         window.document.addEventListener('analyserLoaded', function() {debugAdd('loaded All.. now building BufferArray')}, true);
-        window.document.addEventListener('analyserBuffered', function() { /*kickstart()*/;debugAdd('the buffer is ready')}, true);
+        window.document.addEventListener('analyserBuffered', function() { kickstart();debugAdd('the buffer is ready')}, true);
         window.document.addEventListener('analyserCriticalError', function() {alert('the mp3 is not found, maybe a network error?')}, true);
 	// remove the debug border analyserCriticalError
 	removeDebugBorder();
