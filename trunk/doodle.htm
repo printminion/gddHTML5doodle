@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; UTF-8">
+	<title>GDD 2011 HTML5 doodle</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	
+	<link href='http://fonts.googleapis.com/css?family=Rationale' rel='stylesheet' type='text/css'>
+	<link href='css/map8.css' rel='stylesheet' type='text/css'/>
+
+	<script type="text/javascript" src="js/dsp.js"></script>	
+	<script type="text/javascript" src="js/analyser.js"></script>
+	<script type="text/javascript" src="js/canvasWorker.js"></script>
+	<script type="text/javascript" src="js/nightStar.js"></script>
+	<script type="text/javascript" src="js/doodle.js"></script>
+	<script type="text/javascript" src="js/music.js"></script>
+	<script type="text/javascript" src="js/video.js"></script>
+	<script type="text/javascript" src="js/doodle.js"></script>
+
+</head>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25046836-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- Place this tag after the last plusone tag -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<body class="day" onload="init()">
+<div id="body">
+<div class="background" id="background"><!--  --></div>
+
+<audio id="audio" preload>
+	<source src="./media/2257__Andrew_Duke__click1.wav"></source>
+</audio>
+
+
+<div id="toolbox">
+<details id="menu">
+  <summary>menu</summary>
+<details>
+  <summary>Position</summary>
+
+ <label>rotateX:</label><input type="range" min="0" step="1" id="rotateX" max="360" value="0">:<span id="rotateXValue"></span><br>
+ <label>rotateY:</label><input type="range" min="0" step="1" id="rotateY" max="360" value="0">:<span id="rotateYValue"></span><br>
+ <label>rotateZ:</label><input type="range" min="0" step="1" id="rotateZ" max="360" value="0">:<span id="rotateZValue"></span><br>
+ <label>translateZ:</label><input type="range" value="156" min="140" max="200" id="translateZ">:<span id="translateZValue"></span><br>
+
+</details>
+
+<details >
+  <summary>Shape</summary>
+  <button id="shape3d" onclick="changeShape(this.innerText)">3d</button>
+</details>
+
+	<details id="steps">
+	  <summary>Steps</summary>
+	  <button id="btnStep1" onclick="step(1)" title="flat world">step 1</button><br/>
+	  <button id="btnStep2" onclick="step(2)" title="superstars world">step 2</button><br/>
+	  <button id="btnStep3" onclick="step(3)" title="team world">step 3</button><br/>
+	  <button id="btnStep4" onclick="step(4)" title="stop world">step 4</button><br/>
+	  <!-- <button id="btnStep5" onclick="step(5)">step 5</button><br/> -->
+	  <button id="btnStep6" onclick="step(6)" title="debug world">step 6</button><br/>
+	  <!-- <button id="btnStep7" onclick="step(7)">step 7</button><br/> -->
+	</details>
+</details>
+
+</div>
+
+
+<div id="container" style="border: 1px solid transparent;">
+<div id="shape-container" class="shape-container">
+<div id="shape" class="shape">
+    
+    <section class="nyanContainer r" id="nyannyan" style="display:none">
+        <div id="cube" class="g">
+            <figure id="ncf" class="front r">
+                <img src="images/nyan_cat_animation_de.gif" width="200" />
+            </figure>
+        </div>
+    </section>  
+    
+<div id="icosahedron" class="plane">
+	
+    <div id="p21" class="g plane"><img src="./images/path01.png" path="1"></div>
+    <div id="p211" class="g plane"><img src="./images/path211.png"></div>
+    <div id="p212" class="g plane"><img src="./images/path212.png"></div>
+
+    <div id="p22" class="g plane"><img src="./images/path22.png" path="1"></div>
+    <div id="p23" class="g plane"><img src="./images/path01.png" path="1"></div>
+    <div id="p24" class="g plane"><img src="./images/path01.png" path="1"> </div>
+    <div id="p25" class="g plane"><img src="./images/path25.png" path="1"></div>
+    
+
+    <div id="p01" class="r plane"><img src="./images/path02.png" path="2"></div>
+    <div id="p02" class="g plane"><img src="./images/path02orig.png" path="2"></div>
+    <div id="p03" class="r plane"><img src="./images/path02.png" path="2"></div>
+    <div id="p04" class="g plane"><img src="./images/path04.png" path="2"></div>
+    <div id="p05" class="r plane"><img src="./images/path02.png" path="2"></div>
+
+    <div id="p06" class="g plane triangle-mask -vcontainer"><img src="./images/path01.png" path="1"></div>
+    <div id="p07" class="r plane"><img src="./images/path07.png" path="1"></div>
+    <div id="p08" class="g plane"><img src="./images/path01.png" path="1"></div>
+    <div id="p09" class="r plane"><img src="./images/path01.png"  path="1"></div>
+    <div id="p10" class="g plane"><img src="./images/path01.png"  path="1"></div>
+
+    <div id="p16" class="r plane triangle-mask-flipped -vcontainer"><img src="./images/path02.png"  path="2"></div>
+    <div id="p17" class="g plane"><img src="./images/path02.png"  path="2"></div>
+    <div id="p18" class="r plane"><img src="./images/path02.png"  path="2"></div>
+    <div id="p19" class="r plane"><img src="./images/path02.png"  path="2"></div>
+    
+    <div id="p20" class="g plane triangle-mask-flipped -vcontainer"><img src="./images/path20.png"  path="2"></div>
+    <div id="p201" class="g plane"><img src="./images/path201.png" path="1"></div>
+    <div id="p202" class="g plane"><img src="./images/path202.png" path="2"></div>
+  </div>
+  </div>
+
+  <div class="shadow-container"></div>
+	<div class="shadow-container" data-scale="1.3"></div>
+  </div>
+
+
+
+
+</div>
+
+
+<!-- placeholder for names -->
+<div id="persons"><!--  --></div>
+
+<div id="humanInfo" style="display:none" class="hd">
+
+</div>
+
+<button id="btnBuzzer" style="display: none;">finish it!</button>
+  
+<div id="logo"><!--  --></div>
+
+<div id="footer">
+  Tested with Google Chrome 15.0.848.0 <a href="http://tools.google.com/dlpage/chromesxs" target="_blank">canary</a>
+</div>
+<div id="credits" style="display:none">
+    
+    <div id="creditCont" class="cdown" >
+    <div class="cabsatz">
+        <b>Programming, Idea, CSS3 3D</b><br>
+        Misha M.-Kupriyanov
+    </div>
+    <div class="cabsatz"><p><!-- --></p></div>
+    
+    <div class="cabsatz">
+    	<b>Programming, Audio Web API, Idea(German scientists)</b><br>
+        Kay Schneider 
+    </div>
+    <div class="cabsatz"><p><!-- --></p></div>
+    
+    <div class="cabsatz">
+       <b>Music, GDD mega beat</b><br>
+        Hanno E. Allen
+    </div>
+    <div class="cabsatz"><p><!-- --></p></div>
+
+    <div class="cabsatz">
+    	<b>CAST</b>
+    </div>
+<div class="cabsatz"><p><!-- --></p></div>
+    
+  <div class="cabsatz">
+  	German scientists
+  </div>
+<div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Albert Einstein - Albert Einstein</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Otto Hahn - Otto Hahn</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Wilhelm R&ouml;ntgen - Wilhelm R&ouml;ntgen</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Konrad Zuse - Konrad Zuse</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Karlheinz Brandenburg - Karlheinz Brandenburg</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Philip Reis - Philip Reis</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Heinrich Hertz - Heinrich Hertz</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">William IV, Duke of Bavaria - William IV, Duke of Bavaria</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Melitta Bentz - Melitta Bentz</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">You - You</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Johannes Gutenberg - Johannes Gutenberg</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Julius Lothar Meyer - Julius Lothar Meyer</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Gottlieb Daimler - Gottlieb Daimler</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Felix Hoffmann - Felix Hoffmann</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Hans von Ohain - Hans von Ohain</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Robert Koch - Robert Koch</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Artur Fischer - Artur Fischer</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Emil Berner - Emil Berner</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Martin Luther - Martin Luther</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Otto von Guericke - Otto von Guericke</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz"><p><!-- --></p></div>
+
+<div class="cabsatz">
+	<b>Special guests</b>
+</div>
+
+<div class="cabsatz">Nyan Cat</div><div class="cabsatz"><p><!-- --></p></div>
+
+<div class="cabsatz"><p><!-- --></p></div>
+
+<div class="cabsatz"><b>Special thanks to</b></div>
+
+<div class="cabsatz">Hanno E.Allen - for his exclusive track (it will play in our heads for next 10 months)</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Google Chrome Team - for very strong web Browser</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Melitta Bentz - for inventing coffee filter</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Aygul Zagidullina - for patience</div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">No german scientist were harmed during the filming of this doodle</div>  
+
+<div class="cabsatz"><b>THE END</b></div>
+<div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz"><p><!-- --></p></div><div class="cabsatz"><p><!-- --></p></div><div class="cabsatz"><p><!-- --></p></div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Thank you for watching till the end</div>
+<div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz"><p><!-- --></p></div><div class="cabsatz"><p><!-- --></p></div><div class="cabsatz"><p><!-- --></p></div><div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz">Are you there? <!-- portal2 joke--></div>
+<div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz"><p><!-- --></p></div>
+<div class="cabsatz"><p><!-- --></p></div><div class="cabsatz"><p><!-- --></p></div><div class="cabsatz"><p><!-- --></p></div><div class="cabsatz"><p><!-- --></p></div>
+
+<div class="cabsatz">Goodbye till the next GDD doodle year ;)</div>
+ </div>
+</div>    
+
+
+<div id="license">
+<g:plusone size="small"></g:plusone><br>
+	<a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">GDD 2011 HTML5 doodle</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/russenreaktor/gddHTML5doodle" property="cc:attributionName" rel="cc:attributionURL">Kay Schneider, Misha Matiyenko-Kupriyanov, Hanno E. Allen</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
+<div>
+
+	<video id="videoHanno" class="-video" loop="true"   volume="0" autobuffer="true" preload  style="display:none">
+				Your browser does not support the <code>video</code> element.
+			 <source  muted src="media/hanno.m4v" type="video/mp4"/>
+	</video>
+	<video id="videoMisha" class="-video"  loop="true"   volume="0" autobuffer="true" preload  style="display:none">
+				Your browser does not support the <code>video</code> element.
+			 <source  muted src="media/misha.m4v" type="video/mp4"/>
+	</video>
+            <video id="videoKay" class="-video"  loop="true"   volume="0" autobuffer="true" preload  style="display:none;" class="wt90">
+				Your browser does not support the <code>video</code> element.
+			 <source  muted src="media/kay.m4v" type="video/mp4" />
+	</video>
+
+</div>
+
+</body>
+</html>
