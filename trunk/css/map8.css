@@ -674,7 +674,7 @@ css for the info box german stars
     height:400px;
     overflow:hidden;
     position:absolute;
-    right:20px;
+    right:250px;
     top:100px;
 }
 
@@ -684,7 +684,7 @@ css for the info box german stars
 }
 #creditCont {
      position:relative;
-    -webkit-transition-duration: 30s;
+    -webkit-transition-duration: 50s;
     -webkit-transition-timing-function: linear;
 }
 #creditCont.cdown {

@@ -20,7 +20,7 @@ function step(n) {
 	if (activeStep != 0) {
 		undoLastStep(activeStep);
 	}
-
+        clearAllStepTimeouts();
 	$('#steps button').removeClass('selected');
 	$('#steps button#btnStep' + n).addClass('selected');
 
@@ -92,6 +92,7 @@ function undoLastStep(n) {
 function clearAllStepTimeouts() {
     window.clearTimeout(timeOutStep1);
     window.clearTimeout(timeout2);
+     window.removeEventListener('humanShowEnded');
 }
 
 function step1() {
