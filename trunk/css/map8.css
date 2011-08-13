@@ -99,6 +99,9 @@ background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 1000, from(rgba(
     background-color:grey;
     color: black;
     overflow:hidden;
+    
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
 }
 .bootkonsole p {
     margin-left:10px;

@@ -279,10 +279,11 @@ function showDebugBorder() {
  * here we can add some magic functions. we can wait until four our five things are loaded and say: "hey im ready"
  */
 function kickstart() {
+    debugAdd('now im starting...much fun');
     showBootstrap('stop');
     playPreloadSound('stop');
     step(1);
-    debugAdd('now im starting');
+   
 }
 function showBootstrap(stop) {
     
