@@ -254,9 +254,9 @@ var p01, p02, p03, p04, p05, p06, p07, p08, p09, p10, p11, p12, p13, p14, p15, p
 var audioElement;
 
 function removeDebugBorder() {
-	var d = $('.d');
+	/*var d = $('.d');
 	var g = $('.g');
-	var r = $('.r');
+	var r = $('.r');*/
 
 	try {
 		$('#logo').bind('click', function() {
@@ -295,7 +295,7 @@ function init() {
         window.document.addEventListener('analyserBuffered', function() {kickstart();debugAdd('the buffer is ready')}, true);
         window.document.addEventListener('analyserCriticalError', function() {alert('the mp3 is not found, maybe a network error?')}, true);
 	// remove the debug border analyserCriticalError
-	//removeDebugBorder();
+	removeDebugBorder();
 	if (analyserState == true) {
 		window.analyserObj = new analyser();
 		window.analyserObj.init();
