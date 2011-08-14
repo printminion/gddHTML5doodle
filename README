@@ -1,10 +1,26 @@
-IMPORTANT (before you start): This doodle uses HTML5 features 
-1) Please test it with Google Chrome 15.0.848.0 canary http://tools.google.com/dlpage/chromesxs
-If you have performance problems please make your window smaller
-
+IMPORTANT (before you start):
+1) Please test it with Google Chrome 15.0.848.0 canary http://tools.google.com/dlpage/chromesxs If you have performance problems please make your window smaller
 2) Enable Web Audio API via chrome://flags/
-
 3) Watch the google till the end (~3min)
 
 
-Team:  * Kay Schneider * Misha Matiyenko-Kupriyanov * Hanno E. Allen
+Team:  
+ 	Javascript Monster: Kay Schneider
+	Twitter: @ikayschneider
+	Google+: 104512463398531242371
+	From: Stuttgart, Germany
+
+	Humble Programmer: Misha M.-Kupriyanov
+	Twitter: @russenreaktor
+	Google+: 101394390558382014012
+	From: Stuttgart, Germany
+	
+	HTML Guru: Hanno Allen
+	From: Stuttgart, Germany
+	
+
+Versions:
+ * Current - http://russenreaktor.github.com/gddHTML5doodle/
+ * v0.2 - http://russenreaktor.github.com/gddHTML5doodle/v0.2/
+ * v0.1 - http://russenreaktor.github.com/gddHTML5doodle/v0.1/
+
