@@ -798,7 +798,7 @@ function debugShow(msg) {
             try {
 			var debugContainer = document.getElementById('boot');
 			var node = document.createElement('p');
-			node.innerHTML = msg;
+			node.innerHTML = msg + '...';
 			debugContainer.insertBefore(node, debugContainer.firstChild);
 		} catch (e) {
 

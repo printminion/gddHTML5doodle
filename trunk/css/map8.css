@@ -114,9 +114,9 @@ background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 1000, from(rgba(
 }
 .bootkonsole p {
     margin-left:10px;
-    color: white;
     margin-top:0px;
     padding-top:0px;
+    margin: 0px;
    
 }
 
@@ -185,15 +185,10 @@ margin: 5px;
 }
 
 
-#persons>section>a {
-	position: absolute;
-	bottom: -20px;
+#persons>section>div.info>a {
 	width: 240px;
 	height: 24px;
-	margin: 0 auto;
-	left: 50%;
-	margin-left: -120px;
-	
+	margin: 5px;
 	font-size: 23px;
 	color: #ADADAD;
 }
@@ -271,6 +266,7 @@ h1,h2,h3,h4 {
 	position: fixed;
 	bottom: 20px;
 	left: 93px;
+	font-size: 14px;
 }
 
 
@@ -280,6 +276,7 @@ h1,h2,h3,h4 {
 	position: fixed;
 	bottom: 0px;
 	left: 0px;
+	font-size: 14px;
 }
 
 
@@ -700,7 +697,7 @@ css for the info box german stars
 
 #cube {
 	-webkit-transform-style: preserve-3d;
-	-webkit-animation: nyanAnimation 10s infinite linear;
+	-webkit-animation: nyanAnimation 20s infinite linear;
 	width: 200px;
 	height: 200px;
 }
@@ -754,7 +751,7 @@ css for the info box german stars
 
 #creditCont {
      position:relative;
-    -webkit-transition-duration: 300s;
+    -webkit-transition-duration: 200s;
     -webkit-transition-timing-function: linear;
     color:#ffffff;
 }

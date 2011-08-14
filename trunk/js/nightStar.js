@@ -1,5 +1,5 @@
 var nightStar = function () {
-    debugAdd("init nightStar");
+    debugAdd("init NightStar");
     this.stars = 40;
     this.debug = new Array();
     this.starType = 'canvas';//nyan
