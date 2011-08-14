@@ -24,7 +24,8 @@ a:HOVER {
 
 body {
 	overflow: hidden;
-	font-family: 'Rationale', cursive;
+	/*font-family: 'Rationale', cursive;*/
+	font-family: "Open Sans", Arial;
 	margin: 0px;
 	background: white;
 	height: 100%;
@@ -81,9 +82,9 @@ background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 1000, from(rgba(
 .loader {
     position:absolute;
     top:0px;left:0px;
-   background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 1000, from(rgba(0,28,79, 0.1) ), to(rgba(0,28,79, 0.5) ) );
+    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 1000, from(rgba(0,28,79, 0.1) ), to(rgba(0,28,79, 0.5) ) );
     width:100%;
-    height:110%;
+    height:100%;
     z-index:1000;
     display:block
 }
@@ -94,14 +95,22 @@ background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 1000, from(rgba(
     left:50%;
     width:250px;
     height:100px;
+    
     margin-left:-125px;
-    margin-top:-100px;
-    background-color:grey;
+    margin-top:-50px;
+    
+    padding: 5px;
     color: black;
     overflow:hidden;
-     background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 1000, from(rgba(165,217,239, 0.1) ), to(rgba(165,217,239, 0.2) ) );
-    -webkit-border-radius:10px;
-    -moz-border-radius:10px;
+
+	-moz-border-radius: 4px;
+	-moz-box-shadow: 0 0 6px #c6c6c6;
+	-webkit-border-radius: 4px;
+	-webkit-box-shadow: 0 0 6px #c6c6c6;
+	background: white;
+	border-radius: 4px 4px 4px 4px;
+	margin-bottom: 20px;
+
 }
 .bootkonsole p {
     margin-left:10px;
@@ -133,11 +142,11 @@ body.grey .background {
 
 #persons {
 	position: absolute;
-	width: 400px;
+	width: 500px;
 	height: 100px;
 	left: 50%;
 	top: 50%;
-	margin-left: -200px;
+	margin-left: -250px;
 	margin-top: -28px;
 	text-align: center;
 	-webkit-perspective: 600px;
@@ -146,13 +155,35 @@ body.grey .background {
 	-webkit-perspective-origin-y: 25%;
 }
 
-#persons>section>h3 {
-	position: absolute;
-	bottom: 0px;
-	width: 100%;
-	height: 30px;
-	margin: 0 auto;
+#persons>section>img {
+	-moz-border-radius: 4px;
+	-moz-box-shadow: 0 0 6px #c6c6c6;
+	-webkit-border-radius: 4px;
+	-webkit-box-shadow: 0 0 6px #c6c6c6;
+	background: white;
+	border-radius: 4px 4px 4px 4px;
+	margin-bottom: 20px;
+	padding: 5px;
 }
+
+#persons>section>div.info > div {
+color: #363636;
+font-size: 35px;
+font-weight: 400;
+margin: 5px;
+}
+
+#persons>section>div.info {
+	-moz-border-radius: 4px;
+	-moz-box-shadow: 0 0 6px #c6c6c6;
+	-webkit-border-radius: 4px;
+	-webkit-box-shadow: 0 0 6px #c6c6c6;
+	background: white;
+	border-radius: 4px 4px 4px 4px;
+	margin-bottom: 20px;
+	padding: 5px;
+}
+
 
 #persons>section>a {
 	position: absolute;
@@ -162,6 +193,9 @@ body.grey .background {
 	margin: 0 auto;
 	left: 50%;
 	margin-left: -120px;
+	
+	font-size: 23px;
+	color: #ADADAD;
 }
 
 #persons>section,#persons>section>section {
@@ -220,18 +254,16 @@ body.grey .background {
  *********************************************/
 #persons>section {
 	line-height: 1.2em;
-	text-shadow: 0px 0px 2px #fff, 0px 0px 4px #bbb;
-	font-weight: 600;
+/* 	text-shadow: 0px 0px 2px #fff, 0px 0px 4px #bbb; */
+/* 	font-weight: 600; */
 }
 
 h1,h2,h3,h4 {
 	margin: 30px 0 10px 0;
-	font-family: 'League Gothic', Arial, Helvetica, sans-serif;
 	line-height: 0.9em;
 	letter-spacing: 0.02em;
-	text-transform: uppercase;
 	color: #222;
-	text-shadow: 0px 0px 2px white, 0px 0px 4px #BBB;
+/* 	text-shadow: 0px 0px 2px white, 0px 0px 4px #BBB; */
 }
 
 #footer {
@@ -243,12 +275,11 @@ h1,h2,h3,h4 {
 
 
 #license {
-	width: 900px;
+	width: 100%;
 	padding: 5px;
 	position: fixed;
 	bottom: 0px;
 	left: 0px;
-	
 }
 
 
@@ -256,16 +287,18 @@ h1,h2,h3,h4 {
 	width: 149px;
 	height: 128px;
 	position: fixed;
-	bottom: 10px;
-	right: 10px;
+	bottom: 20px;
+	right: 20px;
 	background-image: url(../images/gdd11_logo.png);
 	background-repeat: no-repeat;
 }
 
 #toolbox {
-	background-color: #77A2D9;
+	background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 1000, from(rgba(0,28,79, 0.1) ), to(rgba(0,28,79, 0.5) ) );
+	
 	padding: 5px;
 	position: absolute;
+	color: #4076A1;
 	top: 0px;
 	left: 0px;
 	z-index: 1000;
@@ -703,7 +736,7 @@ css for the info box german stars
 }
 
 #credits {
-    width:400px;
+    width:500px;
     height:400px;
     overflow:hidden;
     position:absolute;
@@ -713,23 +746,27 @@ css for the info box german stars
 
 #creditCont .cabsatz {
     margin-top:10px;
-    color:#ffffff;
 }
+
+#creditCont .screen {
+    height: 400px;
+}
+
 #creditCont {
      position:relative;
-    -webkit-transition-duration: 50s;
+    -webkit-transition-duration: 300s;
     -webkit-transition-timing-function: linear;
+    color:#ffffff;
 }
 #creditCont.cdown {
-   
     top:400px;
-    
 }
 
 #creditCont.cup {
-    top:-1000px;
+    top:-3000px;
 }
 /*rotate something **/
 .wt90 {
     -webkit-transform: rotate(90deg);
 }
+

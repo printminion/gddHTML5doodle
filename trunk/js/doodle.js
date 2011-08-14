@@ -14,6 +14,9 @@ var activeStep = 0;
 var timeOutStep1 = undefined;
 var timeout2 = undefined;
 var loader = undefined;
+
+var bAutoStep = true;
+
 function step(n) {
 	/*
 	 * undo if possible & neccessary an old state
@@ -59,12 +62,11 @@ function step(n) {
 	}
 
 }
-function startAgain(audioEl) {
- 
-                    audioEl.currentTime = 0;
 
-            
+function startAgain(audioEl) {
+	audioEl.currentTime = 0;
 }
+
 function playPreloadSound(stop) {
 	audioElement = document.getElementById('audio');
         if(stop != undefined) {
@@ -93,7 +95,7 @@ function undoLastStep(n) {
 function clearAllStepTimeouts() {
     window.clearTimeout(timeOutStep1);
     window.clearTimeout(timeout2);
-     window.removeEventListener('humanShowEnded');
+    window.removeEventListener('humanShowEnded');
 }
 
 function step1() {
@@ -124,7 +126,9 @@ function step1() {
 	/*
 	 * fade each cell into show maps pieces
 	 */
-	timeOutStep1 = window.setTimeout("step(2)", 18000);
+	if (bAutoStep) {
+		timeOutStep1 = window.setTimeout("step(2)", 18000);
+	}
 
 }
 
@@ -144,8 +148,12 @@ function step2() {
 	 */
         window.addEventListener('humanShowEnded', function() {
             //wait 20sec and show step3
-            timeout2 = window.setTimeout("step(3)", 40000);
+        	if (bAutoStep) {
+        		timeout2 = window.setTimeout("step(3)", 40000);
+        	}
         }, false); // humanShowEnded
+        
+        
 	window.canvasObj.printPeople();
 
 	/*
@@ -212,7 +220,11 @@ function step3() {
 	 * add end titles with superstars, credits and so on
 	 */
         $('#credits').css('display', 'block');
-        window.setTimeout("showCredits()", 3000);
+
+        
+        if (bAutoStep) {
+	        window.setTimeout("showCredits()", 3000);
+        }
         
         //$('#creditCont').removeClass('cdown').addClass('cup');
 
@@ -285,6 +297,7 @@ function kickstart() {
     step(1);
    
 }
+
 function showBootstrap(stop) {
     
     var wait = document.getElementById('loadingIndicator');
@@ -297,17 +310,21 @@ function showBootstrap(stop) {
         wait.style.display = 'none';
     }
 }
+
 function init() {
+
 	// fix an chrome bug, workaround
 	videoMuteHelper();
-        //show wait 
-        showBootstrap();
-        //adding here new eventListener, wait that all is loaded
-        window.document.addEventListener('analyserLoaded', function() {debugAdd('loaded All.. now building BufferArray')}, true);
-        window.document.addEventListener('analyserBuffered', function() { kickstart();debugAdd('the buffer is ready')}, true);
-        window.document.addEventListener('analyserCriticalError', function() {alert('the mp3 is not found, maybe a network error?')}, true);
+	
+	//show wait 
+	showBootstrap();
+	//adding here new eventListener, wait that all is loaded
+	window.document.addEventListener('analyserLoaded', function() {debugAdd('loaded All.. now building BufferArray')}, true);
+	window.document.addEventListener('analyserBuffered', function() { kickstart();debugAdd('the buffer is ready')}, true);
+	window.document.addEventListener('analyserCriticalError', function() {alert('the mp3 is not found, maybe a network error?')}, true);
 	// remove the debug border analyserCriticalError
 	removeDebugBorder();
+
 	if (analyserState == true) {
 		window.analyserObj = new analyser();
 		window.analyserObj.init();
@@ -332,13 +349,15 @@ function init() {
 								+ window.canvasObj.people[i].dynmapId
 								+ '" class="future">'
 								+ '<img src="' + window.canvasObj.people[i].picUrl + '" width="150"/>'
-								+ '<h3>'
+								+ '<div class="info">'
+								+ '<div>'
 								+ window.canvasObj.people[i].name
-								+ '</h3><a href="'
+								+ '</div><a href="'
 								+ window.canvasObj.people[i].wikiUrl
 								+ '" target="_blank">'
 								+ window.canvasObj.people[i].founded
-								+ '</a></section>');
+								+ '</div>'
+								+ '</section>');
 	}
 
 	/*
@@ -438,7 +457,6 @@ function resetCanvas() {
 
 function updateCanvas(percent) {
 	updateZ(translateZValue + percent);
-
 }
 
 function updateZ(transZ, containerId) {

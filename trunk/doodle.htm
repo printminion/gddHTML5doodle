@@ -6,6 +6,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 	
 	<link href='http://fonts.googleapis.com/css?family=Rationale' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700&amp;v2' rel='stylesheet' type='text/css'>
+    
 	<link href='css/map8.css' rel='stylesheet' type='text/css'/>
 
 	<script type="text/javascript" src="js/dsp.js"></script>	
@@ -43,7 +45,7 @@
 <body class="day" onload="init()">
     <div id="loadingIndicator" class="loader">
         <div id="boot" class="bootkonsole">
-            
+           initializing... 
         </div>
     </div>
 <div id="body">
@@ -79,7 +81,7 @@
 	  <button id="btnStep3" onclick="step(3)" title="team world">step 3</button><br/>
 	  <button id="btnStep4" onclick="step(4)" title="stop world">step 4</button><br/>
 	  <!-- <button id="btnStep5" onclick="step(5)">step 5</button><br/> -->
-	  <button id="btnStep6" onclick="step(6)" title="debug world">step 6</button><br/>
+	  <!-- <button id="btnStep6" onclick="step(6)" title="debug world">step 6</button><br/> -->
 	  <!-- <button id="btnStep7" onclick="step(7)">step 7</button><br/> -->
 	</details>
 </details>
@@ -101,36 +103,36 @@
     
 <div id="icosahedron" class="plane">
 	
-    <div id="p21" class="g plane"><img src="./images/path01.png" path="1"></div>
-    <div id="p211" class="g plane"><img src="./images/path211.png"></div>
-    <div id="p212" class="g plane"><img src="./images/path212.png"></div>
+    <div id="p21" class="g plane"><img src="./images/map/shadow2/path01.png" path="1"></div>
+    <div id="p211" class="g plane"><img src="./images/map/shadow2/path211.png"></div>
+    <div id="p212" class="g plane"><img src="./images/map/shadow2/path212.png"></div>
 
-    <div id="p22" class="g plane"><img src="./images/path22.png" path="1"></div>
-    <div id="p23" class="g plane"><img src="./images/path01.png" path="1"></div>
-    <div id="p24" class="g plane"><img src="./images/path01.png" path="1"> </div>
-    <div id="p25" class="g plane"><img src="./images/path25.png" path="1"></div>
+    <div id="p22" class="g plane"><img src="./images/map/shadow2/path22.png" path="1"></div>
+    <div id="p23" class="g plane"><img src="./images/map/shadow2/path01.png" path="1"></div>
+    <div id="p24" class="g plane"><img src="./images/map/shadow2/path01.png" path="1"> </div>
+    <div id="p25" class="g plane"><img src="./images/map/shadow2/path25.png" path="1"></div>
     
 
-    <div id="p01" class="r plane"><img src="./images/path02.png" path="2"></div>
-    <div id="p02" class="g plane"><img src="./images/path02orig.png" path="2"></div>
-    <div id="p03" class="r plane"><img src="./images/path02.png" path="2"></div>
-    <div id="p04" class="g plane"><img src="./images/path04.png" path="2"></div>
-    <div id="p05" class="r plane"><img src="./images/path02.png" path="2"></div>
+    <div id="p01" class="r plane"><img src="./images/map/shadow2/path02.png" path="2"></div>
+    <div id="p02" class="g plane"><img src="./images/map/shadow2/path02orig.png" path="2"></div>
+    <div id="p03" class="r plane"><img src="./images/map/shadow2/path02.png" path="2"></div>
+    <div id="p04" class="g plane"><img src="./images/map/shadow2/path04.png" path="2"></div>
+    <div id="p05" class="r plane"><img src="./images/map/shadow2/path02.png" path="2"></div>
 
-    <div id="p06" class="g plane triangle-mask -vcontainer"><img src="./images/path01.png" path="1"></div>
-    <div id="p07" class="r plane"><img src="./images/path07.png" path="1"></div>
-    <div id="p08" class="g plane"><img src="./images/path01.png" path="1"></div>
-    <div id="p09" class="r plane"><img src="./images/path01.png"  path="1"></div>
-    <div id="p10" class="g plane"><img src="./images/path01.png"  path="1"></div>
+    <div id="p06" class="g plane triangle-mask -vcontainer"><img src="./images/map/shadow2/path01.png" path="1"></div>
+    <div id="p07" class="r plane"><img src="./images/map/shadow2/path07.png" path="1"></div>
+    <div id="p08" class="g plane"><img src="./images/map/shadow2/path01.png" path="1"></div>
+    <div id="p09" class="r plane"><img src="./images/map/shadow2/path01.png"  path="1"></div>
+    <div id="p10" class="g plane"><img src="./images/map/shadow2/path01.png"  path="1"></div>
 
-    <div id="p16" class="r plane triangle-mask-flipped -vcontainer"><img src="./images/path02.png"  path="2"></div>
-    <div id="p17" class="g plane"><img src="./images/path02.png"  path="2"></div>
-    <div id="p18" class="r plane"><img src="./images/path02.png"  path="2"></div>
-    <div id="p19" class="r plane"><img src="./images/path02.png"  path="2"></div>
+    <div id="p16" class="r plane triangle-mask-flipped -vcontainer"><img src="./images/map/shadow2/path02.png"  path="2"></div>
+    <div id="p17" class="g plane"><img src="./images/map/shadow2/path02.png"  path="2"></div>
+    <div id="p18" class="r plane"><img src="./images/map/shadow2/path02.png"  path="2"></div>
+    <div id="p19" class="r plane"><img src="./images/map/shadow2/path02.png"  path="2"></div>
     
-    <div id="p20" class="g plane triangle-mask-flipped -vcontainer"><img src="./images/path20.png"  path="2"></div>
-    <div id="p201" class="g plane"><img src="./images/path201.png" path="1"></div>
-    <div id="p202" class="g plane"><img src="./images/path202.png" path="2"></div>
+    <div id="p20" class="g plane triangle-mask-flipped -vcontainer"><img src="./images/map/shadow2/path20.png"  path="2"></div>
+    <div id="p201" class="g plane"><img src="./images/map/shadow2/path201.png" path="1"></div>
+    <div id="p202" class="g plane"><img src="./images/map/shadow2/path202.png" path="2"></div>
   </div>
   </div>
 
@@ -158,6 +160,28 @@
 <div id="footer">
   Tested with Google Chrome 15.0.848.0 <a href="http://tools.google.com/dlpage/chromesxs" target="_blank">canary</a>
 </div>
+
+<div id="license">
+<g:plusone size="small"></g:plusone><br>
+	<a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">GDD 2011 HTML5 doodle</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/russenreaktor/gddHTML5doodle" property="cc:attributionName" rel="cc:attributionURL">Kay Schneider, Misha Matiyenko-Kupriyanov, Hanno E. Allen</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
+</div>
+
+	<video id="videoHanno" class="-video" loop="true"   volume="0" autobuffer="true" preload  style="display:none">
+				Your browser does not support the <code>video</code> element.
+			 <source  muted src="media/hanno.m4v" type="video/mp4"/>
+	</video>
+	<video id="videoMisha" class="-video"  loop="true"   volume="0" autobuffer="true" preload  style="display:none">
+				Your browser does not support the <code>video</code> element.
+			 <source  muted src="media/misha.m4v" type="video/mp4"/>
+	</video>
+            <video id="videoKay" class="-video"  loop="true"   volume="0" autobuffer="true" preload  style="display:none;" class="wt90">
+				Your browser does not support the <code>video</code> element.
+			 <source  muted src="media/kay.m4v" type="video/mp4" />
+	</video>
+
+</div>
+
+
 <div id="credits" style="display:none">
     
     <div id="creditCont" class="cdown" >
@@ -229,44 +253,22 @@
 <div class="cabsatz"><p><!-- --></p></div>
 <div class="cabsatz">No german scientist were harmed during the filming of this doodle</div>  
 
-<div class="cabsatz"><b>THE END</b></div>
+<div class="screen"><b>THE END</b></div>
 <div class="cabsatz"><p><!-- --></p></div>
 <div class="cabsatz"><p><!-- --></p></div>
 <div class="cabsatz"><p><!-- --></p></div><div class="cabsatz"><p><!-- --></p></div><div class="cabsatz"><p><!-- --></p></div><div class="cabsatz"><p><!-- --></p></div>
-<div class="cabsatz">Thank you for watching till the end</div>
+<div class="screen">Thank you for watching till the end</div>
 <div class="cabsatz"><p><!-- --></p></div>
 <div class="cabsatz"><p><!-- --></p></div>
 <div class="cabsatz"><p><!-- --></p></div><div class="cabsatz"><p><!-- --></p></div><div class="cabsatz"><p><!-- --></p></div><div class="cabsatz"><p><!-- --></p></div>
-<div class="cabsatz">Are you there? <!-- portal2 joke--></div>
+<div class="screen">Are you there? <!-- portal2 joke--></div>
 <div class="cabsatz"><p><!-- --></p></div>
 <div class="cabsatz"><p><!-- --></p></div>
-<div class="cabsatz"><p>42<!-- 42! the answer of everything  --></p></div><div class="cabsatz"><p><!-- --></p></div><div class="cabsatz"><p><!-- --></p></div><div class="cabsatz"><p><!-- --></p></div>
+<div class="screen"><p>42<!-- 42! the answer of everything  --></p></div><div class="cabsatz"><p><!-- --></p></div><div class="cabsatz"><p><!-- --></p></div><div class="cabsatz"><p><!-- --></p></div>
 
-<div class="cabsatz">Goodbye till the next GDD doodle year ;)</div>
- </div>
-</div>    
-
-
-<div id="license">
-<g:plusone size="small"></g:plusone><br>
-	<a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">GDD 2011 HTML5 doodle</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/russenreaktor/gddHTML5doodle" property="cc:attributionName" rel="cc:attributionURL">Kay Schneider, Misha Matiyenko-Kupriyanov, Hanno E. Allen</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
-<div>
-
-	<video id="videoHanno" class="-video" loop="true"   volume="0" autobuffer="true" preload  style="display:none">
-				Your browser does not support the <code>video</code> element.
-			 <source  muted src="media/hanno.m4v" type="video/mp4"/>
-	</video>
-	<video id="videoMisha" class="-video"  loop="true"   volume="0" autobuffer="true" preload  style="display:none">
-				Your browser does not support the <code>video</code> element.
-			 <source  muted src="media/misha.m4v" type="video/mp4"/>
-	</video>
-            <video id="videoKay" class="-video"  loop="true"   volume="0" autobuffer="true" preload  style="display:none;" class="wt90">
-				Your browser does not support the <code>video</code> element.
-			 <source  muted src="media/kay.m4v" type="video/mp4" />
-	</video>
-
+<div class="screen">Goodbye till the next GDD doodle year ;)</div>
 </div>
-        
+</div>      
      
 </body>
 </html>
