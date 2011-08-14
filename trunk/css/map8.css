@@ -733,12 +733,12 @@ css for the info box german stars
 }
 
 #credits {
-    width:500px;
-    height:400px;
-    overflow:hidden;
-    position:absolute;
-    right:250px;
-    top:100px;
+	width: 500px;
+	height: 400px;
+	overflow: hidden;
+	position: relative;
+	left: 50%;
+	top: 150px;
 }
 
 #creditCont .cabsatz {
