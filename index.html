@@ -5,10 +5,10 @@
 	<title>GDD 2011 HTML5 doodle</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 	
-	<link href='http://fonts.googleapis.com/css?family=Rationale' rel='stylesheet' type='text/css'>
+	<!-- <link href='http://fonts.googleapis.com/css?family=Rationale' rel='stylesheet' type='text/css'> -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700&amp;v2' rel='stylesheet' type='text/css'>
     
-	<link href='css/map8.css' rel='stylesheet' type='text/css'/>
+	<link href='css/doodle.css' rel='stylesheet' type='text/css'/>
 
 	<script type="text/javascript" src="js/dsp.js"></script>	
 	<script type="text/javascript" src="js/analyser.js"></script>
@@ -19,21 +19,21 @@
 	<script type="text/javascript" src="js/video.js"></script>
 	<script type="text/javascript" src="js/doodle.js"></script>
 
+	<script type="text/javascript">
+	
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-25046836-1']);
+	  _gaq.push(['_trackPageview', '/']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
+
 </head>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-25046836-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
 <!-- Place this tag after the last plusone tag -->
 <script type="text/javascript">
   (function() {
@@ -153,8 +153,10 @@
 
 </div>
 
-<button id="btnBuzzer" style="display: none;">finish it!</button>
-  
+<!-- <button id="btnBuzzer" style="display: none;" onclick="step(3)">finish it!</button> -->
+
+<a id="btnBuzzer" href="javascript:void(0)" onclick="step(3)" style="color: #36C; cursor: pointer; text-decoration: none; display:none;"><div  class="b-o-l g-d g-d-R">finish it!</div></a>
+ 
 <div id="logo"><!--  --></div>
 
 <div id="footer">

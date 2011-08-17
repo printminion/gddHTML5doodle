@@ -4,7 +4,7 @@ var canvasWorker = function () {
     this.people = new Array();
     this.timeout = undefined;
     this.buzzerId = 'btnBuzzer';
-    this.showBuzzerId = 10;//show buzzer after 10 elements ( humans are shown)
+    this.showBuzzerId = 20;//show buzzer after 10 elements ( humans are shown)
     //+6, 7, +16, 17, 8, 9, 10, +20
     
     
@@ -340,7 +340,7 @@ canvasWorker.prototype.printPeople = function() {
         try {
             var buzzer = document.getElementById(this.buzzerId);
             buzzer.style.display = 'block';
-            buzzer.style.zIndex = 1000  ;
+            buzzer.style.zIndex = 1020  ;
             buzzer.addEventListener('click', function () { step(3);},true );
         } catch(e){
             debugAdd(e);

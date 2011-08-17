@@ -114,6 +114,8 @@ function step1() {
 
 	$('#container').css('-webkit-transform', 'rotateX(21deg) rotateY(3deg)');
 
+	$('#btnBuzzer').hide();
+	
 	/*
 	 * start music - gdd2011beat.mp3
 	 */
@@ -147,7 +149,14 @@ function step2() {
 	 * start showing "superstars"
 	 */
         window.addEventListener('humanShowEnded', function() {
-            //wait 20sec and show step3
+            /*
+             * show finish button
+             */
+        	
+        	$('#btnBuzzer').show();
+
+        	
+        	//wait 20sec and show step3
         	if (bAutoStep) {
         		timeout2 = window.setTimeout("step(3)", 40000);
         	}
@@ -183,21 +192,20 @@ function step3() {
 	}
 
 	activeStep = 3;
+
 	/*
 	 * onBuzzer click
 	 */
+	$('#btnBuzzer').hide(); 
+	
 	// make night
 	window.nightStar.toggleDayNight();
 	/*
 	 * move earth - to the left
 	 */
+	document.getElementById('shape-container').style.webkitAnimation = "spinanimation 10s infinite linear";
         
-
-        
-
-        document.getElementById('shape-container').style.webkitAnimation = "spinanimation 10s infinite linear";
-        
-        $('#container').addClass('leftNyan');
+    $('#container').addClass('leftNyan');
 
 	$('#persons section.current').attr('class', 'past');
 	
