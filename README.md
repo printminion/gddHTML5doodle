@@ -17,7 +17,7 @@ Team:
  From: Stuttgart, Germany
 
  Humble Programmer: Misha M.-Kupriyanov
- Twitter: @russenreaktor
+ Twitter: @printminion
  Google+: 101394390558382014012
  From: Stuttgart, Germany
 	
@@ -26,9 +26,9 @@ Team:
 	
 
 Versions:
- * Current - http://russenreaktor.github.com/gddHTML5doodle/
- * v0.2 - http://russenreaktor.github.com/gddHTML5doodle/v0.2/
- * v0.1 - http://russenreaktor.github.com/gddHTML5doodle/v0.1/
+ * Current - http://printminion.github.com/gddHTML5doodle/
+ * v0.2 - http://printminion.github.com/gddHTML5doodle/v0.2/
+ * v0.1 - http://printminion.github.com/gddHTML5doodle/v0.1/
 
 Making of:
  https://plus.google.com/photos/104512463398531242371/albums/5642536257131565313
